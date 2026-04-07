@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Skazka Tours — Personalized Kenya Safaris</title>
+<meta name="description" content="Personalized, concierge-level Kenya safari experiences. Designed around you, not a template. Email us to start planning.">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<link rel="canonical" href="https://skazkatours.com/">
+<link rel="alternate" hreflang="en" href="https://skazkatours.com/">
+<link rel="alternate" hreflang="ru" href="https://skazkatours.com/ru/">
+<link rel="alternate" hreflang="de" href="https://skazkatours.com/de/">
+<link rel="alternate" hreflang="fr" href="https://skazkatours.com/fr/">
+<link rel="alternate" hreflang="x-default" href="https://skazkatours.com/">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Skazka Tours — Personalized Kenya Safaris">
+<meta property="og:description" content="Concierge-level safari experiences in Kenya, planned directly with you from Nairobi.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://skazkatours.com/">
+<meta property="og:image" content="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=1200&q=80&auto=format">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=1200&q=80&auto=format">
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Skazka Tours",
+  "description": "Personalized, concierge-level Kenya safari experiences",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Nairobi",
+    "addressCountry": "KE"
+  },
+  "url": "https://skazkatours.com",
+  "email": "hello@skazkatours.com"
+}
+</script>
+
+<!-- Favicon -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect rx='20' width='100' height='100' fill='%231a3a2a'/><text x='50' y='68' font-size='60' text-anchor='middle' fill='%23c4956a' font-family='Georgia'>S</text></svg>">
+
+<!-- Premium Typography -->
+<!-- Preload hero image (LCP element) -->
+<link rel="preload" as="image" href="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=1600&q=80&auto=format">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --green: #1a3a2a;
+  --green-deep: #0f2218;
+  --ochre: #c4956a;
+  --ochre-light: #d4a87a;
+  --ivory: #FFFBF5;
+  --ivory-warm: #f5efe6;
+  --text: #2C2C2C;
+  --text-light: #5a5247;
+  --text-muted: #8a8278;
+  --border: #e0d8cc;
+  --cta-color: #c4956a;
+  --conv-bg: #ECE5DD;
+  --conv-bubble: #DCF8C6;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ivory: #1a1a18;
+    --ivory-warm: #222018;
+    --text: #e8e4dc;
+    --text-light: #b0a898;
+    --text-muted: #888;
+    --border: #3a362e;
+  }
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  background: var(--ivory);
+  color: var(--text);
+  line-height: 1.7;
+  font-size: 17px;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+h3 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ============================================
+   HERO — Full-bleed background image
+   ============================================ */
+.hero {
+  min-height: 100vh;
+  min-height: 100dvh;
+  background:
+    linear-gradient(180deg, rgba(15, 34, 24, 0.55) 0%, rgba(15, 34, 24, 0.4) 40%, rgba(15, 34, 24, 0.65) 100%),
+    var(--green-deep) url('https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=1600&q=80&auto=format') center/cover no-repeat;
+  color: #FFFBF5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+  position: relative;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: linear-gradient(to top, var(--ivory), transparent);
+  pointer-events: none;
+}
+
+.hero-badge {
+  font-size: 0.65rem;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  opacity: 0.7;
+  margin-bottom: 1.5rem;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 400;
+}
+
+.hero h1 {
+  font-size: clamp(3rem, 7vw, 5rem);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.5rem;
+  line-height: 1.1;
+  color: #FFFBF5;
+  text-shadow: 0 2px 40px rgba(0,0,0,0.5), 0 1px 3px rgba(0,0,0,0.3);
+}
+
+.hero-tagline {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+  font-style: italic;
+  font-weight: 300;
+  opacity: 0.85;
+  margin-bottom: 3rem;
+  max-width: 500px;
+  line-height: 1.5;
+}
+
+.founder-intro {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-bottom: 2.5rem;
+  background: rgba(255, 251, 245, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 1rem 1.5rem;
+  border-radius: 60px;
+  border: 1px solid rgba(255, 251, 245, 0.12);
+}
+
+.founder-photo {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--ochre);
+  border: 2px solid rgba(255, 251, 245, 0.3);
+  flex-shrink: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.founder-photo svg { opacity: 0.7; }
+
+.founder-text {
+  text-align: left;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  font-family: -apple-system, sans-serif;
+}
+
+.founder-name {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* ============================================
+   CTA BUTTONS
+   ============================================ */
+.cta-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: var(--cta-color);
+  color: var(--green-deep);
+  padding: 0.9rem 2.2rem;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: none;
+  cursor: pointer;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  letter-spacing: 0.01em;
+}
+
+.cta-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(196, 149, 106, 0.35);
+}
+
+.cta-primary:focus-visible {
+  outline: 3px solid var(--ochre);
+  outline-offset: 3px;
+}
+
+.cta-primary svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+.email-fallback {
+  display: block;
+  margin-top: 0.75rem;
+  font-size: 0.75rem;
+  opacity: 0.5;
+  color: var(--ivory);
+  text-decoration: none;
+  font-family: -apple-system, sans-serif;
+  letter-spacing: 0.03em;
+}
+
+.email-fallback:hover {
+  opacity: 0.85;
+  text-decoration: underline;
+}
+
+/* ============================================
+   PHOTO BREAKS — Full-bleed with parallax
+   ============================================ */
+.photo-break {
+  width: 100%;
+  height: 65vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative;
+}
+
+.photo-break::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(15, 34, 24, 0.08) 0%,
+    rgba(15, 34, 24, 0.03) 50%,
+    rgba(15, 34, 24, 0.08) 100%
+  );
+}
+
+.photo-break--1 {
+  background-image: url('https://images.unsplash.com/photo-1535338454528-1b22dc78db53?w=1600&q=80&auto=format');
+}
+
+.photo-break--2 {
+  background-image: url('https://images.unsplash.com/photo-1549366021-9f761d450615?w=1600&q=80&auto=format');
+  background-position: center 30%;
+}
+
+.photo-break--3 {
+  background-image: url('https://images.unsplash.com/photo-1611241893603-3c228ee0ae6f?w=1600&q=80&auto=format');
+}
+
+@media (max-width: 768px) {
+  .photo-break {
+    height: 45vh;
+    background-attachment: scroll;
+  }
+}
+
+/* ============================================
+   SECTION LAYOUT
+   ============================================ */
+.section {
+  padding: 6rem 2rem;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.section-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--ochre);
+  margin-bottom: 0.75rem;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 500;
+}
+
+.section h2 {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 400;
+  color: var(--green);
+  margin-bottom: 3rem;
+  line-height: 1.25;
+}
+
+@media (prefers-color-scheme: dark) {
+  .section h2 { color: var(--ochre-light); }
+}
+
+/* Gold line accent under section headings */
+.section h2::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 1px;
+  background: var(--ochre);
+  margin-top: 1.25rem;
+}
+
+/* ============================================
+   TESTIMONIALS
+   ============================================ */
+.testimonials {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+@media (max-width: 640px) {
+  .testimonials { grid-template-columns: 1fr; gap: 2.5rem; }
+}
+
+.testimonial {
+  border-left: 2px solid var(--ochre);
+  padding-left: 1.75rem;
+  position: relative;
+}
+
+.testimonial::before {
+  content: '\201C';
+  position: absolute;
+  top: -0.5rem;
+  left: 0.5rem;
+  font-size: 3rem;
+  color: var(--ochre);
+  opacity: 0.2;
+  font-family: 'Playfair Display', Georgia, serif;
+  line-height: 1;
+}
+
+.testimonial blockquote {
+  font-size: 1rem;
+  font-style: italic;
+  font-weight: 300;
+  margin-bottom: 1rem;
+  color: var(--text-light);
+  line-height: 1.7;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+.testimonial .attribution {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+/* ============================================
+   HOW IT WORKS
+   ============================================ */
+.how-section {
+  background:
+    linear-gradient(180deg, rgba(15, 34, 24, 0.92) 0%, rgba(26, 58, 42, 0.95) 100%),
+    url('https://images.unsplash.com/photo-1516426122078-c23e76319801?w=1200&q=60&auto=format') center/cover no-repeat;
+  color: var(--ivory);
+  padding: 6rem 2rem;
+}
+
+.how-inner {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.how-section .section-label { color: var(--ochre); }
+
+.how-section h2 {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 400;
+  margin-bottom: 3.5rem;
+  color: var(--ivory);
+  line-height: 1.25;
+}
+
+.how-section h2::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 1px;
+  background: var(--ochre);
+  margin-top: 1.25rem;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
+
+@media (max-width: 640px) {
+  .steps { grid-template-columns: 1fr; gap: 2.5rem; }
+}
+
+.step {
+  padding: 2rem;
+  background: rgba(255, 251, 245, 0.04);
+  border: 1px solid rgba(255, 251, 245, 0.08);
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.step:hover {
+  background: rgba(255, 251, 245, 0.07);
+}
+
+.step-num {
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: var(--ochre);
+  margin-bottom: 0.75rem;
+  font-family: 'Playfair Display', Georgia, serif;
+  line-height: 1;
+}
+
+.step h3 {
+  font-size: 1.15rem;
+  font-weight: 500;
+  margin-bottom: 0.6rem;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  letter-spacing: 0.02em;
+}
+
+.step p {
+  font-size: 0.9rem;
+  opacity: 0.75;
+  line-height: 1.7;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 400;
+}
+
+/* Sample conversation preview */
+.conv-preview {
+  max-width: 400px;
+  margin: 3.5rem auto 0;
+  background: var(--conv-bg);
+  border-radius: 12px;
+  padding: 1.25rem;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 0.85rem;
+  color: #333;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+}
+
+.conv-header {
+  text-align: center;
+  font-size: 0.65rem;
+  color: #888;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+.conv-msg {
+  max-width: 82%;
+  padding: 0.6rem 0.85rem;
+  border-radius: 8px;
+  margin-bottom: 0.4rem;
+  line-height: 1.45;
+}
+
+.conv-them {
+  background: #fff;
+  border-top-left-radius: 2px;
+}
+
+.conv-us {
+  background: var(--conv-bubble);
+  margin-left: auto;
+  border-top-right-radius: 2px;
+}
+
+.conv-caption {
+  font-size: 0.7rem;
+  color: var(--ochre);
+  text-align: center;
+  margin-top: 0.6rem;
+  font-style: italic;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+/* ============================================
+   FAQ
+   ============================================ */
+.faq-section {
+  background: var(--ivory-warm);
+}
+
+.faq-list {
+  max-width: 680px;
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--border);
+  padding: 1.5rem 0;
+}
+
+.faq-item:last-child {
+  border-bottom: none;
+}
+
+.faq-q {
+  font-weight: 500;
+  font-size: 1.05rem;
+  margin-bottom: 0.6rem;
+  color: var(--green);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  .faq-q { color: var(--ochre-light); }
+  .conv-preview { background: #2a2820; color: var(--text); }
+  .conv-them { background: #3a362e; }
+  .conv-us { background: #2d3a2a; }
+  .conv-header { color: var(--text-muted); }
+}
+
+.faq-a {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  line-height: 1.7;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 400;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.site-footer {
+  background:
+    linear-gradient(180deg, rgba(15, 34, 24, 0.93) 0%, rgba(10, 22, 16, 0.97) 100%),
+    url('https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=1200&q=50&auto=format') center/cover no-repeat;
+  color: var(--ivory);
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.trust-badges {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.badge {
+  font-size: 0.75rem;
+  padding: 0.5rem 1.2rem;
+  border: 1px solid rgba(196, 149, 106, 0.3);
+  border-radius: 4px;
+  color: var(--ochre-light);
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  letter-spacing: 0.02em;
+}
+
+.footer-cta {
+  margin-bottom: 2.5rem;
+}
+
+.footer-contact {
+  font-size: 0.85rem;
+  opacity: 0.78;
+  line-height: 2.2;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.footer-contact a {
+  color: var(--ivory);
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+.footer-contact a:hover {
+  text-decoration: underline;
+  opacity: 1;
+}
+
+.footer-note {
+  margin-top: 1.5rem;
+  font-size: 0.8rem;
+  opacity: 0.72;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  letter-spacing: 0.03em;
+}
+
+/* ============================================
+   FLOATING CTA BUTTON
+   ============================================ */
+.floating-cta {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  width: 56px;
+  height: 56px;
+  background: var(--cta-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--green-deep);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.3);
+  z-index: 100;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.floating-cta:hover {
+  transform: scale(1.1) translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.floating-cta:focus-visible {
+  outline: 3px solid var(--ochre);
+  outline-offset: 3px;
+}
+
+.floating-cta svg {
+  width: 28px;
+  height: 28px;
+  fill: currentColor;
+}
+
+@media (min-width: 768px) {
+  .floating-cta { width: 48px; height: 48px; }
+  .floating-cta svg { width: 24px; height: 24px; }
+}
+
+/* ============================================
+   LANGUAGE SWITCHER
+   ============================================ */
+.lang-switcher {
+  position: fixed;
+  top: 1.25rem;
+  right: 1.5rem;
+  z-index: 100;
+  display: flex;
+  gap: 0.25rem;
+  background: rgba(15, 34, 24, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 6px;
+  padding: 0.3rem;
+  border: 1px solid rgba(255, 251, 245, 0.1);
+}
+
+.lang-switcher a {
+  min-height: 44px;
+  min-width: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: block;
+  padding: 0.3rem 0.6rem;
+  font-size: 0.65rem;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: rgba(255, 251, 245, 0.6);
+  border-radius: 4px;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.lang-switcher a:hover {
+  color: #FFFBF5;
+}
+
+.lang-switcher a.active {
+  color: #FFFBF5;
+  background: rgba(196, 149, 106, 0.3);
+}
+
+/* ============================================
+   REDUCED MOTION
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .cta-primary, .floating-cta, .step { transition: none; }
+  .photo-break { background-attachment: scroll; }
+}
+
+/* ============================================
+   PRINT
+   ============================================ */
+@media print {
+  .floating-cta { display: none; }
+  .photo-break { height: 200px; }
+  .hero { min-height: auto; padding: 3rem; }
+}
+
+/* Skip link for keyboard users */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  padding: 0.75rem 1.5rem;
+  background: var(--ochre);
+  color: var(--green-deep);
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 600;
+  font-size: 0.85rem;
+  z-index: 200;
+  text-decoration: none;
+  border-radius: 0 0 6px 0;
+}
+.skip-link:focus {
+  top: 0;
+}
+</style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to content</a>
+
+<!-- ===================== LANGUAGE SWITCHER ===================== -->
+<nav class="lang-switcher" aria-label="Language">
+  <a href="/" class="active" lang="en" hreflang="en">EN</a>
+  <a href="/ru/" lang="ru" hreflang="ru">RU</a>
+  <a href="/de/" lang="de" hreflang="de">DE</a>
+  <a href="/fr/" lang="fr" hreflang="fr">FR</a>
+</nav>
+
+<!-- ===================== HERO ===================== -->
+<header class="hero" role="banner" id="main-content">
+  <p class="hero-badge" aria-hidden="true">Kenya &middot; Private Safaris &middot; Tailored Planning</p>
+  <h1>Skazka Tours</h1>
+  <p class="hero-tagline">Concierge safari experiences by a team who knows Kenya like home.</p>
+
+  <div class="founder-intro">
+    <div class="founder-photo" aria-hidden="true">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
+    </div>
+    <div class="founder-text">
+      <div class="founder-name">The Skazka team in Nairobi</div>
+      <div>You plan directly with the people shaping your trip.</div>
+    </div>
+  </div>
+
+  <a href="mailto:hello@skazkatours.com"
+     class="cta-primary"
+     aria-label="Start planning by email">
+    <svg viewBox="0 0 16 16"><path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v.217l-8 4.8-8-4.8V4zm0 1.383v6.617a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V5.383l-7.4 4.44a1 1 0 0 1-1.2 0L0 5.383z"/></svg>
+    Start planning by email
+  </a>
+  <a href="mailto:hello@skazkatours.com" class="email-fallback">hello@skazkatours.com</a>
+</header>
+
+<!-- ===================== PHOTO BREAK 1: Elephants at golden hour ===================== -->
+<div class="photo-break photo-break--1" role="img" aria-label="Elephants crossing the savanna at golden hour"></div>
+
+<!-- ===================== TESTIMONIALS ===================== -->
+<section class="section" aria-labelledby="testimonials-heading">
+  <p class="section-label">What Our Guests Say</p>
+  <h2 id="testimonials-heading">They came as strangers. They left as friends.</h2>
+
+  <div class="testimonials">
+    <div class="testimonial">
+      <blockquote>"We were nervous about booking a safari with someone we'd never met. By day two, it felt like traveling with family. The guides knew our kids' names."</blockquote>
+      <p class="attribution"><span aria-hidden="true">&#x1F1E9;&#x1F1EA;</span> Martina &amp; Klaus, Munich</p>
+    </div>
+    <div class="testimonial">
+      <blockquote>"I've done safaris in Tanzania and Botswana. Skazka was different. It felt like the trip was made for me, because it was."</blockquote>
+      <p class="attribution"><span aria-hidden="true">&#x1F1FA;&#x1F1F8;</span> David R., San Francisco</p>
+    </div>
+    <div class="testimonial">
+      <blockquote>"My mother-in-law has mobility issues. They arranged everything... the right vehicle, the right lodge, even the walking paths. Nothing was an afterthought."</blockquote>
+      <p class="attribution"><span aria-hidden="true">&#x1F1EF;&#x1F1F5;</span> Yuki T., Tokyo</p>
+    </div>
+    <div class="testimonial">
+      <blockquote>"From the moment we landed in Nairobi, someone was there. Not a driver holding a sign... a person who already knew what we needed."</blockquote>
+      <p class="attribution"><span aria-hidden="true">&#x1F1EC;&#x1F1E7;</span> Sarah &amp; Tom, London</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PHOTO BREAK 2: Leopard ===================== -->
+<div class="photo-break photo-break--2" role="img" aria-label="Leopard resting in dappled sunlight"></div>
+
+<!-- ===================== HOW IT WORKS ===================== -->
+<section class="how-section" aria-labelledby="how-heading">
+  <div class="how-inner">
+    <p class="section-label">How It Works</p>
+    <h2 id="how-heading">Three steps. No forms. No algorithms.</h2>
+
+    <div class="steps">
+      <div class="step">
+      <div class="step-num" aria-hidden="true">01</div>
+      <h3>We talk</h3>
+      <p>Send us an email. Tell us who's traveling, when, and what excites you. We'll ask the right questions.</p>
+      </div>
+      <div class="step">
+        <div class="step-num" aria-hidden="true">02</div>
+        <h3>We design your trip</h3>
+        <p>A custom itinerary built around your group. Not a template. Lodges we've personally stayed at. Guides we trust with our own families.</p>
+      </div>
+      <div class="step">
+        <div class="step-num" aria-hidden="true">03</div>
+        <h3>You show up</h3>
+        <p>Everything is handled. Airport pickup, lodges, park fees, meals, surprises. You just bring a camera and curiosity.</p>
+      </div>
+    </div>
+
+    <!-- Sample planning exchange -->
+    <div class="conv-preview" role="group" aria-label="Sample planning exchange">
+      <div class="conv-header">Sample exchange</div>
+      <div class="conv-msg conv-them">Hi! We're a family of 4 from Berlin. Thinking about Kenya in August. Never done a safari before 😅</div>
+      <div class="conv-msg conv-us">Welcome! August is perfect... you'll catch the Great Migration. How old are the kids? That changes everything about which lodges and drives we recommend.</div>
+      <p class="conv-caption">This is how most trips start ↑</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FAQ ===================== -->
+<section class="section faq-section" aria-labelledby="faq-heading">
+  <p class="section-label">Questions You're Probably Thinking</p>
+  <h2 id="faq-heading">Before you email us</h2>
+
+  <div class="faq-list">
+    <div class="faq-item">
+      <h3 class="faq-q">Is this legit? How do I know you won't disappear with my money?</h3>
+      <p class="faq-a">Fair question. We work from Nairobi and plan each trip with you directly before anything is booked. You'll receive a written itinerary, clear pricing, and transparent payment steps before you decide.</p>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-q">How much does a safari cost?</h3>
+      <p class="faq-a">Most trips run $3,000 to $8,000 per person depending on duration, lodges, and group size. We'll give you a detailed quote with no hidden fees after we talk.</p>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-q">What if I need to cancel?</h3>
+      <p class="faq-a">Full refund up to 60 days before departure. 50% refund 30 to 60 days out. We also recommend travel insurance and can help you find the right policy.</p>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-q">Do you handle flights and visas?</h3>
+      <p class="faq-a">Our team handles everything on the ground in Kenya. For flights, we'll recommend routes and timing. For visas, we'll walk you through the eVisa process... it takes about 10 minutes.</p>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-q">Is Kenya safe?</h3>
+      <p class="faq-a">Our safari areas (Masai Mara, Amboseli, Samburu, Laikipia) are safe and well-organized. You'll be with experienced guides throughout, and we only recommend routes where we know the people and logistics well.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PHOTO BREAK 3: Amboseli sunrise ===================== -->
+<div class="photo-break photo-break--3" role="img" aria-label="Sunrise over Amboseli with Mount Kilimanjaro"></div>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="site-footer" role="contentinfo">
+  <div class="trust-badges" role="group" aria-label="Trust indicators">
+    <span class="badge">Custom itineraries</span>
+    <span class="badge">Direct team contact</span>
+    <span class="badge">Nairobi-based planning</span>
+    <span class="badge">Transparent quotes</span>
+  </div>
+
+  <div class="footer-cta">
+    <a href="mailto:hello@skazkatours.com"
+       class="cta-primary"
+       aria-label="Start planning your safari by email">
+      <svg viewBox="0 0 16 16"><path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v.217l-8 4.8-8-4.8V4zm0 1.383v6.617a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V5.383l-7.4 4.44a1 1 0 0 1-1.2 0L0 5.383z"/></svg>
+      Start planning your safari
+    </a>
+  </div>
+
+  <div class="footer-contact">
+    <strong>Skazka Tours</strong> &middot; Nairobi, Kenya<br>
+    <a href="mailto:hello@skazkatours.com">hello@skazkatours.com</a>
+  </div>
+  <div class="footer-note">
+    Ask for a sample itinerary and a first budget outline.
+  </div>
+</footer>
+
+<!-- ===================== FLOATING CONTACT ===================== -->
+<a href="mailto:hello@skazkatours.com"
+   class="floating-cta"
+   aria-label="Email Skazka Tours">
+  <svg viewBox="0 0 16 16"><path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v.217l-8 4.8-8-4.8V4zm0 1.383v6.617a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V5.383l-7.4 4.44a1 1 0 0 1-1.2 0L0 5.383z"/></svg>
+</a>
+
+</body>
+</html>
