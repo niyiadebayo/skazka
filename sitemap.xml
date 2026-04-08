@@ -3,6 +3,7 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://skazkatours.com/</loc>
+    <lastmod>2026-04-09</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://skazkatours.com/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://skazkatours.com/ru/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://skazkatours.com/de/"/>
@@ -11,6 +12,7 @@
   </url>
   <url>
     <loc>https://skazkatours.com/ru/</loc>
+    <lastmod>2026-04-09</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://skazkatours.com/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://skazkatours.com/ru/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://skazkatours.com/de/"/>
@@ -19,6 +21,7 @@
   </url>
   <url>
     <loc>https://skazkatours.com/de/</loc>
+    <lastmod>2026-04-09</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://skazkatours.com/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://skazkatours.com/ru/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://skazkatours.com/de/"/>
@@ -27,6 +30,7 @@
   </url>
   <url>
     <loc>https://skazkatours.com/fr/</loc>
+    <lastmod>2026-04-09</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://skazkatours.com/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://skazkatours.com/ru/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://skazkatours.com/de/"/>
