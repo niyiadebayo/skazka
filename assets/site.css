@@ -835,16 +835,7 @@ select {
   text-decoration-color: rgba(255, 244, 230, 0.62);
 }
 
-.js-enhanced .reveal {
-  opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
-}
-
-.js-enhanced .reveal.is-visible {
-  opacity: 1;
-  transform: none;
-}
+/* reveal animations handled by site.js inline styles */
 
 .error-page {
   min-height: 100dvh;
@@ -963,8 +954,6 @@ select {
     scroll-behavior: auto;
   }
 
-  .js-enhanced .reveal,
-  .js-enhanced .reveal.is-visible,
   .cta-primary,
   .cta-secondary,
   .cta-pill,
