@@ -1,7 +1,9 @@
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-const reveals = document.querySelectorAll(".reveal");
 
 if (!prefersReducedMotion && "IntersectionObserver" in window) {
+  const reveals = document.querySelectorAll(".reveal");
+  const viewportHeight = window.innerHeight;
+
   const observer = new IntersectionObserver(
     (entries) => {
       for (const entry of entries) {
@@ -16,6 +18,11 @@ if (!prefersReducedMotion && "IntersectionObserver" in window) {
   );
 
   for (const item of reveals) {
+    const rect = item.getBoundingClientRect();
+    if (rect.top < viewportHeight) {
+      // Already in viewport on load — show immediately, no animation
+      continue;
+    }
     item.style.opacity = "0";
     item.style.transform = "translateY(28px)";
     item.style.transition = "opacity 0.7s ease, transform 0.7s ease";
