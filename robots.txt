@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://skazkatours.com/sitemap.xml
+Sitemap: https://skazka.tours/sitemap.xml

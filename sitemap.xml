@@ -1,40 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://skazkatours.com/</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://skazkatours.com/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://skazkatours.com/ru/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://skazkatours.com/de/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://skazkatours.com/fr/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://skazkatours.com/"/>
-  </url>
-  <url>
-    <loc>https://skazkatours.com/ru/</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://skazkatours.com/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://skazkatours.com/ru/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://skazkatours.com/de/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://skazkatours.com/fr/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://skazkatours.com/"/>
-  </url>
-  <url>
-    <loc>https://skazkatours.com/de/</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://skazkatours.com/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://skazkatours.com/ru/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://skazkatours.com/de/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://skazkatours.com/fr/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://skazkatours.com/"/>
-  </url>
-  <url>
-    <loc>https://skazkatours.com/fr/</loc>
-    <lastmod>2026-04-09</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://skazkatours.com/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://skazkatours.com/ru/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://skazkatours.com/de/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://skazkatours.com/fr/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://skazkatours.com/"/>
+    <loc>https://skazka.tours/</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
   </url>
 </urlset>

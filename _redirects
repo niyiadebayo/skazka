@@ -1,0 +1,18 @@
+# Cloudflare Pages redirects
+# Format: <source> <destination> <status>
+# Docs: https://developers.cloudflare.com/pages/configuration/redirects/
+
+# Legacy locale paths → EN root (multi-lang retired)
+/en   /  301
+/en/  /  301
+/ru   /  301
+/ru/  /  301
+/de   /  301
+/de/  /  301
+/fr   /  301
+/fr/  /  301
+
+# Common typo / alt paths
+/contact /#enquire  301
+/about /#founder  301
+/faq /#faq  301
