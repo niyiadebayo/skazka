@@ -1,6 +1,11 @@
 .DS_Store
 .claude/
 
+# Raw photo masters (optimized versions are committed separately)
+assets/IMG_*.jpeg
+assets/IMG_*.jpg
+assets/IMG_*.HEIC
+
 # wrangler files
 .wrangler
 .dev.vars*
