@@ -104,6 +104,27 @@ The card grid was replaced because it read like a shop. Each journey is now a sp
 - The whole spread is one link to the enquiry form; choosing it adds the journey to the enquiry note and marks the spread "In your note".
 - Phones: photo above, text below.
 
+## Hero by the Kenya clock (November 2026)
+
+The hero changes with Kenya time (UTC+3), the same clock as the "in Kenya now" line.
+
+| Phase | Kenya time | Today |
+|---|---|---|
+| dawn | 05:30 - 08:00 | sunset clip, tinted cooler and pinker |
+| day | 08:00 - 16:30 | sunset clip, desaturated with a pale blue wash (the weakest: the sun is still on the horizon) |
+| sunset | 16:30 - 19:00 | the clip as filmed |
+| night | 19:00 - 05:30 | sunset clip turned moonlit blue |
+
+Only one clip exists, so three phases are tints (CSS filter plus a colour wash on `.hero-bg::before`). Without JavaScript the hero shows as filmed.
+
+**Adding real footage for a phase**
+1. Add `assets/hero-<phase>.mp4` and `assets/hero-poster-<phase>.jpg` (phase is `dawn`, `day` or `night`).
+2. Add the phase to `data-clips` on the hero video, e.g. `data-clips="sunset dawn"`.
+
+That phase then plays its own clip and its tint switches off. The list is explicit on purpose: probing for files would make every visitor request clips that do not exist, and `/assets/*` is cached for a year.
+
+Hero text contrast is measured per phase against the video pixels; the lowest is the 88px headline at 4.9:1 in the day phase, and all small text is 7.7:1 or better.
+
 ## Layout Principles
 
 - Max content width: `1180px`

@@ -2565,6 +2565,19 @@ html.menu-open .concierge { display: none; }
   .journey:hover .journey-media img { transform: none; }
   .route-jeep { transition: none; }
 }
+
+/* ===== HERO BY THE KENYA CLOCK =====
+   One real clip (sunset). Until dawn, day and night footage exists, those phases re-tint it:
+   a filter on the picture plus a thin colour wash. A phase with its own clip (data-own-clip) is left untouched.
+   Without JavaScript there is no data-phase and the hero shows as filmed. */
+.hero-bg img, .hero-bg video { transition: filter 2.4s var(--ease); }
+.hero-bg::before { content: ''; position: absolute; inset: 0; z-index: 2; pointer-events: none; background: transparent; transition: background 2.4s var(--ease); }
+.hero[data-phase="dawn"]:not([data-own-clip]) .hero-bg :is(img, video)  { filter: hue-rotate(-14deg) saturate(0.72) brightness(1.04); }
+.hero[data-phase="dawn"]:not([data-own-clip]) .hero-bg::before          { background: linear-gradient(180deg, rgba(196, 176, 214, 0.26) 0%, rgba(240, 196, 190, 0.16) 45%, rgba(0, 0, 0, 0) 70%); }
+.hero[data-phase="day"]:not([data-own-clip]) .hero-bg :is(img, video)   { filter: saturate(0.3) brightness(1.16) contrast(0.96); }
+.hero[data-phase="day"]:not([data-own-clip]) .hero-bg::before           { background: linear-gradient(180deg, rgba(150, 190, 230, 0.34) 0%, rgba(205, 222, 235, 0.16) 46%, rgba(0, 0, 0, 0) 70%); }
+.hero[data-phase="night"]:not([data-own-clip]) .hero-bg :is(img, video) { filter: hue-rotate(188deg) saturate(0.5) brightness(0.74) contrast(1.22); }
+.hero[data-phase="night"]:not([data-own-clip]) .hero-bg::before         { background: linear-gradient(180deg, rgba(10, 14, 30, 0.38) 0%, rgba(10, 14, 30, 0.12) 55%, rgba(0, 0, 0, 0) 80%); }
   </style>
 </head>
 <body>
@@ -2641,13 +2654,13 @@ html.menu-open .concierge { display: none; }
 
   <section class="hero" id="top">
     <div class="hero-bg">
-      <video class="hero-video" autoplay muted loop playsinline preload="metadata"
+      <video class="hero-video" id="hero-video" data-clips="sunset" autoplay muted loop playsinline preload="metadata"
              poster="/assets/hero-poster.jpg"
              aria-label="African elephants walking at sunset in Samburu National Reserve, Kenya">
         <source src="/assets/hero.webm" type="video/webm">
         <source src="/assets/hero.mp4" type="video/mp4">
       </video>
-      <img class="hero-fallback" src="/assets/hero-poster.jpg"
+      <img class="hero-fallback" id="hero-fallback" src="/assets/hero-poster.jpg"
            alt="African elephants at sunset in Samburu National Reserve, Kenya"
            width="1600" height="900" decoding="async" fetchpriority="high" />
     </div>
@@ -3692,6 +3705,42 @@ html.menu-open .concierge { display: none; }
   var eatClock = document.getElementById('eat-clock');
   var dayStrip = document.getElementById('day-strip');
   var dayScrolled = false;
+
+  // --- Hero follows the Kenya day: dawn, day, sunset, night ---
+  // Only the sunset clip exists so far, so the other phases re-tint it (see CSS).
+  // To give a phase its own footage: add /assets/hero-<phase>.mp4 and /assets/hero-poster-<phase>.jpg,
+  // then add the phase name to data-clips on the hero video, e.g. data-clips="sunset dawn".
+  var heroEl = document.querySelector('.hero');
+  var heroVideo = document.getElementById('hero-video');
+  var heroStill = document.getElementById('hero-fallback');
+  var heroClips = heroVideo ? (heroVideo.getAttribute('data-clips') || 'sunset').split(/\s+/) : [];
+  function phaseAt(m) {
+    if (m >= 330 && m < 480) return 'dawn';     // 05:30 - 08:00
+    if (m >= 480 && m < 990) return 'day';      // 08:00 - 16:30
+    if (m >= 990 && m < 1140) return 'sunset';  // 16:30 - 19:00
+    return 'night';
+  }
+  function setHeroPhase(m) {
+    if (!heroEl) return;
+    var phase = phaseAt(m);
+    if (heroEl.getAttribute('data-phase') === phase) return;
+    heroEl.setAttribute('data-phase', phase);
+    var own = phase !== 'sunset' && heroClips.indexOf(phase) > -1;
+    var base = own ? '-' + phase : '';
+    if (own) heroEl.setAttribute('data-own-clip', ''); else heroEl.removeAttribute('data-own-clip');
+    if (heroVideo && heroVideo.getAttribute('data-playing') !== (base || 'sunset')) {
+      heroVideo.setAttribute('data-playing', base || 'sunset');
+      if (own || heroVideo.getAttribute('data-swapped')) {
+        heroVideo.setAttribute('data-swapped', '1');
+        heroVideo.innerHTML = own ? '' : '<source src="/assets/hero.webm" type="video/webm"><source src="/assets/hero.mp4" type="video/mp4">';
+        if (own) heroVideo.src = '/assets/hero' + base + '.mp4'; else heroVideo.removeAttribute('src');
+        heroVideo.poster = '/assets/hero-poster' + base + '.jpg';
+        heroVideo.load();
+        var playing = heroVideo.play(); if (playing && playing.catch) playing.catch(function () {});
+      }
+      if (heroStill) heroStill.src = '/assets/hero-poster' + base + '.jpg';
+    }
+  }
   var heroNow = document.getElementById('hero-now-text');
   var NOW_SHORT = {
     tea: 'tea is going round the tents', dawn: 'the dawn drive is out', breakfast: 'breakfast in the bush',
@@ -3707,6 +3756,7 @@ html.menu-open .concierge { display: none; }
       if (m >= parseInt(el.getAttribute('data-from'), 10)) current = el;
       el.classList.remove('is-now');
     });
+    setHeroPhase(m);
     var asleep = !current || m >= 1290; // before 05:30 or after 21:30
     if (heroNow) heroNow.textContent = fmt(m) + ' in Kenya \u00b7 ' + (asleep ? 'the camp is asleep' : NOW_SHORT[current.getAttribute('data-sky')]);
     if (asleep) {
