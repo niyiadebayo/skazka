@@ -93,6 +93,16 @@ The hero and chapter 1 share the night ground, so the opening reads as one act. 
 
 **Animal tracks** mark each chapter label: lion, zebra, elephant, antelope, guineafowl (CSS masks, `data-track`).
 
+## Sample journeys: five spreads (November 2026)
+
+The card grid was replaced because it read like a shop. Each journey is now a spread, like facing pages: a 3:2 photograph on one side and the telling on the other, alternating sides, with white space between them and no boxes.
+
+- Label (`Journey № 01 — 12 days`), serif title, one paragraph, a route, then price and one link.
+- The route is a dotted trail of the places named in that journey's description, with a small vehicle that travels it as the spread scrolls past (or on hover where scroll timelines are unsupported). Kimani should confirm the stop order for journeys 2 to 5.
+- "Small party, two to six" is said once in the intro, not on every journey.
+- The whole spread is one link to the enquiry form; choosing it adds the journey to the enquiry note and marks the spread "In your note".
+- Phones: photo above, text below.
+
 ## Layout Principles
 
 - Max content width: `1180px`
