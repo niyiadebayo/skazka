@@ -2293,7 +2293,7 @@ section { padding: clamp(112px, 12vw, 192px) 0; }
 @media (min-width: 821px) { .hero-ticker { padding-right: 220px; } }
 
 /* nav: a real ground behind the links */
-.nav { background: rgba(20, 17, 14, 0.62); color: #F3EDE3; }
+.nav { background: rgba(20, 17, 14, 0.76); color: #F3EDE3; }
 .nav-links a { color: #F3EDE3; }
 .nav.scrolled { background: color-mix(in srgb, var(--bg) 96%, transparent); border-bottom-color: var(--line); color: var(--ink); }
 .nav.scrolled .nav-links a { color: var(--ink); }
@@ -2578,6 +2578,18 @@ html.menu-open .concierge { display: none; }
 .hero[data-phase="day"]:not([data-own-clip]) .hero-bg::before           { background: linear-gradient(180deg, rgba(150, 190, 230, 0.34) 0%, rgba(205, 222, 235, 0.16) 46%, rgba(0, 0, 0, 0) 70%); }
 .hero[data-phase="night"]:not([data-own-clip]) .hero-bg :is(img, video) { filter: hue-rotate(188deg) saturate(0.5) brightness(0.74) contrast(1.22); }
 .hero[data-phase="night"]:not([data-own-clip]) .hero-bg::before         { background: linear-gradient(180deg, rgba(10, 14, 30, 0.38) 0%, rgba(10, 14, 30, 0.12) 55%, rgba(0, 0, 0, 0) 80%); }
+
+/* a phase shown as a still photograph: no video, a very slow drift */
+.hero[data-still] .hero-bg video { display: none; }
+.hero-bg .hero-fallback { transition: opacity 0.9s var(--ease), filter 2.4s var(--ease); }
+.hero-bg .hero-fallback.is-loading { opacity: 0; }
+.hero[data-still] .hero-bg .hero-fallback { object-position: 62% 12%; }
+@media (prefers-reduced-motion: no-preference) {
+  .hero[data-still] .hero-bg .hero-fallback { animation: still-drift 36s ease-in-out infinite alternate; transform-origin: 70% 8%; }
+}
+@keyframes still-drift { from { transform: scale(1); } to { transform: scale(1.07); } }
+@media (max-width: 820px) { .hero[data-still] .hero-bg .hero-fallback { object-position: 74% 50%; translate: 0 52px; } }
+.hero-bg { overflow: hidden; }
   </style>
 </head>
 <body>
@@ -2654,7 +2666,7 @@ html.menu-open .concierge { display: none; }
 
   <section class="hero" id="top">
     <div class="hero-bg">
-      <video class="hero-video" id="hero-video" data-clips="sunset" autoplay muted loop playsinline preload="metadata"
+      <video class="hero-video" id="hero-video" data-clips="sunset" data-stills="day" autoplay muted loop playsinline preload="metadata"
              poster="/assets/hero-poster.jpg"
              aria-label="African elephants walking at sunset in Samburu National Reserve, Kenya">
         <source src="/assets/hero.webm" type="video/webm">
@@ -2815,7 +2827,7 @@ html.menu-open .concierge { display: none; }
       <div class="journeys">
         <article class="journey">
           <div class="journey-media">
-            <img src="https://images.unsplash.com/photo-1535941339077-2dd1c7963098?w=1400&q=80" alt="Lion at dawn, Maasai Mara" width="1400" height="933" loading="lazy" decoding="async" />
+            <img src="https://images.unsplash.com/photo-1518709594023-6eab9bab7b23?w=1400&q=80" alt="Zebras in tall golden grass under a blue sky" width="1400" height="933" loading="lazy" decoding="async" />
           </div>
           <div class="journey-body">
             <p class="journey-label"><span>Journey &#8470; 01</span><span>10 days</span><span class="journey-picked">&#10003; In your note</span></p>
@@ -2851,7 +2863,7 @@ html.menu-open .concierge { display: none; }
         </article>
         <article class="journey">
           <div class="journey-media">
-            <img src="https://images.unsplash.com/photo-1504432842672-1a79f78e4084?w=1400&q=80" alt="Hot air balloon over acacia" width="1400" height="933" loading="lazy" decoding="async" />
+            <img src="https://images.unsplash.com/photo-1519659528534-7fd733a832a0?w=1400&q=80" alt="A hot-air balloon above the plains, with wildebeest below" width="1400" height="933" loading="lazy" decoding="async" />
           </div>
           <div class="journey-body">
             <p class="journey-label"><span>Journey &#8470; 03</span><span>5 days</span><span class="journey-picked">&#10003; In your note</span></p>
@@ -2918,7 +2930,7 @@ html.menu-open .concierge { display: none; }
 
         <div class="region-preview">
           <div class="region-preview-img">
-            <img id="region-img" src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=1400&q=80" alt="Cheetah on termite mound, Mara conservancy" width="1400" height="933" loading="lazy" decoding="async" />
+            <img id="region-img" src="https://images.unsplash.com/photo-1535082623926-b39352a03fb7?w=1400&q=80" alt="Wildebeest and a safari vehicle on the open plains" width="1400" height="933" loading="lazy" decoding="async" />
           </div>
           <div class="region-preview-body">
             <div class="eyebrow" id="region-sub" style="margin-bottom: 12px;">Southwest &middot; 1,510 km&sup2;</div>
@@ -3552,22 +3564,22 @@ html.menu-open .concierge { display: none; }
     {
       sub: 'Southwest \u00b7 1,510 km\u00b2', name: 'Maasai Mara',
       desc: 'The great northern extension of the Serengeti. We work only in the private conservancies that ring the reserve \u2014 Olare Motorogi, Mara North, Naboisho \u2014 where vehicles are limited and off-road is permitted.',
-      img: 'https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=1400&q=80',
-      alt: 'Cheetah on termite mound, Mara conservancy',
+      img: 'https://images.unsplash.com/photo-1535082623926-b39352a03fb7?w=1400&q=80',
+      alt: 'Wildebeest and a safari vehicle on the open plains',
       stats: [['Drive time','5h'],['Elevation','1,650m'],['Best for','Big cats']]
     },
     {
       sub: 'Central highlands \u00b7 9,500 km\u00b2', name: 'Laikipia',
       desc: 'A plateau of private conservancies north of Mt. Kenya, stitched together from former cattle ranches. Rhinos, wild dogs, walking safaris, fly camps under the stars. My favorite place in Kenya.',
-      img: 'https://images.unsplash.com/photo-1581852017103-68e8e14c3964?w=1400&q=80',
-      alt: 'Walking safari in Laikipia',
+      img: 'https://images.unsplash.com/photo-1535338454770-8be927b5a00b?w=1400&q=80',
+      alt: 'A rhino and her calf in dry grass',
       stats: [['Drive time','3.5h'],['Elevation','1,800m'],['Best for','Walking']]
     },
     {
       sub: 'Northern \u00b7 Ewaso Nyiro basin', name: 'Samburu',
       desc: "Dry, red country. Home to the 'Samburu Special Five' \u2014 reticulated giraffe, Grevy's zebra, gerenuk, beisa oryx, Somali ostrich \u2014 and no one else's itinerary. We fly in, then drive doubletracks.",
-      img: 'https://images.unsplash.com/photo-1534996858221-380b92700493?w=1400&q=80',
-      alt: 'Reticulated giraffe in Samburu',
+      img: 'https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=1400&q=80',
+      alt: 'A giraffe behind a thorn tree in warm evening light',
       stats: [['Flight','1h 15m'],['Elevation','900m'],['Best for','Rare species']]
     },
     {
@@ -3587,8 +3599,8 @@ html.menu-open .concierge { display: none; }
     {
       sub: 'South-central \u00b7 22,000 km\u00b2', name: 'Tsavo',
       desc: 'Red-dust elephants and the hardest-earned sightings in Kenya. For guests who have been on safari before and want space, solitude, and distance from the circuit.',
-      img: 'https://images.unsplash.com/photo-1516426122078-c23e76319801?w=1400&q=80',
-      alt: 'Tsavo landscape',
+      img: 'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=1400&q=80',
+      alt: 'A lone acacia over red earth at sunset',
       stats: [['Drive time','5h'],['Elevation','500m'],['Best for','Solitude']]
     }
   ];
@@ -3714,6 +3726,10 @@ html.menu-open .concierge { display: none; }
   var heroVideo = document.getElementById('hero-video');
   var heroStill = document.getElementById('hero-fallback');
   var heroClips = heroVideo ? (heroVideo.getAttribute('data-clips') || 'sunset').split(/\s+/) : [];
+  var heroStills = heroVideo ? (heroVideo.getAttribute('data-stills') || '').split(/\s+/) : [];
+  // A phase can also be a still photograph: add /assets/hero-<phase>.jpg and list the phase in data-stills.
+  var STILL_ALT = { day: 'An elephant walking through golden grass in daylight' };
+  var BASE_ALT = heroStill ? heroStill.alt : '';
   function phaseAt(m) {
     if (m >= 330 && m < 480) return 'dawn';     // 05:30 - 08:00
     if (m >= 480 && m < 990) return 'day';      // 08:00 - 16:30
@@ -3721,24 +3737,37 @@ html.menu-open .concierge { display: none; }
     return 'night';
   }
   function setHeroPhase(m) {
-    if (!heroEl) return;
+    if (!heroEl || !heroVideo || !heroStill) return;
     var phase = phaseAt(m);
     if (heroEl.getAttribute('data-phase') === phase) return;
     heroEl.setAttribute('data-phase', phase);
-    var own = phase !== 'sunset' && heroClips.indexOf(phase) > -1;
-    var base = own ? '-' + phase : '';
-    if (own) heroEl.setAttribute('data-own-clip', ''); else heroEl.removeAttribute('data-own-clip');
-    if (heroVideo && heroVideo.getAttribute('data-playing') !== (base || 'sunset')) {
-      heroVideo.setAttribute('data-playing', base || 'sunset');
-      if (own || heroVideo.getAttribute('data-swapped')) {
-        heroVideo.setAttribute('data-swapped', '1');
-        heroVideo.innerHTML = own ? '' : '<source src="/assets/hero.webm" type="video/webm"><source src="/assets/hero.mp4" type="video/mp4">';
-        if (own) heroVideo.src = '/assets/hero' + base + '.mp4'; else heroVideo.removeAttribute('src');
-        heroVideo.poster = '/assets/hero-poster' + base + '.jpg';
+    var kind = phase === 'sunset' ? 'base' : heroClips.indexOf(phase) > -1 ? 'clip' : heroStills.indexOf(phase) > -1 ? 'still' : 'tint';
+    // own footage or photograph: no tint
+    if (kind === 'clip' || kind === 'still') heroEl.setAttribute('data-own-clip', ''); else heroEl.removeAttribute('data-own-clip');
+    if (kind === 'still') heroEl.setAttribute('data-still', ''); else heroEl.removeAttribute('data-still');
+
+    // the video
+    var wantVideo = kind === 'clip' ? phase : 'sunset';
+    if (kind === 'still') { heroVideo.pause(); }
+    else {
+      if ((heroVideo.getAttribute('data-playing') || 'sunset') !== wantVideo) {
+        heroVideo.innerHTML = kind === 'clip' ? '' : '<source src="/assets/hero.webm" type="video/webm"><source src="/assets/hero.mp4" type="video/mp4">';
+        if (kind === 'clip') heroVideo.src = '/assets/hero-' + phase + '.mp4'; else heroVideo.removeAttribute('src');
+        heroVideo.poster = kind === 'clip' ? '/assets/hero-poster-' + phase + '.jpg' : '/assets/hero-poster.jpg';
+        heroVideo.setAttribute('data-playing', wantVideo);
         heroVideo.load();
-        var playing = heroVideo.play(); if (playing && playing.catch) playing.catch(function () {});
       }
-      if (heroStill) heroStill.src = '/assets/hero-poster' + base + '.jpg';
+      var playing = heroVideo.play(); if (playing && playing.catch) playing.catch(function () {});
+    }
+
+    // the still image beneath it (and the whole picture, for a still phase)
+    var wantStill = kind === 'still' ? '/assets/hero-' + phase + '.jpg' : kind === 'clip' ? '/assets/hero-poster-' + phase + '.jpg' : '/assets/hero-poster.jpg';
+    if (heroStill.getAttribute('src') !== wantStill) {
+      heroStill.classList.add('is-loading');   // fade the new picture in once it has arrived
+      heroStill.onload = heroStill.onerror = function () { heroStill.classList.remove('is-loading'); };
+      heroStill.src = wantStill;
+      heroStill.alt = kind === 'still' ? (STILL_ALT[phase] || '') : BASE_ALT;
+      if (heroStill.complete) heroStill.classList.remove('is-loading');
     }
   }
   var heroNow = document.getElementById('hero-now-text');

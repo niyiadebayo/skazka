@@ -111,7 +111,7 @@ The hero changes with Kenya time (UTC+3), the same clock as the "in Kenya now" l
 | Phase | Kenya time | Today |
 |---|---|---|
 | dawn | 05:30 - 08:00 | sunset clip, tinted cooler and pinker |
-| day | 08:00 - 16:30 | sunset clip, desaturated with a pale blue wash (the weakest: the sun is still on the horizon) |
+| day | 08:00 - 16:30 | a still photograph (`assets/hero-day.jpg`, Unsplash stock: an elephant in golden grass), drifting very slowly |
 | sunset | 16:30 - 19:00 | the clip as filmed |
 | night | 19:00 - 05:30 | sunset clip turned moonlit blue |
 
@@ -121,9 +121,18 @@ Only one clip exists, so three phases are tints (CSS filter plus a colour wash o
 1. Add `assets/hero-<phase>.mp4` and `assets/hero-poster-<phase>.jpg` (phase is `dawn`, `day` or `night`).
 2. Add the phase to `data-clips` on the hero video, e.g. `data-clips="sunset dawn"`.
 
-That phase then plays its own clip and its tint switches off. The list is explicit on purpose: probing for files would make every visitor request clips that do not exist, and `/assets/*` is cached for a year.
+That phase then plays its own clip and its tint switches off. A phase can be a still photograph instead: add `assets/hero-<phase>.jpg` and list the phase in `data-stills`. The list is explicit on purpose: probing for files would make every visitor request clips that do not exist, and `/assets/*` is cached for a year.
 
 Hero text contrast is measured per phase against the video pixels; the lowest is the 88px headline at 4.9:1 in the day phase, and all small text is 7.7:1 or better.
+
+## Stock photographs: look before you label (November 2026)
+
+Until November 2026 nobody had looked at the Unsplash photos on this page, and most did not show what their alt text said (a "balloon over acacia" was a hiker on a hilltop; "giraffe, Samburu" was the Earth from the stratosphere; one link was dead). They were replaced with photos that were downloaded and viewed first.
+
+- Never add an Unsplash ID from memory. Download it and look at it.
+- Alt text describes what is in the picture. It does not claim a Kenyan location for a stock photo.
+- Current stock IDs: zebras `1518709594023`, balloon `1519659528534`, wildebeest and vehicle `1535082623926`, rhino and calf `1535338454770`, giraffe at dusk `1523805009345`, acacia over red earth `1547471080`, founder placeholder `1732027198077`, daytime hero `1535941339077` (saved locally).
+- All of them are stand-ins. Skazka's own photographs should replace them.
 
 ## Layout Principles
 
