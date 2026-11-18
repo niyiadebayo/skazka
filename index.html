@@ -7,7 +7,7 @@
 <meta name="description" content="Private Kenya safaris, planned in Nairobi. Tailored routes through the Mara, Amboseli, Laikipia, and private conservancies. Built for families, couples, and repeat travelers.">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<meta name="theme-color" content="#FFFFFF">
+<meta name="theme-color" content="#F5F1EA">
 <link rel="canonical" href="https://skazka.tours/">
 <meta property="og:site_name" content="Skazka Tours">
 <meta property="og:title" content="Skazka Tours — Luxury Kenya Safari Concierge">
@@ -26,8 +26,8 @@
 <meta name="twitter:image:alt" content="African elephants at sunset in Samburu National Reserve, Kenya">
 <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
 <link rel="preload" as="image" fetchpriority="high" href="/assets/hero-poster.jpg">
-<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
-<link rel="apple-touch-icon" href="/assets/favicon.svg">
+<link rel="icon" type="image/svg+xml" href="/assets/mark.svg">
+<link rel="apple-touch-icon" href="/assets/mark.svg">
 <meta name="author" content="Skazka Tours">
 <meta name="geo.region" content="KE-110">
 <meta name="geo.placename" content="Nairobi">
@@ -167,34 +167,38 @@
 </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..500;1,6..72,300..400&family=Hanken+Grotesk:wght@300..600&display=swap" rel="stylesheet">
   <style>
 /* Skazka Tours — Luxury Kenya Safari Concierge */
 
 :root {
-  /* Palette: the "Adeniyi Adebayo" design system. One accent (field); no gradients, glows or shadows. */
-  --bg: #FFFFFF;          /* white: the default ground */
-  --bg-2: #F4F3EC;        /* stone: alternate bands */
-  --bg-3: #E5E3D9;        /* stone-paper: quiet panels */
-  --surface: #FFFFFF;
-  --ink: #22322E;         /* savanna ink, 13.4:1 on white */
-  --ink-dim: #5A615C;     /* ink-muted, 6.4:1 on white */
-  --ink-faint: #5A615C;   /* small labels stay at 4.5:1 or better */
-  --accent: #33700A;      /* field green: the one accent */
-  --accent-2: #22322E;    /* hover: accent steps down to ink */
-  --cta: #33700A;
-  --cta-2: #22322E;
-  --forest: #33700A;
-  --line: #B9BCB2;        /* rule-soft: hairlines */
-  --line-2: #5A615C;
-  --on-accent: #F4F3EC;   /* stone on field, 5.5:1 */
-  --on-cta: #F4F3EC;
-  --warn: #93421B;        /* soil-deep */
+  /* Palette: quiet luxury. Warm linen to charcoal; colour comes from the photographs. */
+  --bg: #F5F1EA;          /* linen */
+  --bg-2: #ECE5DA;        /* sand */
+  --bg-3: #E2D9CB;
+  --surface: #FBF9F5;     /* paper */
+  --ink: #2A2622;         /* charcoal, 13.3:1 on linen */
+  --ink-dim: #6B6358;     /* taupe, 5.3:1 on linen, 4.7:1 on sand */
+  --ink-faint: #6B6358;
+  --accent: #6A5B42;      /* dry grass, deep: the one quiet accent, 5.3:1 on sand */
+  --accent-2: #2A2622;
+  --cta: #2A2622;         /* primary action is charcoal, not a colour */
+  --cta-2: #4A433B;
+  --forest: #2A2622;
+  --line: rgba(42, 38, 34, 0.14);   /* hairlines */
+  --line-2: rgba(42, 38, 34, 0.32);
+  --on-accent: #F5F1EA;
+  --on-cta: #F5F1EA;
+  --warn: #8A4A2E;
+  --night: #24201C;
+  --bone: #EFE9DF;
+  --mist: #C9BFB1;
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
 
-  --ff-display: 'Archivo', Arial, sans-serif;
-  --ff-body: 'Archivo', Arial, sans-serif;
-  --ff-mono: 'Archivo', Arial, sans-serif;   /* one typeface: labels are Archivo too */
-  --ff-read: 'Source Serif 4', Georgia, serif; /* reading face for quotes and letters */
+  --ff-display: 'Newsreader', Georgia, serif;          /* editorial serif, used light */
+  --ff-body: 'Hanken Grotesk', 'Helvetica Neue', Arial, sans-serif;
+  --ff-mono: 'Hanken Grotesk', 'Helvetica Neue', Arial, sans-serif; /* labels: small, tracked */
+  --ff-read: 'Newsreader', Georgia, serif;
 
   --maxw: 1360px;
   --pad: clamp(20px, 4vw, 56px);
@@ -374,13 +378,13 @@ section {
   transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  background: rgba(92, 65, 38, 0.62);
+  background: rgba(36, 32, 28, 0.28);
   border-bottom: 1px solid transparent;
-  color: #F4F3EC;
+  color: #EFE9DF;
 }
 .nav a { color: inherit; }
-.nav-links a { color: rgba(244, 243, 236, 0.82); }
-.nav-links a:hover { color: #A3D67F; }
+.nav-links a { color: rgba(239, 233, 223, 0.86); }
+.nav-links a:hover { color: #FFFFFF; }
 .nav.scrolled {
   border-bottom: 1px solid var(--line);
   background: color-mix(in srgb, var(--bg) 92%, transparent);
@@ -421,13 +425,16 @@ section {
 /* ===== HERO ===== */
 .hero {
   /* Cinematic zone: invert to light-on-dark regardless of site palette */
-  --bg: #5C4126;          /* tobacco */
-  --ink: #F4F3EC;         /* stone */
-  --ink-dim: #E5E3D9;
-  --ink-faint: #B8B4AC;   /* on-yard-muted */
-  --accent: #A3D67F;      /* field-tint */
-  --line: rgba(244, 243, 236, 0.22);
-  --line-2: rgba(244, 243, 236, 0.4);
+  --bg: #24201C;          /* night */
+  --ink: #EFE9DF;         /* bone */
+  --ink-dim: #DCD3C6;
+  --ink-faint: #C9BFB1;   /* mist */
+  --accent: #D8C8A8;      /* pale dry grass */
+  --line: rgba(239, 233, 223, 0.2);
+  --line-2: rgba(239, 233, 223, 0.42);
+  --cta: #EFE9DF;
+  --cta-2: #FFFFFF;
+  --on-cta: #24201C;
   min-height: 100vh;
   position: relative;
   padding-top: 120px;
@@ -435,7 +442,7 @@ section {
   display: grid;
   align-items: end;
   overflow: hidden;
-  background: #5C4126;
+  background: #24201C;
 }
 .hero-bg {
   position: absolute;
@@ -1882,13 +1889,13 @@ section {
 
 /* ===== A DAY IN THE FIELD ===== */
 .day {
-  background: #5C4126;    /* tobacco: the yard at dusk */
-  color: #F4F3EC;
-  --ink: #F4F3EC;
-  --ink-dim: #E5E3D9;
-  --ink-faint: #B8B4AC;   /* on-yard-muted, 4.5:1 */
-  --accent: #A3D67F;      /* field-tint */
-  --line: rgba(244, 243, 236, 0.22);
+  background: linear-gradient(180deg, #24201C 0%, #2E2822 100%);
+  color: #EFE9DF;
+  --ink: #EFE9DF;
+  --ink-dim: #DCD3C6;
+  --ink-faint: #C9BFB1;
+  --accent: #D8C8A8;
+  --line: rgba(239, 233, 223, 0.18);
 }
 .day-intro {
   color: var(--ink-dim);
@@ -1942,7 +1949,7 @@ section {
   position: relative;
   height: 1px;
   margin-top: 16px;
-  background: rgba(244, 243, 236, 0.45);
+  background: rgba(239, 233, 223, 0.28);
 }
 .day-track-sun {
   position: absolute;
@@ -1951,12 +1958,12 @@ section {
   width: 14px; height: 14px;
   margin: -7px 0 0 -7px;
   border-radius: 50%;
-  background: #F4F3EC;
+  background: #EFE9DF;
   transition: left 1s ease;
 }
 .day-track-sun.is-night {
   background: transparent;
-  border: 1px solid #F4F3EC;
+  border: 1px solid #EFE9DF;
 }
 
 .day-strip {
@@ -1978,14 +1985,14 @@ section {
   border: 1px solid transparent;
   transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.3s;
 }
-/* Flat grounds from the design system, in the order the light moves */
-.day-moment[data-sky="tea"]       { --sky: #1E1C1A; --sky-ink: #F4F3EC; }  /* granite: before light */
-.day-moment[data-sky="dawn"]      { --sky: #E0935C; --sky-ink: #22322E; }  /* dawn */
-.day-moment[data-sky="breakfast"] { --sky: #F4F3EC; --sky-ink: #22322E; }  /* stone */
-.day-moment[data-sky="midday"]    { --sky: #FFFFFF; --sky-ink: #22322E; }  /* white: full sun */
-.day-moment[data-sky="afternoon"] { --sky: #33700A; --sky-ink: #F4F3EC; }  /* field */
-.day-moment[data-sky="sunset"]    { --sky: #5C4126; --sky-ink: #F4F3EC; border-color: rgba(244, 243, 236, 0.35); }  /* tobacco: dusk */
-.day-moment[data-sky="night"]     { --sky: #1E1C1A; --sky-ink: #F4F3EC; }  /* granite: night */
+/* Soft tonal light, in the order the day moves. Two close stops only: a wash, not a rainbow. */
+.day-moment[data-sky="tea"]       { --sky: linear-gradient(180deg, #1C1916 0%, #2C2620 100%); --sky-ink: #EFE9DF; }
+.day-moment[data-sky="dawn"]      { --sky: linear-gradient(180deg, #E3CDB8 0%, #EEE0D0 100%); --sky-ink: #2A2622; }
+.day-moment[data-sky="breakfast"] { --sky: linear-gradient(180deg, #F3EDE3 0%, #ECE4D7 100%); --sky-ink: #2A2622; }
+.day-moment[data-sky="midday"]    { --sky: linear-gradient(180deg, #FBF9F5 0%, #F4EFE7 100%); --sky-ink: #2A2622; }
+.day-moment[data-sky="afternoon"] { --sky: linear-gradient(180deg, #DCCBA9 0%, #CDB993 100%); --sky-ink: #2A2622; }
+.day-moment[data-sky="sunset"]    { --sky: linear-gradient(180deg, #9C6E52 0%, #5B4434 100%); --sky-ink: #F5EDE2; border-color: transparent; }
+.day-moment[data-sky="night"]     { --sky: linear-gradient(180deg, #1A1714 0%, #24201C 100%); --sky-ink: #EFE9DF; }
 .day-moment time {
   font-family: var(--ff-mono);
   font-size: 12px;
@@ -2018,7 +2025,7 @@ section {
   border: 1px solid currentColor;
   border-radius: 999px;
 }
-.day-moment.is-now { border-color: #A3D67F; outline: 1px solid #A3D67F; transform: translateY(-8px); }
+.day-moment.is-now { border-color: rgba(239, 233, 223, 0.7); outline: none; transform: translateY(-6px); }
 .day-moment.is-now .day-moment-now { display: inline-block; }
 .day-foot {
   margin-top: 28px;
@@ -2165,109 +2172,183 @@ section {
 .letter-text.is-empty { color: var(--ink-faint); font-style: italic; }
 .itin-card.is-picked { border-color: var(--cta); outline: 1px solid var(--cta); }
 
-/* ===== TYPE: the "Adeniyi Adebayo" design system =====
-   Archivo only for headlines, labels and interface; Source Serif 4 for reading.
-   Five sizes: 12 label/caption · 16 body · 24 heading/lead · 48 title · 96 display
-   (19 for reading on screen). Headlines 800, sentence case, never italic. */
-html, body { font-family: var(--ff-body); font-size: 16px; line-height: 1.5; }
 
+/* ===== ZEN LAYER =====
+   Quiet luxury, after Aman and Gentle Monster: space as material, a light editorial serif,
+   small tracked labels, hairlines, square corners, slow and sparse motion. Nothing starts hidden. */
+
+html, body { font-family: var(--ff-body); font-weight: 400; font-size: 16px; line-height: 1.7; color: var(--ink); background: var(--bg); }
+:root { --maxw: 1240px; --pad: clamp(24px, 5vw, 72px); }
+
+/* ma: room to breathe */
+section { padding: clamp(120px, 14vw, 224px) 0; }
+.section-head { margin-bottom: clamp(64px, 8vw, 112px); gap: 64px; }
+.how, .faq, .house { background: linear-gradient(180deg, #ECE5DA 0%, #F2ECE3 100%); border-color: transparent; }
+.testimonials, .enquire, #itineraries, .regions, .founder { background: var(--bg); }
+
+/* headlines: light serif, never shouting */
 .display {
   font-family: var(--ff-display);
-  font-weight: 800;
-  letter-spacing: -0.015em;
-  line-height: 1;
+  font-weight: 300;
+  letter-spacing: -0.012em;
+  line-height: 1.08;
   font-variation-settings: normal;
 }
 .display em, .display .accent, em.accent,
-.hero-title em, .itin-title em, .enquire-intro h2 em, .form-step-title em,
-.itin-hero h1 em, .day-block h3 em {
-  font-style: normal;
-  font-weight: inherit;
-  color: var(--accent);
+.hero-title em, .itin-title em, .enquire-intro h2 em, .form-step-title em, .day-block h3 em {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--ink-dim);
 }
-.title { font-size: 48px !important; line-height: 48px; }
-.hero-title { font-size: 96px; line-height: 88px; letter-spacing: -0.02em; font-weight: 800; }
-.enquire-intro h2 { font-size: 48px; line-height: 48px; font-weight: 800; letter-spacing: -0.015em; }
+.hero .hero-title em, .day .display em, .day .accent { color: var(--accent); }
+.title { font-size: clamp(34px, 3.8vw, 54px) !important; line-height: 1.12; }
+.hero-title { font-size: clamp(46px, 6.4vw, 92px); line-height: 1.02; letter-spacing: -0.018em; font-weight: 300; margin-bottom: 40px; }
+.enquire-intro h2 { font-family: var(--ff-display); font-size: clamp(34px, 3.8vw, 54px); font-weight: 300; line-height: 1.12; }
 
-/* heading: 24 / 32, 800 */
+/* card and list heads: serif, regular */
 .how-step h3, .itin-title, .region-name, .region-preview-body h4, .faq-q-text,
 .form-step-title, .form-success h3, .day-moment h3, .md-body h3, .itin-price,
-.founder-meta-item strong, .day-now-clock strong, .itin-hero-meta-item strong {
+.founder-meta-item strong, .day-now-clock strong, .hero-meta-item strong,
+.region-preview-stat strong, .concierge-header-info h5, .md-rules strong, .test-author, .footer-wordmark {
   font-family: var(--ff-display);
-  font-size: 24px;
-  line-height: 32px;
-  font-weight: 800;
-  letter-spacing: -0.01em;
+  font-weight: 400;
   font-style: normal;
+  letter-spacing: -0.005em;
 }
-.md-body h3::before { font-family: var(--ff-display); font-size: 24px; vertical-align: 0; font-weight: 400; }
-.region-name small { margin-top: 4px; }
+.how-step h3 { font-size: 26px; line-height: 1.2; }
+.itin-title { font-size: 28px; line-height: 1.2; }
+.region-name { font-size: 26px; line-height: 1.2; }
+.region-preview-body h4 { font-size: 34px; line-height: 1.15; font-weight: 300; }
+.faq-q-text { font-size: 22px; line-height: 1.35; }
+.form-step-title { font-size: 32px; line-height: 1.15; font-weight: 300; }
+.form-success h3 { font-size: 32px; font-weight: 300; }
+.day-moment h3 { font-size: 22px; line-height: 1.2; }
+.md-body h3 { font-size: 26px; line-height: 1.25; font-weight: 300; }
+.md-body h3::before { font-family: var(--ff-body); font-size: 14px; vertical-align: 0.35em; font-weight: 400; color: var(--accent); }
+.itin-price { font-size: 22px; }
+.hero-meta-item strong, .founder-meta-item strong { font-size: 20px; }
+.region-preview-stat strong { font-size: 18px; }
+.md-rules strong { font-size: 20px; margin-bottom: 4px; }
+.test-author { font-size: 17px; }
+.day-now-clock strong { font-size: 26px; font-weight: 300; font-variant-numeric: tabular-nums; }
+.footer-wordmark { font-size: 44px; font-weight: 300; letter-spacing: -0.01em; }
+.nav-brand { font-family: var(--ff-display); font-weight: 400; font-size: 23px; letter-spacing: 0.01em; }
+.nav-brand-mark { background: transparent; border: 1px solid currentColor; color: inherit; font-style: normal; font-weight: 400; font-size: 14px; }
 
-/* body-weight heads at 16 */
-.hero-meta-item strong, .region-preview-stat strong, .concierge-header-info h5,
-.md-rules strong, .test-author, .builder-item-name, .day-nav-title {
-  font-family: var(--ff-display);
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 800;
-  letter-spacing: 0;
-}
-
-/* wordmark */
-.nav-brand { font-weight: 800; font-size: 24px; letter-spacing: -0.01em; }
-.nav-brand-mark { font-style: normal; font-weight: 800; font-size: 16px; }
-.footer-wordmark { font-style: normal; font-weight: 800; font-size: 48px; line-height: 48px; letter-spacing: -0.015em; }
-
-/* body: 16 / 24 */
+/* body copy: calm, generous leading */
 .hero-sub, .how-step p, .itin-desc, .region-note, .founder-bio, .faq-a-text,
-.enquire-intro p, .day-intro, .day-moment p, .form-success p, .concierge-msg {
+.enquire-intro p, .day-intro, .day-moment p, .form-success p, .concierge-msg, .md-body {
+  font-family: var(--ff-body);
+  font-weight: 400;
   font-size: 16px;
-  line-height: 24px;
+  line-height: 1.75;
 }
+.hero-sub { font-size: 17px; max-width: 560px; }
+.day-moment p { font-size: 14.5px; line-height: 1.6; }
 
-/* lead: 24 / 32, regular */
-.day-now-text { font-family: var(--ff-display); font-style: normal; font-weight: 400; font-size: 24px; line-height: 32px; }
-.field input, .field textarea, .field select { font-family: var(--ff-display); font-size: 24px; font-weight: 400; }
-.field input::placeholder, .field textarea::placeholder { font-style: normal; }
-.faq-toggle { font-size: 24px; font-weight: 400; }
+/* reading voices: serif */
+.day-now-text { font-family: var(--ff-display); font-style: italic; font-weight: 300; font-size: 24px; line-height: 1.4; }
+.founder-quote { font-family: var(--ff-read); font-style: normal; font-weight: 300; font-size: clamp(22px, 2.3vw, 30px); line-height: 1.45; letter-spacing: -0.005em; }
+.founder-quote em { font-style: italic; color: var(--ink-dim); }
+.test-card p { font-family: var(--ff-read); font-weight: 300; font-size: 21px; line-height: 1.6; }
+.test-card p em { color: var(--ink); }
+.test-card .quote-mark { font-family: var(--ff-display); font-weight: 300; font-size: 64px; color: var(--ink-dim); }
+.letter-text { font-family: var(--ff-read); font-weight: 300; font-size: 20px; line-height: 1.6; }
+.md-sign em { font-family: var(--ff-display); font-style: italic; font-weight: 300; font-size: 26px; }
+.field input, .field textarea, .field select { font-family: var(--ff-display); font-weight: 300; font-size: 24px; }
+.field input::placeholder { font-style: italic; color: #8E8579; }
+.faq-toggle { font-family: var(--ff-body); font-weight: 300; font-size: 22px; color: var(--ink-dim); }
+.form-success-seal { font-family: var(--ff-display); font-style: italic; font-weight: 300; font-size: 30px; }
 
-/* reading: Source Serif 4 */
-.founder-quote { font-family: var(--ff-read); font-style: normal; font-weight: 400; font-size: 24px; line-height: 36px; letter-spacing: 0; }
-.founder-quote em { font-style: italic; color: var(--accent); }
-.test-card p { font-family: var(--ff-read); font-size: 19px; line-height: 30px; letter-spacing: 0; }
-.test-card .quote-mark { font-family: var(--ff-display); font-weight: 800; font-size: 48px; line-height: 0.6; }
-.letter-text { font-family: var(--ff-read); font-size: 19px; line-height: 30px; }
-.md-body { font-family: var(--ff-display); font-size: 16px; line-height: 28px; }
-.md-sign em { font-family: var(--ff-display); font-style: normal; font-weight: 800; font-size: 24px; }
-.form-success-seal { font-style: normal; font-weight: 800; font-size: 24px; }
-
-/* label: 12 / 16, 600, uppercase, 0.06em */
+/* labels: small capitals, widely tracked */
 .mono, .eyebrow, .btn, .nav-links, .hero-ticker, .hero-meta-item .mono, .how-step-num, .how-step-tag,
 .itin-img-tag, .itin-meta, .itin-price small, .itin-link, .region-num, .region-name small,
 .region-meta, .region-preview-stat span, .founder-img-tag, .founder-meta-item span,
 .test-author small, .test-trip, .faq-num, .form-step-label, .field label, .chip,
 .form-step-num, .link-btn, .footer-tagline, .footer-col h5, .footer-bottom,
 .concierge-toggle, .concierge-header-info p, .concierge-foot button, .skip-link,
-.day-now-clock, .day-moment-now, .day-foot, .letter-label, .enquire-contact-row span:first-child {
-  font-family: var(--ff-display);
-  font-size: 12px;
-  line-height: 16px;
-  font-weight: 600;
-  letter-spacing: 0.06em;
+.day-now-clock, .day-moment-now, .day-foot, .letter-label, .enquire-contact-row span:first-child, .md-file-bar {
+  font-family: var(--ff-body);
+  font-size: 11.5px;
+  line-height: 1.5;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
 }
-/* captions and values: 12-16, regular, not shouty */
-.enquire-contact-row { font-family: var(--ff-display); font-size: 16px; letter-spacing: 0; }
-.md-file-bar { font-family: var(--ff-display); font-size: 12px; letter-spacing: 0.02em; }
-.day-moment time { font-family: var(--ff-display); font-size: 16px; font-weight: 600; letter-spacing: 0; font-variant-numeric: tabular-nums; }
-.day-now-clock strong { font-variant-numeric: tabular-nums; letter-spacing: 0; }
-.concierge-msg.you { font-family: var(--ff-display); font-size: 16px; letter-spacing: 0; text-transform: none; }
-.letter-text.is-empty { font-style: italic; }
+.eyebrow { color: var(--ink-dim); }
+.hero .eyebrow, .day .eyebrow { color: var(--accent); }
+.enquire-contact-row { font-family: var(--ff-body); font-size: 15px; letter-spacing: 0.01em; }
+.day-moment time { font-family: var(--ff-body); font-size: 12px; font-weight: 500; letter-spacing: 0.16em; font-variant-numeric: tabular-nums; }
+.concierge-msg.you { font-family: var(--ff-body); font-size: 15px; letter-spacing: 0; text-transform: none; }
+.md-body { color: var(--ink-dim); }
+
+/* hairlines and square corners */
+.btn { padding: 18px 34px; border-width: 1px; border-color: var(--line-2); gap: 16px; }
+.btn-primary { background: var(--cta); border-color: var(--cta); color: var(--on-cta); }
+.btn-primary:hover { background: var(--cta-2); border-color: var(--cta-2); color: var(--on-cta); }
+.btn:not(.btn-primary):hover { background: transparent; border-color: var(--ink); color: var(--ink); }
+.chip { border-color: var(--line-2); padding: 11px 20px; }
+.chip.selected { background: var(--ink); border-color: var(--ink); color: var(--bg); }
+.form-shell { background: var(--surface); border-color: var(--line); padding: clamp(28px, 4vw, 56px); }
+.letter { background: var(--bg); border-color: var(--line); }
+.md-file { background: var(--surface); border-color: var(--line); }
+.md-rules li { border-bottom: 1px solid var(--line); padding: 20px 0; }
+.itin-card { background: var(--surface); border-color: var(--line); }
+.itin-card:hover { transform: none; border-color: var(--line-2); }
+.itin-card.is-picked { border-color: var(--ink); outline: 1px solid var(--ink); }
+.itin-body { padding: 32px; }
+.itineraries-grid { gap: 32px; }
+.how-step { padding: 48px 36px 64px; border-color: var(--line); }
+.faq-q { padding: 36px 0; }
+.form-progress-dot { height: 1px; }
+.form-progress-dot.active { background: var(--ink); }
+.concierge-toggle { border-radius: 0; background: var(--ink); color: var(--bg); border: none; }
+.concierge-toggle:hover { background: #4A433B; transform: none; }
+.concierge-avatar { border-color: var(--bg); }
+.concierge-avatar::after { background: #B9C79A; border-color: var(--ink); }
+.region-preview { background: var(--surface); }
+.footer { background: var(--bg-2); border-top-color: transparent; }
+
+/* hero: let the picture lead, slow light in */
+.hero-bg::after {
+  background: linear-gradient(180deg,
+    rgba(36, 32, 28, 0.42) 0%,
+    rgba(36, 32, 28, 0.05) 28%,
+    rgba(36, 32, 28, 0.30) 62%,
+    rgba(36, 32, 28, 0.92) 100%);
+}
+.hero-bg video { animation: zen-fade 2.8s var(--ease) both; } /* the poster sits beneath: never blank */
+@keyframes zen-fade { from { opacity: 0; } to { opacity: 1; } }
+.hero-ticker { margin-top: 112px; border-top-color: rgba(239, 233, 223, 0.18); }
+.hero-meta { margin-bottom: 56px; }
+.hero-cta { gap: 20px; }
+
+/* slow, sparse motion */
+.btn, .chip, .itin-card, .faq-toggle, .nav, .region-row, .concierge-toggle, .day-moment { transition-duration: 0.6s; transition-timing-function: var(--ease); }
+.itin-img img { transition: transform 1.8s var(--ease); }
+.itin-card:hover .itin-img img { transform: scale(1.03); }
+.faq-a { transition: max-height 0.7s var(--ease), padding 0.7s var(--ease); }
 
 @media (max-width: 820px) {
-  .hero-title { font-size: 48px; line-height: 48px; }
-  .title, .enquire-intro h2 { font-size: 36px !important; line-height: 40px; }
-  .footer-wordmark { font-size: 36px; line-height: 40px; }
-  .founder-quote { font-size: 19px; line-height: 30px; }
+  section { padding: 104px 0; }
+  .hero-title { font-size: 46px; }
+  .title, .enquire-intro h2 { font-size: 34px !important; }
+  .footer-wordmark { font-size: 36px; }
+}
+/* phones: the chat becomes a quiet square mark; hero facts stack in one column */
+@media (max-width: 820px) {
+  .concierge { right: 16px; bottom: 16px; }
+  .concierge-toggle { padding: 6px; gap: 0; }
+  #concierge-toggle-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .concierge-panel { width: calc(100vw - 32px); }
+  .hero-meta { flex-direction: column; align-items: flex-start; gap: 24px; }
+  .hero-meta > .hero-meta-item { text-align: left !important; }
+  .hero-meta-left { gap: 20px 32px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-bg video { animation: none; }
+  .itin-card:hover .itin-img img { transform: none; }
+  * { transition-duration: 0.01s !important; }
 }
   </style>
 </head>
@@ -3112,7 +3193,7 @@ html, body { font-family: var(--ff-body); font-size: 16px; line-height: 1.5; }
     <div class="concierge-panel" id="concierge-panel">
       <div class="concierge-header">
         <div class="concierge-header-avatar">
-          <img src="/assets/favicon.svg" alt="" width="40" height="40" />
+          <img src="/assets/mark.svg" alt="" width="40" height="40" />
         </div>
         <div class="concierge-header-info">
           <h5>Kimani</h5>
@@ -3133,7 +3214,7 @@ html, body { font-family: var(--ff-body); font-size: 16px; line-height: 1.5; }
     </div>
     <button type="button" class="concierge-toggle" id="concierge-toggle" aria-label="Open concierge chat">
       <div class="concierge-avatar">
-        <img src="/assets/favicon.svg" alt="" width="40" height="40" />
+        <img src="/assets/mark.svg" alt="" width="40" height="40" />
       </div>
       <span id="concierge-toggle-label">Chat with Kimani</span>
     </button>

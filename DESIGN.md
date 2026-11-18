@@ -23,45 +23,38 @@ Each locale follows the same arc:
 - `fr/index.html` — French page
 - `404.html` — branded error page
 
+## Direction: quiet luxury (November 2026)
+
+Researched against Aman (near-monochrome warm neutrals, colour only from photographs, an editorial serif with a quiet sans, square corners, generous space) and Gentle Monster (gallery presentation, extreme negative space, thin rules). This replaces the short-lived adoption of the "Adeniyi Adebayo" design system palette and type.
+
+**Principles**
+- **Space is material (ma).** Sections breathe: 120–224px of padding, 64–112px under each headline.
+- **Colour comes from the photographs.** The interface stays in warm linen to charcoal; the one accent is a deep dry-grass brown.
+- **Light, not weight.** Headlines in a light serif; emphasis by italic and tone, never by bold or colour blocks.
+- **Hairlines and square corners.** Borders at 14–32% charcoal; no radii except the round mark.
+- **Gradients as light, not decoration.** Two close stops only: section washes (sand to linen), the day chapter (night to dusk), the day moments.
+- **Slow and sparse motion.** 0.6s eased transitions, a 1.8s image drift on hover, the hero video fading in over the poster. Nothing starts hidden.
+
 ## Palette
 
-Since November 2026 the colours come from the **"Adeniyi Adebayo" design system** (claude.ai design system artifact). Its rules apply: one accent, no gradients, glows, drop shadows or textures, text at 4.5:1 or better.
-
-| Token | Value | Role on Skazka |
+| Token | Value | Use |
 |---|---|---|
-| `white` | `#FFFFFF` | Default ground |
-| `stone` | `#F4F3EC` | Alternate bands; text on dark grounds |
-| `stone-paper` | `#E5E3D9` | Quiet panels |
-| `ink` | `#22322E` | Headlines and body text |
-| `ink-muted` | `#5A615C` | Secondary text, labels |
-| `rule-soft` | `#B9BCB2` | Hairlines |
-| `field` | `#33700A` | **The one accent**: eyebrows, italic headline words, buttons, selected chips, links |
-| `field-tint` | `#A3D67F` | The accent on tobacco |
-| `tobacco` | `#5C4126` | Dark grounds: hero, nav over hero, A day in the field |
-| `on-yard-muted` | `#B8B4AC` | Secondary text on tobacco |
-| `dawn` | `#E0935C` | The 06:00 moment in A day in the field |
-| `granite` | `#1E1C1A` | Before-dawn and night moments |
-| `soil-deep` | `#93421B` | Warnings only |
-
-Ultramarine is not used: the system allows field or ultramarine on a page, never both. The hero keeps a dark scrim behind its headline for legibility over the video; that is the only gradient left.
+| linen `--bg` | `#F5F1EA` | Page ground |
+| sand `--bg-2` | `#ECE5DA` | Washed bands (method, house rules, FAQ), footer |
+| paper `--surface` | `#FBF9F5` | Cards, the form, the SKAZKA.md file |
+| charcoal `--ink` | `#2A2622` | Text (13.3:1 on linen); primary buttons |
+| taupe `--ink-dim` | `#6B6358` | Secondary text, labels, italic accents (4.7:1 on sand) |
+| dry grass `--accent` | `#6A5B42` | The one quiet accent (5.3:1 on sand) |
+| night | `#24201C` | Hero and day chapter grounds |
+| bone | `#EFE9DF` | Text on night (13.4:1) |
+| mist | `#C9BFB1` | Secondary text on night (8.9:1) |
+| pale grass | `#D8C8A8` | Accent on night |
 
 ## Typography
 
-From the "Adeniyi Adebayo" design system (November 2026). One typeface for the voice, one for reading.
-
-- **Archivo** (Google Fonts, variable width and weight): headlines, labels, navigation, buttons, body.
-- **Source Serif 4**: reading passages only (Kimani's quote, the guest letter, the enquiry note).
-- No italics in headlines; the accent words are field green, upright, same weight.
-
-| Role | Size / line | Weight | Used for |
-|---|---|---|---|
-| display | 96 / 88 (48 on phones) | 800 | Hero title |
-| title | 48 / 48 (36 on phones) | 800 | Section headlines |
-| heading | 24 / 32 | 800 | Card, region, FAQ and form-step titles |
-| lead | 24 / 32 | 400 | The "In Kenya now" line, form inputs |
-| reading | 19 / 30 | 400 | Source Serif passages |
-| body | 16 / 24 | 400 | Paragraphs |
-| label | 12 / 16 | 600, uppercase, 0.06em | Eyebrows, buttons, nav, tags |
+- **Newsreader** (Google Fonts, optical sizes): headlines at weight 300, card heads at 400, quotes and the enquiry note. Closest free match to Aman's Lyon.
+- **Hanken Grotesk**: body at 16/1.75, and labels as small capitals (11.5px, 500, 0.2em tracking). Closest free match to Aman's Whitney.
+- Headline sizes: hero 46–92px, section titles 34–54px, card heads 22–28px.
 
 ## Layout Principles
 
