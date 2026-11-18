@@ -134,6 +134,17 @@ Until November 2026 nobody had looked at the Unsplash photos on this page, and m
 - Current stock IDs: zebras `1518709594023`, balloon `1519659528534`, wildebeest and vehicle `1535082623926`, rhino and calf `1535338454770`, giraffe at dusk `1523805009345`, acacia over red earth `1547471080`, founder placeholder `1732027198077`, daytime hero `1535941339077` (saved locally).
 - All of them are stand-ins. Skazka's own photographs should replace them.
 
+## Search and AI visibility (November 2026)
+
+**Rule: structured data repeats the page, nothing more.** The JSON-LD FAQ used to hold four questions that were not on the page and contradicted it (a $3,000-$8,000 price range, a cancellation policy, an air-ambulance partner). The FAQ, the three journeys (`TouristTrip` with from-prices) and the agency facts in the JSON-LD are now generated from the visible HTML. When the page copy changes, regenerate them.
+
+- Title 56 characters, description 157; social tags match.
+- One h1; headings never skip a level (footer and chat labels are paragraphs, not headings).
+- Three questions added to the visible FAQ because people ask them of search engines and AI assistants: cost, Russian-speaking guides, best time to go. Each answer restates facts already on the page.
+- `robots.txt` names the main AI crawlers as welcome. `llms.txt` is the plain-text fact sheet for them; the page links to it. Keep `llms.txt`, `skazka.md`, the JSON-LD and the page in step.
+- "Now booking" in the hero is a rolling window, three to ten months ahead of the current month in Kenya. The rule was inferred from the old fixed dates; change it in the script if the real booking window differs.
+- Not on the page and so not in the data: reviews, ratings, social profiles, a street address. Add them only when they are real.
+
 ## Layout Principles
 
 - Max content width: `1180px`
