@@ -167,7 +167,7 @@
 </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
   <style>
 /* Skazka Tours — Luxury Kenya Safari Concierge */
 
@@ -191,9 +191,10 @@
   --on-cta: #F4F3EC;
   --warn: #93421B;        /* soil-deep */
 
-  --ff-display: 'Fraunces', 'Canela', Georgia, serif;
-  --ff-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  --ff-mono: 'JetBrains Mono', 'IBM Plex Mono', ui-monospace, monospace;
+  --ff-display: 'Archivo', Arial, sans-serif;
+  --ff-body: 'Archivo', Arial, sans-serif;
+  --ff-mono: 'Archivo', Arial, sans-serif;   /* one typeface: labels are Archivo too */
+  --ff-read: 'Source Serif 4', Georgia, serif; /* reading face for quotes and letters */
 
   --maxw: 1360px;
   --pad: clamp(20px, 4vw, 56px);
@@ -2163,6 +2164,111 @@ section {
 }
 .letter-text.is-empty { color: var(--ink-faint); font-style: italic; }
 .itin-card.is-picked { border-color: var(--cta); outline: 1px solid var(--cta); }
+
+/* ===== TYPE: the "Adeniyi Adebayo" design system =====
+   Archivo only for headlines, labels and interface; Source Serif 4 for reading.
+   Five sizes: 12 label/caption · 16 body · 24 heading/lead · 48 title · 96 display
+   (19 for reading on screen). Headlines 800, sentence case, never italic. */
+html, body { font-family: var(--ff-body); font-size: 16px; line-height: 1.5; }
+
+.display {
+  font-family: var(--ff-display);
+  font-weight: 800;
+  letter-spacing: -0.015em;
+  line-height: 1;
+  font-variation-settings: normal;
+}
+.display em, .display .accent, em.accent,
+.hero-title em, .itin-title em, .enquire-intro h2 em, .form-step-title em,
+.itin-hero h1 em, .day-block h3 em {
+  font-style: normal;
+  font-weight: inherit;
+  color: var(--accent);
+}
+.title { font-size: 48px !important; line-height: 48px; }
+.hero-title { font-size: 96px; line-height: 88px; letter-spacing: -0.02em; font-weight: 800; }
+.enquire-intro h2 { font-size: 48px; line-height: 48px; font-weight: 800; letter-spacing: -0.015em; }
+
+/* heading: 24 / 32, 800 */
+.how-step h3, .itin-title, .region-name, .region-preview-body h4, .faq-q-text,
+.form-step-title, .form-success h3, .day-moment h3, .md-body h3, .itin-price,
+.founder-meta-item strong, .day-now-clock strong, .itin-hero-meta-item strong {
+  font-family: var(--ff-display);
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  font-style: normal;
+}
+.md-body h3::before { font-family: var(--ff-display); font-size: 24px; vertical-align: 0; font-weight: 400; }
+.region-name small { margin-top: 4px; }
+
+/* body-weight heads at 16 */
+.hero-meta-item strong, .region-preview-stat strong, .concierge-header-info h5,
+.md-rules strong, .test-author, .builder-item-name, .day-nav-title {
+  font-family: var(--ff-display);
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 800;
+  letter-spacing: 0;
+}
+
+/* wordmark */
+.nav-brand { font-weight: 800; font-size: 24px; letter-spacing: -0.01em; }
+.nav-brand-mark { font-style: normal; font-weight: 800; font-size: 16px; }
+.footer-wordmark { font-style: normal; font-weight: 800; font-size: 48px; line-height: 48px; letter-spacing: -0.015em; }
+
+/* body: 16 / 24 */
+.hero-sub, .how-step p, .itin-desc, .region-note, .founder-bio, .faq-a-text,
+.enquire-intro p, .day-intro, .day-moment p, .form-success p, .concierge-msg {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+/* lead: 24 / 32, regular */
+.day-now-text { font-family: var(--ff-display); font-style: normal; font-weight: 400; font-size: 24px; line-height: 32px; }
+.field input, .field textarea, .field select { font-family: var(--ff-display); font-size: 24px; font-weight: 400; }
+.field input::placeholder, .field textarea::placeholder { font-style: normal; }
+.faq-toggle { font-size: 24px; font-weight: 400; }
+
+/* reading: Source Serif 4 */
+.founder-quote { font-family: var(--ff-read); font-style: normal; font-weight: 400; font-size: 24px; line-height: 36px; letter-spacing: 0; }
+.founder-quote em { font-style: italic; color: var(--accent); }
+.test-card p { font-family: var(--ff-read); font-size: 19px; line-height: 30px; letter-spacing: 0; }
+.test-card .quote-mark { font-family: var(--ff-display); font-weight: 800; font-size: 48px; line-height: 0.6; }
+.letter-text { font-family: var(--ff-read); font-size: 19px; line-height: 30px; }
+.md-body { font-family: var(--ff-display); font-size: 16px; line-height: 28px; }
+.md-sign em { font-family: var(--ff-display); font-style: normal; font-weight: 800; font-size: 24px; }
+.form-success-seal { font-style: normal; font-weight: 800; font-size: 24px; }
+
+/* label: 12 / 16, 600, uppercase, 0.06em */
+.mono, .eyebrow, .btn, .nav-links, .hero-ticker, .hero-meta-item .mono, .how-step-num, .how-step-tag,
+.itin-img-tag, .itin-meta, .itin-price small, .itin-link, .region-num, .region-name small,
+.region-meta, .region-preview-stat span, .founder-img-tag, .founder-meta-item span,
+.test-author small, .test-trip, .faq-num, .form-step-label, .field label, .chip,
+.form-step-num, .link-btn, .footer-tagline, .footer-col h5, .footer-bottom,
+.concierge-toggle, .concierge-header-info p, .concierge-foot button, .skip-link,
+.day-now-clock, .day-moment-now, .day-foot, .letter-label, .enquire-contact-row span:first-child {
+  font-family: var(--ff-display);
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+}
+/* captions and values: 12-16, regular, not shouty */
+.enquire-contact-row { font-family: var(--ff-display); font-size: 16px; letter-spacing: 0; }
+.md-file-bar { font-family: var(--ff-display); font-size: 12px; letter-spacing: 0.02em; }
+.day-moment time { font-family: var(--ff-display); font-size: 16px; font-weight: 600; letter-spacing: 0; font-variant-numeric: tabular-nums; }
+.day-now-clock strong { font-variant-numeric: tabular-nums; letter-spacing: 0; }
+.concierge-msg.you { font-family: var(--ff-display); font-size: 16px; letter-spacing: 0; text-transform: none; }
+.letter-text.is-empty { font-style: italic; }
+
+@media (max-width: 820px) {
+  .hero-title { font-size: 48px; line-height: 48px; }
+  .title, .enquire-intro h2 { font-size: 36px !important; line-height: 40px; }
+  .footer-wordmark { font-size: 36px; line-height: 40px; }
+  .founder-quote { font-size: 19px; line-height: 30px; }
+}
   </style>
 </head>
 <body>
@@ -2249,8 +2355,8 @@ section {
         <div>
           <div class="eyebrow">01 / The Method</div>
         </div>
-        <h2 class="display" style="font-size: clamp(40px, 5.5vw, 80px);">
-          Four steps, then<br/><em style="color: var(--accent); font-style: italic; font-weight: 300;">everything else is yours.</em>
+        <h2 class="display title">
+          Four steps, then<br/><em class="accent">everything else is yours.</em>
         </h2>
       </div>
     </div>
@@ -2290,9 +2396,9 @@ section {
         <div>
           <div class="eyebrow">02 / Sample Journeys</div>
         </div>
-        <h2 class="display" style="font-size: clamp(40px, 5.5vw, 80px);">
+        <h2 class="display title">
           Starting points,<br/>
-          <em style="color: var(--accent); font-style: italic; font-weight: 300;">not destinations.</em>
+          <em class="accent">not destinations.</em>
         </h2>
       </div>
       <p style="color: var(--ink-dim); max-width: 640px; margin-top: -32px; margin-bottom: 56px; font-size: 16px; line-height: 1.6;">
@@ -2410,8 +2516,8 @@ section {
         <div>
           <div class="eyebrow">03 / Regions</div>
         </div>
-        <h2 class="display" style="font-size: clamp(40px, 5.5vw, 80px);">
-          The country,<br/><em style="color: var(--accent); font-style: italic; font-weight: 300;">in six moods.</em>
+        <h2 class="display title">
+          The country,<br/><em class="accent">in six moods.</em>
         </h2>
       </div>
 
@@ -2474,8 +2580,8 @@ section {
         <div>
           <div class="eyebrow">04 / A day in the field</div>
         </div>
-        <h2 class="display" id="day-title" style="font-size: clamp(40px, 5.5vw, 80px);">
-          The day keeps<br/><em style="color: var(--accent); font-style: italic; font-weight: 300;">the sun's hours.</em>
+        <h2 class="display title" id="day-title">
+          The day keeps<br/><em class="accent">the sun's hours.</em>
         </h2>
       </div>
       <p class="day-intro">There is no typical day. But this is the rhythm most of them follow, and it is set by the light, not the clock.</p>
@@ -2544,9 +2650,9 @@ section {
         <div>
           <div class="eyebrow">05 / Who leads your trip</div>
         </div>
-        <h2 class="display" style="font-size: clamp(40px, 5.5vw, 80px);">
+        <h2 class="display title">
           I am<br/>
-          <em style="color: var(--accent); font-style: italic; font-weight: 300;">Kimani Kennedy Muna.</em>
+          <em class="accent">Kimani Kennedy Muna.</em>
         </h2>
       </div>
 
@@ -2600,8 +2706,8 @@ section {
         <div>
           <div class="eyebrow">06 / House rules</div>
         </div>
-        <h2 class="display" id="house-title" style="font-size: clamp(40px, 5.5vw, 80px);">
-          Seven promises,<br/><em style="color: var(--accent); font-style: italic; font-weight: 300;">kept in plain text.</em>
+        <h2 class="display title" id="house-title">
+          Seven promises,<br/><em class="accent">kept in plain text.</em>
         </h2>
       </div>
 
@@ -2650,8 +2756,8 @@ section {
         <div>
           <div class="eyebrow">07 / In their words</div>
         </div>
-        <h2 class="display" style="font-size: clamp(40px, 5.5vw, 80px);">
-          Notes from<br/><em style="color: var(--accent); font-style: italic; font-weight: 300;">former guests.</em>
+        <h2 class="display title">
+          Notes from<br/><em class="accent">former guests.</em>
         </h2>
       </div>
       <div class="test-grid" style="grid-template-columns: 1fr;">
@@ -2679,8 +2785,8 @@ section {
         <div>
           <div class="eyebrow">08 / FAQ</div>
         </div>
-        <h2 class="display" style="font-size: clamp(40px, 5.5vw, 80px);">
-          What we're<br/><em style="color: var(--accent); font-style: italic; font-weight: 300;">often asked.</em>
+        <h2 class="display title">
+          What we're<br/><em class="accent">often asked.</em>
         </h2>
       </div>
       <div class="faq-list" id="faq-list">

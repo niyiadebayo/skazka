@@ -47,15 +47,21 @@ Ultramarine is not used: the system allows field or ultramarine on a page, never
 
 ## Typography
 
-- **Hero / chapter titles:** `Playfair Display`
-- **Card and note titles:** `Cormorant Garamond`
-- **Body / UI copy:** `Manrope`
+From the "Adeniyi Adebayo" design system (November 2026). One typeface for the voice, one for reading.
 
-The type system is intentionally mixed:
+- **Archivo** (Google Fonts, variable width and weight): headlines, labels, navigation, buttons, body.
+- **Source Serif 4**: reading passages only (Kimani's quote, the guest letter, the enquiry note).
+- No italics in headlines; the accent words are field green, upright, same weight.
 
-- `Playfair Display` carries drama and cinematic scale
-- `Cormorant Garamond` adds softness to sub-narrative moments
-- `Manrope` keeps practical information readable and contemporary
+| Role | Size / line | Weight | Used for |
+|---|---|---|---|
+| display | 96 / 88 (48 on phones) | 800 | Hero title |
+| title | 48 / 48 (36 on phones) | 800 | Section headlines |
+| heading | 24 / 32 | 800 | Card, region, FAQ and form-step titles |
+| lead | 24 / 32 | 400 | The "In Kenya now" line, form inputs |
+| reading | 19 / 30 | 400 | Source Serif passages |
+| body | 16 / 24 | 400 | Paragraphs |
+| label | 12 / 16 | 600, uppercase, 0.06em | Eyebrows, buttons, nav, tags |
 
 ## Layout Principles
 
