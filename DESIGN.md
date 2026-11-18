@@ -23,38 +23,52 @@ Each locale follows the same arc:
 - `fr/index.html` — French page
 - `404.html` — branded error page
 
-## Direction: quiet luxury (November 2026)
+## Direction: quiet luxury, legible (November 2026)
 
-Researched against Aman (near-monochrome warm neutrals, colour only from photographs, an editorial serif with a quiet sans, square corners, generous space) and Gentle Monster (gallery presentation, extreme negative space, thin rules). This replaces the short-lived adoption of the "Adeniyi Adebayo" design system palette and type.
+Researched against Aman (warm neutrals, colour only from photographs, an editorial serif with a quiet sans, square corners, generous space) and Gentle Monster (gallery presentation, negative space, thin rules). The first pass was too faint; a rendered-page audit found body copy at 4.7:1, 11.5px labels, and hero text at 2-4:1 over the sky. These floors now apply.
+
+**Legibility floors (measured on the rendered page, not assumed)**
+- Copy is `--ink` (13:1 or better on every ground). Labels and captions are `--ink-dim` (8:1 or better).
+- Nothing under 12.5px. No font weight under 400.
+- Hero and nav text: 6.9:1 or better against the actual video pixels (worst case, brightest 10% behind each line).
+- The accent is for marks (dots, rules, the progress line), never for copy.
+- Emphasis in headlines is italic only, same colour.
 
 **Principles**
-- **Space is material (ma).** Sections breathe: 120–224px of padding, 64–112px under each headline.
-- **Colour comes from the photographs.** The interface stays in warm linen to charcoal; the one accent is a deep dry-grass brown.
-- **Light, not weight.** Headlines in a light serif; emphasis by italic and tone, never by bold or colour blocks.
-- **Hairlines and square corners.** Borders at 14–32% charcoal; no radii except the round mark.
-- **Gradients as light, not decoration.** Two close stops only: section washes (sand to linen), the day chapter (night to dusk), the day moments.
-- **Slow and sparse motion.** 0.6s eased transitions, a 1.8s image drift on hover, the hero video fading in over the poster. Nothing starts hidden.
+- **Space is material.** Sections carry 112-192px of padding.
+- **Colour comes from the photographs.** The interface stays linen to near-black.
+- **Hairlines you can see.** Borders at 20-50% ink; square corners.
+- **Gradients as light.** Two close stops only (the day moments); the hero scrim darkens the left third and the land, and leaves the sun alone. The scrim must sit above the video (`z-index: 2`).
+- **Slow, sparse motion.** 0.6s eased transitions. Nothing starts hidden.
+
+**Hero**
+- Desktop: words on the left over a scrim; the four facts are a bottom strip on the dark land.
+- Phone: the picture fills the top 56vh, and the words sit beneath it on solid ground.
+
+**Small delights**
+- The hero line and the day chapter follow the Kenya clock ("16:00 in Kenya · the afternoon drive is out").
+- A 2px reading-progress line at the top (CSS scroll timeline; absent where unsupported).
+- Underlines that draw in on links; a tick on chosen chips; the enquiry note brightens briefly when it rewrites itself.
 
 ## Palette
 
 | Token | Value | Use |
 |---|---|---|
-| linen `--bg` | `#F5F1EA` | Page ground |
-| sand `--bg-2` | `#ECE5DA` | Washed bands (method, house rules, FAQ), footer |
-| paper `--surface` | `#FBF9F5` | Cards, the form, the SKAZKA.md file |
-| charcoal `--ink` | `#2A2622` | Text (13.3:1 on linen); primary buttons |
-| taupe `--ink-dim` | `#6B6358` | Secondary text, labels, italic accents (4.7:1 on sand) |
-| dry grass `--accent` | `#6A5B42` | The one quiet accent (5.3:1 on sand) |
-| night | `#24201C` | Hero and day chapter grounds |
-| bone | `#EFE9DF` | Text on night (13.4:1) |
-| mist | `#C9BFB1` | Secondary text on night (8.9:1) |
-| pale grass | `#D8C8A8` | Accent on night |
+| linen `--bg` | `#F6F2EB` | Page ground |
+| sand `--bg-2` | `#EDE6DB` | Alternate bands, footer |
+| paper `--surface` | `#FFFDF9` | Cards, the form, the SKAZKA.md file |
+| ink `--ink` | `#1F1B17` | All copy and headlines (15.3:1 on linen); primary buttons; night grounds |
+| ink-dim `--ink-dim` | `#4A4238` | Labels and captions (8.0:1 on sand) |
+| ember `--accent` | `#A0481C` | Marks only |
+| bone | `#F3EDE3` | Text on night (14.7:1) |
+| mist | `#D5CBBD` | Labels on night (10.7:1) |
+| apricot | `#F0BE8E` | Marks on night |
 
 ## Typography
 
-- **Newsreader** (Google Fonts, optical sizes): headlines at weight 300, card heads at 400, quotes and the enquiry note. Closest free match to Aman's Lyon.
-- **Hanken Grotesk**: body at 16/1.75, and labels as small capitals (11.5px, 500, 0.2em tracking). Closest free match to Aman's Whitney.
-- Headline sizes: hero 46–92px, section titles 34–54px, card heads 22–28px.
+- **Newsreader**: headlines at 400, card heads at 500, quotes and the enquiry note at 400.
+- **Hanken Grotesk**: body at 17/1.7; labels at 12.5px, 600, 0.14em, uppercase.
+- Sizes: hero 48-88px, section titles 36-56px, card heads 23-29px, reading passages 21-22px.
 
 ## Layout Principles
 

@@ -7,7 +7,7 @@
 <meta name="description" content="Private Kenya safaris, planned in Nairobi. Tailored routes through the Mara, Amboseli, Laikipia, and private conservancies. Built for families, couples, and repeat travelers.">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<meta name="theme-color" content="#F5F1EA">
+<meta name="theme-color" content="#F6F2EB">
 <link rel="canonical" href="https://skazka.tours/">
 <meta property="og:site_name" content="Skazka Tours">
 <meta property="og:title" content="Skazka Tours — Luxury Kenya Safari Concierge">
@@ -172,27 +172,28 @@
 /* Skazka Tours — Luxury Kenya Safari Concierge */
 
 :root {
-  /* Palette: quiet luxury. Warm linen to charcoal; colour comes from the photographs. */
-  --bg: #F5F1EA;          /* linen */
-  --bg-2: #ECE5DA;        /* sand */
+  /* Palette: quiet luxury, legible. Text is ink or ink-dim only; the accent is for marks, never for copy. */
+  --bg: #F6F2EB;          /* linen */
+  --bg-2: #EDE6DB;        /* sand */
   --bg-3: #E2D9CB;
-  --surface: #FBF9F5;     /* paper */
-  --ink: #2A2622;         /* charcoal, 13.3:1 on linen */
-  --ink-dim: #6B6358;     /* taupe, 5.3:1 on linen, 4.7:1 on sand */
-  --ink-faint: #6B6358;
-  --accent: #6A5B42;      /* dry grass, deep: the one quiet accent, 5.3:1 on sand */
-  --accent-2: #2A2622;
-  --cta: #2A2622;         /* primary action is charcoal, not a colour */
-  --cta-2: #4A433B;
-  --forest: #2A2622;
-  --line: rgba(42, 38, 34, 0.14);   /* hairlines */
-  --line-2: rgba(42, 38, 34, 0.32);
-  --on-accent: #F5F1EA;
-  --on-cta: #F5F1EA;
-  --warn: #8A4A2E;
-  --night: #24201C;
-  --bone: #EFE9DF;
-  --mist: #C9BFB1;
+  --surface: #FFFDF9;     /* paper */
+  --ink: #1F1B17;         /* 15.3:1 on linen, 13.8:1 on sand */
+  --ink-dim: #4A4238;     /* 8.8:1 on linen, 8.0:1 on sand: labels and captions */
+  --ink-faint: #4A4238;
+  --accent: #A0481C;      /* ember: dots, rules and markers only */
+  --accent-2: #1F1B17;
+  --cta: #1F1B17;
+  --cta-2: #3A332B;
+  --forest: #1F1B17;
+  --line: rgba(31, 27, 23, 0.2);
+  --line-2: rgba(31, 27, 23, 0.5);
+  --on-accent: #F6F2EB;
+  --on-cta: #F6F2EB;
+  --warn: #8A3A1C;
+  --night: #1F1B17;
+  --bone: #F3EDE3;        /* 14.7:1 on night */
+  --mist: #D5CBBD;        /* 10.7:1 on night */
+  --glow: #F0BE8E;        /* apricot: the accent on night, 10.2:1 */
   --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
 
   --ff-display: 'Newsreader', Georgia, serif;          /* editorial serif, used light */
@@ -2173,94 +2174,107 @@ section {
 .itin-card.is-picked { border-color: var(--cta); outline: 1px solid var(--cta); }
 
 
-/* ===== ZEN LAYER =====
-   Quiet luxury, after Aman and Gentle Monster: space as material, a light editorial serif,
-   small tracked labels, hairlines, square corners, slow and sparse motion. Nothing starts hidden. */
 
-html, body { font-family: var(--ff-body); font-weight: 400; font-size: 16px; line-height: 1.7; color: var(--ink); background: var(--bg); }
+/* ===== ZEN LAYER, LEGIBLE =====
+   Quiet luxury that can be read: space as material, an editorial serif at regular weight,
+   near-black ink for all copy, labels no smaller than 12.5px, hairlines you can see,
+   slow and sparse motion. Nothing starts hidden.
+   Floors: copy >= 13:1, labels >= 8:1, nothing under 12.5px, no weight under 400. */
+
+html, body { font-family: var(--ff-body); font-weight: 400; font-size: 17px; line-height: 1.7; color: var(--ink); background: var(--bg); }
 :root { --maxw: 1240px; --pad: clamp(24px, 5vw, 72px); }
+::selection { background: var(--ink); color: var(--bg); }
+a:focus-visible, button:focus-visible, input:focus-visible, [tabindex]:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
 
 /* ma: room to breathe */
-section { padding: clamp(120px, 14vw, 224px) 0; }
-.section-head { margin-bottom: clamp(64px, 8vw, 112px); gap: 64px; }
-.how, .faq, .house { background: linear-gradient(180deg, #ECE5DA 0%, #F2ECE3 100%); border-color: transparent; }
+section { padding: clamp(112px, 12vw, 192px) 0; }
+.section-head { margin-bottom: clamp(56px, 7vw, 96px); gap: 64px; }
+.how, .faq, .house { background: var(--bg-2); border-color: transparent; }
 .testimonials, .enquire, #itineraries, .regions, .founder { background: var(--bg); }
 
-/* headlines: light serif, never shouting */
+/* headlines: editorial serif, regular weight, ink */
 .display {
   font-family: var(--ff-display);
-  font-weight: 300;
-  letter-spacing: -0.012em;
+  font-weight: 400;
+  letter-spacing: -0.014em;
   line-height: 1.08;
   font-variation-settings: normal;
+  color: var(--ink);
 }
 .display em, .display .accent, em.accent,
 .hero-title em, .itin-title em, .enquire-intro h2 em, .form-step-title em, .day-block h3 em {
   font-style: italic;
-  font-weight: 300;
-  color: var(--ink-dim);
+  font-weight: 400;
+  color: inherit;          /* emphasis by italic alone: full contrast */
 }
-.hero .hero-title em, .day .display em, .day .accent { color: var(--accent); }
-.title { font-size: clamp(34px, 3.8vw, 54px) !important; line-height: 1.12; }
-.hero-title { font-size: clamp(46px, 6.4vw, 92px); line-height: 1.02; letter-spacing: -0.018em; font-weight: 300; margin-bottom: 40px; }
-.enquire-intro h2 { font-family: var(--ff-display); font-size: clamp(34px, 3.8vw, 54px); font-weight: 300; line-height: 1.12; }
+.title { font-size: clamp(36px, 4vw, 56px) !important; line-height: 1.1; }
+.hero-title { font-size: clamp(48px, 6.2vw, 88px); line-height: 1.02; letter-spacing: -0.018em; font-weight: 400; margin-bottom: 28px; }
+.enquire-intro h2 { font-family: var(--ff-display); font-size: clamp(36px, 4vw, 56px); font-weight: 400; line-height: 1.1; color: var(--ink); }
 
-/* card and list heads: serif, regular */
+/* card and list heads */
 .how-step h3, .itin-title, .region-name, .region-preview-body h4, .faq-q-text,
 .form-step-title, .form-success h3, .day-moment h3, .md-body h3, .itin-price,
 .founder-meta-item strong, .day-now-clock strong, .hero-meta-item strong,
 .region-preview-stat strong, .concierge-header-info h5, .md-rules strong, .test-author, .footer-wordmark {
   font-family: var(--ff-display);
-  font-weight: 400;
+  font-weight: 500;
   font-style: normal;
   letter-spacing: -0.005em;
+  color: var(--ink);
 }
-.how-step h3 { font-size: 26px; line-height: 1.2; }
-.itin-title { font-size: 28px; line-height: 1.2; }
-.region-name { font-size: 26px; line-height: 1.2; }
-.region-preview-body h4 { font-size: 34px; line-height: 1.15; font-weight: 300; }
-.faq-q-text { font-size: 22px; line-height: 1.35; }
-.form-step-title { font-size: 32px; line-height: 1.15; font-weight: 300; }
-.form-success h3 { font-size: 32px; font-weight: 300; }
-.day-moment h3 { font-size: 22px; line-height: 1.2; }
-.md-body h3 { font-size: 26px; line-height: 1.25; font-weight: 300; }
-.md-body h3::before { font-family: var(--ff-body); font-size: 14px; vertical-align: 0.35em; font-weight: 400; color: var(--accent); }
-.itin-price { font-size: 22px; }
-.hero-meta-item strong, .founder-meta-item strong { font-size: 20px; }
-.region-preview-stat strong { font-size: 18px; }
-.md-rules strong { font-size: 20px; margin-bottom: 4px; }
-.test-author { font-size: 17px; }
-.day-now-clock strong { font-size: 26px; font-weight: 300; font-variant-numeric: tabular-nums; }
-.footer-wordmark { font-size: 44px; font-weight: 300; letter-spacing: -0.01em; }
-.nav-brand { font-family: var(--ff-display); font-weight: 400; font-size: 23px; letter-spacing: 0.01em; }
-.nav-brand-mark { background: transparent; border: 1px solid currentColor; color: inherit; font-style: normal; font-weight: 400; font-size: 14px; }
+.how-step h3 { font-size: 27px; line-height: 1.2; }
+.itin-title { font-size: 29px; line-height: 1.2; }
+.region-name { font-size: 27px; line-height: 1.2; }
+.region-preview-body h4 { font-size: 34px; line-height: 1.15; font-weight: 400; }
+.faq-q-text { font-size: 23px; line-height: 1.35; }
+.form-step-title { font-size: 32px; line-height: 1.15; font-weight: 400; }
+.form-success h3 { font-size: 32px; font-weight: 400; }
+.day-moment h3 { font-size: 23px; line-height: 1.2; color: var(--sky-ink); }
+.md-body h3 { font-size: 27px; line-height: 1.25; font-weight: 400; }
+.md-body h3::before { font-family: var(--ff-body); font-size: 15px; vertical-align: 0.3em; font-weight: 600; color: var(--ink-dim); }
+.itin-price { font-size: 23px; }
+.hero-meta-item strong, .founder-meta-item strong { font-size: 21px; }
+.region-preview-stat strong { font-size: 19px; }
+.md-rules strong { font-size: 21px; margin-bottom: 4px; }
+.test-author { font-size: 18px; }
+.day-now-clock strong { font-size: 28px; font-weight: 400; font-variant-numeric: tabular-nums; }
+.footer-wordmark { font-size: 44px; font-weight: 400; letter-spacing: -0.01em; }
+.nav-brand { font-family: var(--ff-display); font-weight: 500; font-size: 24px; letter-spacing: 0.01em; }
+.nav-brand-mark { background: transparent; border: 1px solid currentColor; color: inherit; font-style: normal; font-weight: 500; font-size: 14px; }
 
-/* body copy: calm, generous leading */
+/* body copy: ink, not grey */
 .hero-sub, .how-step p, .itin-desc, .region-note, .founder-bio, .faq-a-text,
-.enquire-intro p, .day-intro, .day-moment p, .form-success p, .concierge-msg, .md-body {
+.enquire-intro p, .day-intro, .day-moment p, .form-success p, .concierge-msg, .md-body,
+#itineraries .container > p, .md-rules li > div, .md-dont li, .footer-col a, .footer-col li {
   font-family: var(--ff-body);
   font-weight: 400;
-  font-size: 16px;
-  line-height: 1.75;
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--ink);
 }
-.hero-sub { font-size: 17px; max-width: 560px; }
-.day-moment p { font-size: 14.5px; line-height: 1.6; }
+.hero-sub { font-size: 18px; max-width: 560px; margin-bottom: 36px; }
+.day-moment p { font-size: 15.5px; line-height: 1.55; color: var(--sky-ink); }
+.footer-col a, .footer-col li { font-size: 16px; }
+.md-sign { color: var(--ink-dim); font-size: 16px; }
+.md-quote { color: var(--ink-dim); }
 
-/* reading voices: serif */
-.day-now-text { font-family: var(--ff-display); font-style: italic; font-weight: 300; font-size: 24px; line-height: 1.4; }
-.founder-quote { font-family: var(--ff-read); font-style: normal; font-weight: 300; font-size: clamp(22px, 2.3vw, 30px); line-height: 1.45; letter-spacing: -0.005em; }
-.founder-quote em { font-style: italic; color: var(--ink-dim); }
-.test-card p { font-family: var(--ff-read); font-weight: 300; font-size: 21px; line-height: 1.6; }
-.test-card p em { color: var(--ink); }
-.test-card .quote-mark { font-family: var(--ff-display); font-weight: 300; font-size: 64px; color: var(--ink-dim); }
-.letter-text { font-family: var(--ff-read); font-weight: 300; font-size: 20px; line-height: 1.6; }
-.md-sign em { font-family: var(--ff-display); font-style: italic; font-weight: 300; font-size: 26px; }
-.field input, .field textarea, .field select { font-family: var(--ff-display); font-weight: 300; font-size: 24px; }
-.field input::placeholder { font-style: italic; color: #8E8579; }
-.faq-toggle { font-family: var(--ff-body); font-weight: 300; font-size: 22px; color: var(--ink-dim); }
-.form-success-seal { font-family: var(--ff-display); font-style: italic; font-weight: 300; font-size: 30px; }
+/* reading voices: serif, regular weight */
+.day-now-text { font-family: var(--ff-display); font-style: italic; font-weight: 400; font-size: 25px; line-height: 1.4; }
+.founder-quote { font-family: var(--ff-read); font-style: normal; font-weight: 400; font-size: clamp(23px, 2.3vw, 31px); line-height: 1.42; letter-spacing: -0.005em; color: var(--ink); }
+.founder-quote em { font-style: italic; color: inherit; }
+.test-card p { font-family: var(--ff-read); font-weight: 400; font-size: 22px; line-height: 1.55; color: var(--ink); }
+.test-card p em { color: inherit; }
+.test-card .quote-mark { font-family: var(--ff-display); font-weight: 400; font-size: 64px; color: var(--accent); }
+.letter-text { font-family: var(--ff-read); font-weight: 400; font-size: 21px; line-height: 1.55; color: var(--ink); }
+.letter-text.is-empty { color: var(--ink-dim); }
+.md-sign em { font-family: var(--ff-display); font-style: italic; font-weight: 400; font-size: 27px; color: var(--ink); }
+.field input, .field textarea, .field select { font-family: var(--ff-display); font-weight: 400; font-size: 24px; color: var(--ink); border-bottom-color: var(--line-2); }
+.field input:focus { border-bottom-color: var(--ink); outline: none; box-shadow: 0 1px 0 0 var(--ink); }
+.field input::placeholder { font-style: italic; color: #6E655A; }
+.faq-toggle { font-family: var(--ff-body); font-weight: 400; font-size: 26px; color: var(--ink); }
+.form-success-seal { font-family: var(--ff-display); font-style: italic; font-weight: 400; font-size: 30px; color: var(--ink); border-color: var(--ink); }
 
-/* labels: small capitals, widely tracked */
+/* labels: small capitals you can actually read */
 .mono, .eyebrow, .btn, .nav-links, .hero-ticker, .hero-meta-item .mono, .how-step-num, .how-step-tag,
 .itin-img-tag, .itin-meta, .itin-price small, .itin-link, .region-num, .region-name small,
 .region-meta, .region-preview-stat span, .founder-img-tag, .founder-meta-item span,
@@ -2269,59 +2283,172 @@ section { padding: clamp(120px, 14vw, 224px) 0; }
 .concierge-toggle, .concierge-header-info p, .concierge-foot button, .skip-link,
 .day-now-clock, .day-moment-now, .day-foot, .letter-label, .enquire-contact-row span:first-child, .md-file-bar {
   font-family: var(--ff-body);
-  font-size: 11.5px;
+  font-size: 12.5px;
   line-height: 1.5;
-  font-weight: 500;
-  letter-spacing: 0.2em;
+  font-weight: 600;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
 }
-.eyebrow { color: var(--ink-dim); }
-.hero .eyebrow, .day .eyebrow { color: var(--accent); }
-.enquire-contact-row { font-family: var(--ff-body); font-size: 15px; letter-spacing: 0.01em; }
-.day-moment time { font-family: var(--ff-body); font-size: 12px; font-weight: 500; letter-spacing: 0.16em; font-variant-numeric: tabular-nums; }
-.concierge-msg.you { font-family: var(--ff-body); font-size: 15px; letter-spacing: 0; text-transform: none; }
-.md-body { color: var(--ink-dim); }
+.eyebrow, .how-step-num, .how-step-tag, .itin-meta, .itin-price small, .region-num, .region-name small,
+.region-meta, .region-preview-stat span, .founder-meta-item span, .test-author small, .test-trip, .faq-num,
+.form-step-label, .field label, .form-step-num, .footer-tagline, .footer-col h5, .footer-bottom,
+.letter-label, .enquire-contact-row span:first-child, .md-file-bar, .link-btn { color: var(--ink-dim); }
+.itin-link, .chip, .md-file-bar strong, .md-file-bar a { color: var(--ink); }
+.eyebrow { display: inline-flex; align-items: center; gap: 14px; }
+.eyebrow::before { content: ''; width: 28px; height: 1px; background: currentColor; flex: none; }
+.enquire-contact-row { font-family: var(--ff-body); font-size: 16px; letter-spacing: 0.01em; color: var(--ink); }
+.day-moment time { font-family: var(--ff-body); font-size: 13px; font-weight: 600; letter-spacing: 0.12em; font-variant-numeric: tabular-nums; color: var(--sky-ink); }
+.concierge-msg.you { font-family: var(--ff-body); font-size: 16px; letter-spacing: 0; text-transform: none; background: var(--ink); color: var(--bg); border-radius: 0; }
+.concierge-msg.you:hover { background: #3A332B; }
+.concierge-msg.kimani { background: var(--bg-2); color: var(--ink); border-radius: 0; }
+.concierge-foot button { color: var(--ink); }
 
-/* hairlines and square corners */
-.btn { padding: 18px 34px; border-width: 1px; border-color: var(--line-2); gap: 16px; }
+/* hairlines you can see; square corners */
+.btn { padding: 18px 32px; border-width: 1px; border-color: var(--line-2); gap: 14px; color: var(--ink); }
 .btn-primary { background: var(--cta); border-color: var(--cta); color: var(--on-cta); }
 .btn-primary:hover { background: var(--cta-2); border-color: var(--cta-2); color: var(--on-cta); }
-.btn:not(.btn-primary):hover { background: transparent; border-color: var(--ink); color: var(--ink); }
-.chip { border-color: var(--line-2); padding: 11px 20px; }
+.btn:not(.btn-primary):hover { background: var(--ink); border-color: var(--ink); color: var(--bg); }
+.chip { border-color: var(--line-2); padding: 12px 20px; }
+.chip:hover { border-color: var(--ink); }
 .chip.selected { background: var(--ink); border-color: var(--ink); color: var(--bg); }
+.chip.selected::before { content: '\2713'; margin-right: 10px; }
 .form-shell { background: var(--surface); border-color: var(--line); padding: clamp(28px, 4vw, 56px); }
 .letter { background: var(--bg); border-color: var(--line); }
 .md-file { background: var(--surface); border-color: var(--line); }
+.md-file-bar { border-bottom-color: var(--line); }
 .md-rules li { border-bottom: 1px solid var(--line); padding: 20px 0; }
+.md-rules li::before, .md-quote::before, .md-dont li::before { color: var(--accent); font-weight: 600; }
 .itin-card { background: var(--surface); border-color: var(--line); }
-.itin-card:hover { transform: none; border-color: var(--line-2); }
+.itin-card:hover { transform: none; border-color: var(--ink); }
 .itin-card.is-picked { border-color: var(--ink); outline: 1px solid var(--ink); }
 .itin-body { padding: 32px; }
+.itin-foot { border-top-color: var(--line); }
+.itin-img-tag { background: var(--surface); border-color: var(--line); color: var(--ink); }
 .itineraries-grid { gap: 32px; }
-.how-step { padding: 48px 36px 64px; border-color: var(--line); }
-.faq-q { padding: 36px 0; }
-.form-progress-dot { height: 1px; }
+.how-steps { border-top-color: var(--line-2); }
+.how-step { padding: 44px 32px 56px; border-color: var(--line); }
+.faq-list, .faq-item { border-color: var(--line); }
+.faq-q { padding: 34px 0; }
+.form-progress-dot { height: 2px; background: var(--line); }
 .form-progress-dot.active { background: var(--ink); }
+.region-row { border-color: var(--line); }
+.region-row.active .region-num { color: var(--ink); }
+.region-row.active .region-name { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 6px; }
+.region-preview { background: var(--surface); border-color: var(--line); }
+.test-card { border-color: var(--line); }
 .concierge-toggle { border-radius: 0; background: var(--ink); color: var(--bg); border: none; }
-.concierge-toggle:hover { background: #4A433B; transform: none; }
+.concierge-toggle:hover { background: #3A332B; transform: none; }
 .concierge-avatar { border-color: var(--bg); }
 .concierge-avatar::after { background: #B9C79A; border-color: var(--ink); }
-.region-preview { background: var(--surface); }
 .footer { background: var(--bg-2); border-top-color: transparent; }
+.footer-bottom { border-top-color: var(--line); }
 
-/* hero: let the picture lead, slow light in */
-.hero-bg::after {
-  background: linear-gradient(180deg,
-    rgba(36, 32, 28, 0.42) 0%,
-    rgba(36, 32, 28, 0.05) 28%,
-    rgba(36, 32, 28, 0.30) 62%,
-    rgba(36, 32, 28, 0.92) 100%);
+/* ----- hero: the words sit on the dark land, not on the sky ----- */
+.hero {
+  --bg: #1F1B17; --ink: #F3EDE3; --ink-dim: #E6DED2; --ink-faint: #D5CBBD; --accent: #F0BE8E;
+  --line: rgba(243, 237, 227, 0.3); --line-2: rgba(243, 237, 227, 0.6);
+  --cta: #F3EDE3; --cta-2: #FFFFFF; --on-cta: #1F1B17;
+  background: #1F1B17;
+  padding-top: 132px;
+  padding-bottom: 44px;
 }
+.hero-bg::after {
+  background:
+    linear-gradient(90deg, rgba(20, 17, 14, 0.78) 0%, rgba(20, 17, 14, 0.70) 36%, rgba(20, 17, 14, 0.48) 50%, rgba(20, 17, 14, 0) 61%),
+    linear-gradient(180deg, rgba(20, 17, 14, 0.20) 0%, rgba(20, 17, 14, 0) 16%, rgba(20, 17, 14, 0) 44%, rgba(20, 17, 14, 0.55) 60%, rgba(20, 17, 14, 0.9) 78%, #1F1B17 100%);
+}
+.hero-bg::after { z-index: 2; }
+.hero-bg img, .hero-bg video { filter: none; }   /* the scrim does the work; the sun keeps its colour */   /* above the video, which sits at z-index 1: the scrim used to hide beneath it */
 .hero-bg video { animation: zen-fade 2.8s var(--ease) both; } /* the poster sits beneath: never blank */
 @keyframes zen-fade { from { opacity: 0; } to { opacity: 1; } }
-.hero-ticker { margin-top: 112px; border-top-color: rgba(239, 233, 223, 0.18); }
-.hero-meta { margin-bottom: 56px; }
-.hero-cta { gap: 20px; }
+.hero-title, .hero-title em { color: #FBF7F0; }
+.hero-sub { color: var(--ink); }
+.hero-cta { gap: 16px; }
+.hero .btn:not(.btn-primary) { color: var(--ink); border-color: var(--line-2); background: rgba(20, 17, 14, 0.35); }
+.hero .btn:not(.btn-primary):hover { background: var(--ink); color: #1F1B17; border-color: var(--ink); }
+.hero-now {
+  display: inline-flex; align-items: center; gap: 12px;
+  margin-bottom: 28px; padding: 10px 16px 10px 14px;
+  background: rgba(20, 17, 14, 0.72);
+  border: 1px solid rgba(243, 237, 227, 0.28);
+  color: #F3EDE3;
+  font-family: var(--ff-body); font-size: 14px; font-weight: 500; letter-spacing: 0.02em;
+  transition: border-color 0.6s var(--ease), background 0.6s var(--ease);
+}
+.hero-now:hover { border-color: #F3EDE3; background: rgba(20, 17, 14, 0.9); }
+.hero-now-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); flex: none; }
+.hero-now .arrow { transition: transform 0.6s var(--ease); }
+.hero-now:hover .arrow { transform: translateX(4px); }
+.hero-meta {
+  display: grid; grid-template-columns: repeat(4, auto); justify-content: space-between; align-items: start;
+  gap: 24px 40px; margin: 64px 0 0; padding-top: 28px;
+  border-top: 1px solid var(--line);
+}
+.hero-meta-left { display: contents; }
+.hero-meta-item .mono { color: var(--ink-faint); }
+.hero-meta-item strong { color: var(--ink); }
+.hero-ticker { margin-top: 28px; padding-top: 0; border-top: none; color: var(--ink-faint); gap: 10px 32px; justify-content: flex-start; }
+@media (min-width: 821px) { .hero-ticker { padding-right: 220px; } }
+
+/* nav: a real ground behind the links */
+.nav { background: rgba(20, 17, 14, 0.62); color: #F3EDE3; }
+.nav-links a { color: #F3EDE3; }
+.nav.scrolled { background: color-mix(in srgb, var(--bg) 96%, transparent); border-bottom-color: var(--line); color: var(--ink); }
+.nav.scrolled .nav-links a { color: var(--ink); }
+.nav .btn { color: inherit; border-color: currentColor; background: transparent; }
+.nav .btn:hover { background: #F3EDE3; color: #1F1B17; border-color: #F3EDE3; }
+.nav.scrolled .btn:hover { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.nav-links a, .footer-col a, .md-file-bar a, .enquire-contact-row a {
+  background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat;
+  transition: background-size 0.6s var(--ease), color 0.3s;
+  padding-bottom: 3px; border-bottom: none;
+}
+.nav-links a:hover, .footer-col a:hover, .md-file-bar a:hover, .enquire-contact-row a:hover { background-size: 100% 1px; color: inherit; }
+.md-file-bar a, .enquire-contact-row a { background-size: 100% 1px; }
+
+/* ----- a day in the field ----- */
+.day {
+  background: #1F1B17; color: #F3EDE3;
+  --ink: #F3EDE3; --ink-dim: #E6DED2; --ink-faint: #D5CBBD; --accent: #F0BE8E;
+  --line: rgba(243, 237, 227, 0.26);
+}
+.day .display, .day .display em { color: #FBF7F0; }
+.day .eyebrow, .day-now-clock, .day-foot { color: var(--ink-faint); }
+.day-intro { color: var(--ink); max-width: 620px; }
+.day-now-text { color: var(--ink); }
+.day-now-clock strong { color: #FBF7F0; }
+.day-track { background: rgba(243, 237, 227, 0.4); }
+.day-track-sun { background: var(--accent); }
+.day-track-sun.is-night { background: transparent; border-color: var(--ink); }
+.day-strip { gap: 12px; }
+.day-moment { min-height: 320px; padding: 24px 20px 22px; border: 1px solid transparent; border-top: 3px solid transparent; }
+.day-moment[data-sky="tea"]       { --sky: linear-gradient(180deg, #15120F 0%, #2B251F 100%); --sky-ink: #F3EDE3; border-color: rgba(243, 237, 227, 0.2); border-top-color: transparent; }
+.day-moment[data-sky="dawn"]      { --sky: linear-gradient(180deg, #E6CDB6 0%, #F0E2D2 100%); --sky-ink: #1F1B17; }
+.day-moment[data-sky="breakfast"] { --sky: linear-gradient(180deg, #F4EEE4 0%, #ECE4D7 100%); --sky-ink: #1F1B17; }
+.day-moment[data-sky="midday"]    { --sky: linear-gradient(180deg, #FFFDF9 0%, #F5F0E8 100%); --sky-ink: #1F1B17; }
+.day-moment[data-sky="afternoon"] { --sky: linear-gradient(180deg, #DFCBA6 0%, #D2BD93 100%); --sky-ink: #1F1B17; }
+.day-moment[data-sky="sunset"]    { --sky: linear-gradient(180deg, #6B4029 0%, #45291D 100%); --sky-ink: #FBF4EA; }
+.day-moment[data-sky="night"]     { --sky: linear-gradient(180deg, #15120F 0%, #241F1A 100%); --sky-ink: #F3EDE3; border-color: rgba(243, 237, 227, 0.2); border-top-color: transparent; }
+.day-moment.is-now { border-top-color: #F0BE8E; outline: none; transform: translateY(-10px); }
+.day-moment-now { background: var(--sky-ink); color: #1F1B17; border: none; padding: 4px 10px; border-radius: 0; font-size: 12.5px; top: 20px; }
+.day-moment[data-sky="dawn"] .day-moment-now, .day-moment[data-sky="breakfast"] .day-moment-now,
+.day-moment[data-sky="midday"] .day-moment-now, .day-moment[data-sky="afternoon"] .day-moment-now { color: #FBF7F0; }
+@media (hover: hover) { .day-moment:not(.is-now):hover { transform: translateY(-4px); } }
+
+/* ----- small delights ----- */
+.scroll-progress { display: none; }
+@supports (animation-timeline: scroll()) {
+  .scroll-progress {
+    display: block; position: fixed; top: 0; left: 0; right: 0; height: 2px; z-index: 150;
+    background: var(--accent); transform-origin: 0 50%; transform: scaleX(0);
+    animation: zen-progress linear both; animation-timeline: scroll(root);
+  }
+  @keyframes zen-progress { to { transform: scaleX(1); } }
+}
+.letter.is-fresh { animation: zen-breathe 1.4s var(--ease); }
+@keyframes zen-breathe { from { background: #FFFFFF; border-color: var(--ink); } to { background: var(--bg); border-color: var(--line); } }
+.itin-link { display: inline-flex; gap: 8px; transition: gap 0.6s var(--ease); }
+.itin-card:hover .itin-link { gap: 14px; }
 
 /* slow, sparse motion */
 .btn, .chip, .itin-card, .faq-toggle, .nav, .region-row, .concierge-toggle, .day-moment { transition-duration: 0.6s; transition-timing-function: var(--ease); }
@@ -2329,31 +2456,36 @@ section { padding: clamp(120px, 14vw, 224px) 0; }
 .itin-card:hover .itin-img img { transform: scale(1.03); }
 .faq-a { transition: max-height 0.7s var(--ease), padding 0.7s var(--ease); }
 
+@media (max-width: 1100px) { .day-moment { min-height: 300px; } }
 @media (max-width: 820px) {
-  section { padding: 104px 0; }
-  .hero-title { font-size: 46px; }
-  .title, .enquire-intro h2 { font-size: 34px !important; }
+  section { padding: 96px 0; }
+  .hero { min-height: 0; display: block; padding-top: 44vh; }
+  .hero-bg { bottom: auto; height: 56vh; }
+  .hero-title { font-size: 48px; }
+  .title, .enquire-intro h2 { font-size: 36px !important; }
   .footer-wordmark { font-size: 36px; }
-}
-/* phones: the chat becomes a quiet square mark; hero facts stack in one column */
-@media (max-width: 820px) {
+  .hero-bg::after {
+    background: linear-gradient(180deg, rgba(20, 17, 14, 0.30) 0%, rgba(20, 17, 14, 0) 24%, rgba(20, 17, 14, 0) 50%, rgba(31, 27, 23, 0.9) 82%, #1F1B17 100%);
+  }
+  .hero-meta { grid-template-columns: 1fr 1fr; justify-content: stretch; margin-top: 48px; }
+  .hero-now { padding: 9px 14px; gap: 10px; font-size: 13.5px; }
+  .hero-now .arrow { display: none; }
+  /* the chat becomes a quiet square mark */
   .concierge { right: 16px; bottom: 16px; }
   .concierge-toggle { padding: 6px; gap: 0; }
   #concierge-toggle-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
   .concierge-panel { width: calc(100vw - 32px); }
-  .hero-meta { flex-direction: column; align-items: flex-start; gap: 24px; }
-  .hero-meta > .hero-meta-item { text-align: left !important; }
-  .hero-meta-left { gap: 20px 32px; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .hero-bg video { animation: none; }
-  .itin-card:hover .itin-img img { transform: none; }
+  .hero-bg video, .letter.is-fresh, .scroll-progress { animation: none; }
+  .itin-card:hover .itin-img img, .day-moment:hover { transform: none; }
   * { transition-duration: 0.01s !important; }
 }
   </style>
 </head>
 <body>
   <a class="skip-link" href="#how">Skip to the story</a>
+  <div class="scroll-progress" aria-hidden="true"></div>
   <div class="noise"></div>
 
   <nav class="nav" id="site-nav">
@@ -2386,6 +2518,26 @@ section { padding: clamp(120px, 14vw, 224px) 0; }
            width="1600" height="900" decoding="async" fetchpriority="high" />
     </div>
     <div class="container hero-inner">
+      <a class="hero-now" href="#day">
+        <span class="hero-now-dot" aria-hidden="true"></span>
+        <span id="hero-now-text">See what the camp is doing right now</span>
+        <span class="arrow" aria-hidden="true">&rarr;</span>
+      </a>
+
+      <h1 class="display hero-title">
+        Kenya,<br/>
+        carried <em>by hand.</em>
+      </h1>
+
+      <p class="hero-sub">
+        A concierge safari, small-party only. We do not sell itineraries &mdash; we engineer journeys for the two, four, or six of you, and then walk beside you from first airport door to last goodbye.
+      </p>
+
+      <div class="hero-cta">
+        <a href="#enquire" class="btn btn-primary">Begin a conversation <span class="arrow">&rarr;</span></a>
+        <a href="#how" class="btn">See how we work</a>
+      </div>
+
       <div class="hero-meta">
         <div class="hero-meta-left">
           <div class="hero-meta-item">
@@ -2401,24 +2553,10 @@ section { padding: clamp(120px, 14vw, 224px) 0; }
             <strong>EN &middot; SW &middot; RU</strong>
           </div>
         </div>
-        <div class="hero-meta-item" style="text-align: right;">
+        <div class="hero-meta-item">
           <span class="mono">Now booking</span>
           <strong>Jul 2026 &mdash; Feb 2027</strong>
         </div>
-      </div>
-
-      <h1 class="display hero-title">
-        Kenya,<br/>
-        carried <em>by hand.</em>
-      </h1>
-
-      <p class="hero-sub">
-        A concierge safari, small-party only. We do not sell itineraries &mdash; we engineer journeys for the two, four, or six of you, and then walk beside you from first airport door to last goodbye.
-      </p>
-
-      <div class="hero-cta">
-        <a href="#enquire" class="btn btn-primary">Begin a conversation <span class="arrow">&rarr;</span></a>
-        <a href="#how" class="btn">See how we work</a>
       </div>
 
       <div class="hero-ticker">
@@ -3393,6 +3531,12 @@ section { padding: clamp(120px, 14vw, 224px) 0; }
   var eatClock = document.getElementById('eat-clock');
   var dayStrip = document.getElementById('day-strip');
   var dayScrolled = false;
+  var heroNow = document.getElementById('hero-now-text');
+  var NOW_SHORT = {
+    tea: 'tea is going round the tents', dawn: 'the dawn drive is out', breakfast: 'breakfast in the bush',
+    midday: 'the camp is resting', afternoon: 'the afternoon drive is out', sunset: 'the sun is going down',
+    night: 'dinner under the stars'
+  };
   function renderDay() {
     var m = eatMinutes();
     if (dayTime) dayTime.textContent = fmt(m);
@@ -3403,6 +3547,7 @@ section { padding: clamp(120px, 14vw, 224px) 0; }
       el.classList.remove('is-now');
     });
     var asleep = !current || m >= 1290; // before 05:30 or after 21:30
+    if (heroNow) heroNow.textContent = fmt(m) + ' in Kenya \u00b7 ' + (asleep ? 'the camp is asleep' : NOW_SHORT[current.getAttribute('data-sky')]);
     if (asleep) {
       if (dayText) dayText.textContent = 'The camp is asleep. Tea comes round at 05:30.';
     } else {
@@ -3458,7 +3603,9 @@ section { padding: clamp(120px, 14vw, 224px) 0; }
     else if (when) lines.push((solo ? "I'm " : "We're ") + when + '.');
 
     if (picked.journey) lines.push('\u201c' + picked.journey + '\u201d looked like a good starting point.');
-    if (interests) lines.push(We + ' love ' + listJoin(interests.split(', ').map(function (x) { return x.toLowerCase(); })) + '.');
+    if (interests) lines.push(We + ' love ' + listJoin(interests.split(', ').map(function (x) {
+      return { 'Coastal finish': 'a coastal finish', 'Hot-air balloon': 'a hot-air balloon flight' }[x] || x.toLowerCase();
+    })) + '.');
     if (pace) lines.push({
       'Slower \u2014 fewer moves': 'A slower pace suits ' + us + ', with fewer moves.',
       'Balanced': 'A balanced pace suits ' + us + '.',
@@ -3472,6 +3619,10 @@ section { padding: clamp(120px, 14vw, 224px) 0; }
   function renderLetter() {
     if (!letterText) return;
     var text = composeLetter();
+    if (text && text !== letterText.textContent) {
+      var box = document.getElementById('letter');
+      if (box) { box.classList.remove('is-fresh'); void box.offsetWidth; box.classList.add('is-fresh'); }
+    }
     if (text) {
       letterText.textContent = text;
       letterText.classList.remove('is-empty');
