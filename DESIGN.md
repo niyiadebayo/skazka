@@ -25,20 +25,25 @@ Each locale follows the same arc:
 
 ## Palette
 
-| Token | Value | Purpose |
+Since November 2026 the colours come from the **"Adeniyi Adebayo" design system** (claude.ai design system artifact). Its rules apply: one accent, no gradients, glows, drop shadows or textures, text at 4.5:1 or better.
+
+| Token | Value | Role on Skazka |
 |---|---|---|
-| `--forest-950` | `#0f2017` | deep contrast, dark panels |
-| `--forest-900` | `#173223` | hero accents, theme color |
-| `--forest-700` | `#2f6247` | emphasis inside display type |
-| `--sand-50` | `#fffaf2` | base page tone |
-| `--sand-100` | `#f8efdf` | warm surfaces and gradients |
-| `--gold-300` | `#dfb885` | warm highlights |
-| `--gold-400` | `#cf9a63` | CTA gradient top |
-| `--gold-500` | `#b97847` | CTA gradient base, eyebrow text |
-| `--ink-950` | `#221c16` | primary text |
-| `--ink-700` | `#5f5448` | secondary narrative text |
-| `--surface` | `rgba(255, 250, 242, 0.76)` | translucent cards |
-| `--line` | `rgba(34, 28, 22, 0.12)` | borders and separators |
+| `white` | `#FFFFFF` | Default ground |
+| `stone` | `#F4F3EC` | Alternate bands; text on dark grounds |
+| `stone-paper` | `#E5E3D9` | Quiet panels |
+| `ink` | `#22322E` | Headlines and body text |
+| `ink-muted` | `#5A615C` | Secondary text, labels |
+| `rule-soft` | `#B9BCB2` | Hairlines |
+| `field` | `#33700A` | **The one accent**: eyebrows, italic headline words, buttons, selected chips, links |
+| `field-tint` | `#A3D67F` | The accent on tobacco |
+| `tobacco` | `#5C4126` | Dark grounds: hero, nav over hero, A day in the field |
+| `on-yard-muted` | `#B8B4AC` | Secondary text on tobacco |
+| `dawn` | `#E0935C` | The 06:00 moment in A day in the field |
+| `granite` | `#1E1C1A` | Before-dawn and night moments |
+| `soil-deep` | `#93421B` | Warnings only |
+
+Ultramarine is not used: the system allows field or ultramarine on a page, never both. The hero keeps a dark scrim behind its headline for legibility over the video; that is the only gradient left.
 
 ## Typography
 

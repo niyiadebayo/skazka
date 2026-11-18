@@ -7,7 +7,7 @@
 <meta name="description" content="Private Kenya safaris, planned in Nairobi. Tailored routes through the Mara, Amboseli, Laikipia, and private conservancies. Built for families, couples, and repeat travelers.">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<meta name="theme-color" content="#FAF6EE">
+<meta name="theme-color" content="#FFFFFF">
 <link rel="canonical" href="https://skazka.tours/">
 <meta property="og:site_name" content="Skazka Tours">
 <meta property="og:title" content="Skazka Tours — Luxury Kenya Safari Concierge">
@@ -172,24 +172,24 @@
 /* Skazka Tours — Luxury Kenya Safari Concierge */
 
 :root {
-  /* Palette: golden hour — cream paper base, rich ochre accent (readable on cream), burnt sienna CTA, acacia green brand mark */
-  --bg: #FAF6EE;
-  --bg-2: #EFE5CE;
-  --bg-3: #DDCBA3;
-  --surface: #FFFBF2;
-  --ink: #1A1510;
-  --ink-dim: #3E362B;
-  --ink-faint: #6E6351;
-  --accent: #A06B10;
-  --accent-2: #7E5100;
-  --cta: #C84A2A;
-  --cta-2: #A83518;
-  --forest: #2F4A3A;
-  --line: #C9B48A;
-  --line-2: #8A7550;
-  --on-accent: #FFFBF2;
-  --on-cta: #FFFBF2;
-  --warn: #B24A1F;
+  /* Palette: the "Adeniyi Adebayo" design system. One accent (field); no gradients, glows or shadows. */
+  --bg: #FFFFFF;          /* white: the default ground */
+  --bg-2: #F4F3EC;        /* stone: alternate bands */
+  --bg-3: #E5E3D9;        /* stone-paper: quiet panels */
+  --surface: #FFFFFF;
+  --ink: #22322E;         /* savanna ink, 13.4:1 on white */
+  --ink-dim: #5A615C;     /* ink-muted, 6.4:1 on white */
+  --ink-faint: #5A615C;   /* small labels stay at 4.5:1 or better */
+  --accent: #33700A;      /* field green: the one accent */
+  --accent-2: #22322E;    /* hover: accent steps down to ink */
+  --cta: #33700A;
+  --cta-2: #22322E;
+  --forest: #33700A;
+  --line: #B9BCB2;        /* rule-soft: hairlines */
+  --line-2: #5A615C;
+  --on-accent: #F4F3EC;   /* stone on field, 5.5:1 */
+  --on-cta: #F4F3EC;
+  --warn: #93421B;        /* soil-deep */
 
   --ff-display: 'Fraunces', 'Canela', Georgia, serif;
   --ff-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -373,13 +373,13 @@ section {
   transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  background: rgba(14, 20, 16, 0.45);
+  background: rgba(92, 65, 38, 0.62);
   border-bottom: 1px solid transparent;
-  color: #F5EFE4;
+  color: #F4F3EC;
 }
 .nav a { color: inherit; }
-.nav-links a { color: rgba(245, 239, 228, 0.72); }
-.nav-links a:hover { color: #E8BD6B; }
+.nav-links a { color: rgba(244, 243, 236, 0.82); }
+.nav-links a:hover { color: #A3D67F; }
 .nav.scrolled {
   border-bottom: 1px solid var(--line);
   background: color-mix(in srgb, var(--bg) 92%, transparent);
@@ -420,13 +420,13 @@ section {
 /* ===== HERO ===== */
 .hero {
   /* Cinematic zone: invert to light-on-dark regardless of site palette */
-  --bg: #0E1410;
-  --ink: #F5EFE4;
-  --ink-dim: #D9D2C3;
-  --ink-faint: #A09986;
-  --accent: #E8BD6B;
-  --line: rgba(245, 239, 228, 0.2);
-  --line-2: rgba(245, 239, 228, 0.35);
+  --bg: #5C4126;          /* tobacco */
+  --ink: #F4F3EC;         /* stone */
+  --ink-dim: #E5E3D9;
+  --ink-faint: #B8B4AC;   /* on-yard-muted */
+  --accent: #A3D67F;      /* field-tint */
+  --line: rgba(244, 243, 236, 0.22);
+  --line-2: rgba(244, 243, 236, 0.4);
   min-height: 100vh;
   position: relative;
   padding-top: 120px;
@@ -434,7 +434,7 @@ section {
   display: grid;
   align-items: end;
   overflow: hidden;
-  background: #0E1410;
+  background: #5C4126;
 }
 .hero-bg {
   position: absolute;
@@ -446,7 +446,7 @@ section {
   position: absolute; inset: 0;
   width: 100%; height: 100%;
   object-fit: cover;
-  filter: brightness(0.85) saturate(1.1);
+  filter: brightness(0.85);
 }
 .hero-bg video { z-index: 1; }
 .hero-bg .hero-fallback { z-index: 0; }
@@ -618,9 +618,8 @@ section {
   position: absolute;
   top: 16px; left: 16px;
   padding: 6px 12px;
-  background: color-mix(in srgb, var(--bg) 70%, transparent);
-  backdrop-filter: blur(8px);
-  border: 1px solid color-mix(in srgb, var(--ink) 20%, transparent);
+  background: var(--bg);
+  border: 1px solid var(--line);
   color: var(--ink);
   font-family: var(--ff-mono);
   font-size: 10px;
@@ -819,7 +818,7 @@ section {
   position: absolute;
   bottom: 0; left: 0; right: 0;
   padding: 24px;
-  background: linear-gradient(transparent, color-mix(in srgb, var(--bg) 85%, transparent));
+  background: var(--bg);
   font-family: var(--ff-mono);
   font-size: 10px;
   letter-spacing: 0.18em;
@@ -1274,7 +1273,7 @@ section {
   letter-spacing: 0.14em;
   text-transform: uppercase;
   cursor: pointer;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+  border: 1px solid #22322E;
   transition: all 0.3s;
 }
 .concierge-toggle:hover { background: var(--accent-2); transform: translateY(-2px); }
@@ -1291,7 +1290,7 @@ section {
   position: absolute;
   bottom: 0; right: 0;
   width: 10px; height: 10px;
-  background: #52C461;
+  background: #A3D67F;
   border: 2px solid var(--accent);
   border-radius: 50%;
 }
@@ -1302,7 +1301,6 @@ section {
   width: 360px;
   background: var(--bg-2);
   border: 1px solid var(--line);
-  box-shadow: 0 30px 80px rgba(0,0,0,0.5);
   opacity: 0;
   pointer-events: none;
   transform: translateY(10px);
@@ -1421,7 +1419,6 @@ section {
   padding: 20px 24px;
   display: none;
   min-width: 260px;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
 }
 .tweaks-panel.open { display: block; }
 .tweaks-panel h5 {
@@ -1469,7 +1466,8 @@ section {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  opacity: 0.035;
+  opacity: 0;
+  display: none;
   z-index: 1;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
@@ -1883,13 +1881,13 @@ section {
 
 /* ===== A DAY IN THE FIELD ===== */
 .day {
-  background: #0E1410;
-  color: #F5EFE4;
-  --ink: #F5EFE4;
-  --ink-dim: #D9D2C3;
-  --ink-faint: #A09986;
-  --accent: #E8BD6B;
-  --line: rgba(245, 239, 228, 0.18);
+  background: #5C4126;    /* tobacco: the yard at dusk */
+  color: #F4F3EC;
+  --ink: #F4F3EC;
+  --ink-dim: #E5E3D9;
+  --ink-faint: #B8B4AC;   /* on-yard-muted, 4.5:1 */
+  --accent: #A3D67F;      /* field-tint */
+  --line: rgba(244, 243, 236, 0.22);
 }
 .day-intro {
   color: var(--ink-dim);
@@ -1930,13 +1928,6 @@ section {
   width: 8px; height: 8px;
   border-radius: 50%;
   background: var(--accent);
-  box-shadow: 0 0 0 0 rgba(232, 189, 107, 0.6);
-  animation: day-pulse 2.4s ease-out infinite;
-}
-@keyframes day-pulse {
-  0%   { box-shadow: 0 0 0 0 rgba(232, 189, 107, 0.55); }
-  70%  { box-shadow: 0 0 0 10px rgba(232, 189, 107, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(232, 189, 107, 0); }
 }
 .day-now-text {
   font-family: var(--ff-display);
@@ -1948,10 +1939,9 @@ section {
 .day-track {
   grid-column: 1 / -1;
   position: relative;
-  height: 2px;
+  height: 1px;
   margin-top: 16px;
-  background: linear-gradient(90deg, #3B3A5C 0%, #E59A6B 6%, #F3D27A 30%, #F7EBC8 45%, #F3C26A 65%, #D9653B 85%, #2A3550 100%);
-  border-radius: 2px;
+  background: rgba(244, 243, 236, 0.45);
 }
 .day-track-sun {
   position: absolute;
@@ -1960,13 +1950,12 @@ section {
   width: 14px; height: 14px;
   margin: -7px 0 0 -7px;
   border-radius: 50%;
-  background: #F7D98A;
-  box-shadow: 0 0 18px 4px rgba(247, 217, 138, 0.45);
+  background: #F4F3EC;
   transition: left 1s ease;
 }
 .day-track-sun.is-night {
-  background: #DCE3F0;
-  box-shadow: 0 0 14px 2px rgba(220, 227, 240, 0.35);
+  background: transparent;
+  border: 1px solid #F4F3EC;
 }
 
 .day-strip {
@@ -1988,32 +1977,18 @@ section {
   border: 1px solid transparent;
   transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.3s;
 }
-.day-moment[data-sky="tea"]       { --sky: linear-gradient(180deg, #1E2340 0%, #4B3B5E 70%, #8E5A62 100%); --sky-ink: #F5EFE4; }
-.day-moment[data-sky="dawn"]      { --sky: linear-gradient(180deg, #4B3B5E 0%, #D98868 55%, #F2C38A 100%); --sky-ink: #1A1510; }
-.day-moment[data-sky="breakfast"] { --sky: linear-gradient(180deg, #CFE0E6 0%, #F3E2B4 70%, #EBD49B 100%); --sky-ink: #1A1510; }
-.day-moment[data-sky="midday"]    { --sky: linear-gradient(180deg, #F7F1E1 0%, #F1E3BE 100%); --sky-ink: #1A1510; }
-.day-moment[data-sky="afternoon"] { --sky: linear-gradient(180deg, #EBC77E 0%, #D99A4E 100%); --sky-ink: #1A1510; }
-.day-moment[data-sky="sunset"]    { --sky: linear-gradient(180deg, #E79A5A 0%, #B9472A 55%, #4A2230 100%); --sky-ink: #FFF6EA; }
-.day-moment[data-sky="night"]     { --sky: linear-gradient(180deg, #0B1022 0%, #1A2440 100%); --sky-ink: #F5EFE4; }
-.day-moment[data-sky="night"]::before {
-  /* a few stars, drawn with gradients: decoration only */
-  content: '';
-  position: absolute; inset: 0;
-  background-image:
-    radial-gradient(1px 1px at 20% 18%, #fff 50%, transparent 51%),
-    radial-gradient(1px 1px at 68% 12%, #fff 50%, transparent 51%),
-    radial-gradient(1.5px 1.5px at 82% 34%, #fff 50%, transparent 51%),
-    radial-gradient(1px 1px at 40% 40%, #fff 50%, transparent 51%),
-    radial-gradient(1px 1px at 12% 52%, #fff 50%, transparent 51%),
-    radial-gradient(1px 1px at 55% 28%, #fff 50%, transparent 51%);
-  opacity: 0.7;
-  pointer-events: none;
-}
+/* Flat grounds from the design system, in the order the light moves */
+.day-moment[data-sky="tea"]       { --sky: #1E1C1A; --sky-ink: #F4F3EC; }  /* granite: before light */
+.day-moment[data-sky="dawn"]      { --sky: #E0935C; --sky-ink: #22322E; }  /* dawn */
+.day-moment[data-sky="breakfast"] { --sky: #F4F3EC; --sky-ink: #22322E; }  /* stone */
+.day-moment[data-sky="midday"]    { --sky: #FFFFFF; --sky-ink: #22322E; }  /* white: full sun */
+.day-moment[data-sky="afternoon"] { --sky: #33700A; --sky-ink: #F4F3EC; }  /* field */
+.day-moment[data-sky="sunset"]    { --sky: #5C4126; --sky-ink: #F4F3EC; border-color: rgba(244, 243, 236, 0.35); }  /* tobacco: dusk */
+.day-moment[data-sky="night"]     { --sky: #1E1C1A; --sky-ink: #F4F3EC; }  /* granite: night */
 .day-moment time {
   font-family: var(--ff-mono);
   font-size: 12px;
   letter-spacing: 0.14em;
-  opacity: 0.8;
   position: relative;
 }
 .day-moment h3 {
@@ -2028,7 +2003,6 @@ section {
 .day-moment p {
   font-size: 13.5px;
   line-height: 1.5;
-  opacity: 0.85;
   position: relative;
 }
 .day-moment-now {
@@ -2043,7 +2017,7 @@ section {
   border: 1px solid currentColor;
   border-radius: 999px;
 }
-.day-moment.is-now { border-color: #E8BD6B; transform: translateY(-8px); }
+.day-moment.is-now { border-color: #A3D67F; outline: 1px solid #A3D67F; transform: translateY(-8px); }
 .day-moment.is-now .day-moment-now { display: inline-block; }
 .day-foot {
   margin-top: 28px;
@@ -2070,7 +2044,6 @@ section {
   .day-strip { grid-auto-columns: 78%; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .day-now-pulse { animation: none; }
   .day-moment, .day-track-sun { transition: none; }
   .day-moment.is-now { transform: none; }
 }
@@ -2082,7 +2055,6 @@ section {
   margin: 0 auto;
   background: var(--surface);
   border: 1px solid var(--line);
-  box-shadow: 0 30px 60px -40px rgba(26, 21, 16, 0.35);
 }
 .md-file-bar {
   display: flex;
@@ -2170,14 +2142,6 @@ section {
   background: var(--surface);
   border: 1px solid var(--line);
   position: relative;
-  box-shadow: 0 18px 40px -32px rgba(26, 21, 16, 0.45);
-}
-.letter::before {
-  /* torn-paper hint along the top edge */
-  content: '';
-  position: absolute; left: 0; right: 0; top: -1px;
-  height: 6px;
-  background: radial-gradient(circle at 6px -2px, var(--bg-2) 5px, transparent 5.5px) 0 0 / 14px 6px repeat-x;
 }
 .letter-label {
   font-family: var(--ff-mono);
@@ -2198,7 +2162,7 @@ section {
   white-space: pre-line;
 }
 .letter-text.is-empty { color: var(--ink-faint); font-style: italic; }
-.itin-card.is-picked { border-color: var(--cta); box-shadow: 0 0 0 1px var(--cta); }
+.itin-card.is-picked { border-color: var(--cta); outline: 1px solid var(--cta); }
   </style>
 </head>
 <body>
