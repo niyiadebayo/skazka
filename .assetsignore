@@ -1,0 +1,13 @@
+# Files in this repository that are not part of the public website.
+# Without this list, everything in the folder is published.
+.git
+.gitignore
+.assetsignore
+.claude
+CLAUDE.md
+DESIGN.md
+README.md
+docs
+wrangler.jsonc
+node_modules
+.wrangler

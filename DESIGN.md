@@ -145,6 +145,13 @@ Until November 2026 nobody had looked at the Unsplash photos on this page, and m
 - "Now booking" in the hero is a rolling window, three to ten months ahead of the current month in Kenya. The rule was inferred from the old fixed dates; change it in the script if the real booking window differs.
 - Not on the page and so not in the data: reviews, ratings, social profiles, a street address. Add them only when they are real.
 
+## 404 page and what gets published (November 2026)
+
+- `404.html` is self-contained (inline styles, root-relative links) so it works at any path depth. Same palette, type and dusk scene as the home page; the silhouettes are copied from `index.html`, so update both if the drawings change.
+- `wrangler.jsonc` sets `not_found_handling: "404-page"`. Without it, Cloudflare Workers static assets answer unknown paths with an empty 404 and never show `404.html`.
+- `.assetsignore` lists the repository files that are not part of the website (`DESIGN.md`, `CLAUDE.md`, `README.md`, `docs/`, `wrangler.jsonc`). The asset directory is the repository root, so anything not listed there is public.
+- `assets/site.css` and `assets/site.js` were the old 404 page's only dependencies and are gone.
+
 ## Layout Principles
 
 - Max content width: `1180px`
