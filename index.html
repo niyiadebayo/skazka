@@ -2436,15 +2436,6 @@ section { padding: clamp(112px, 12vw, 192px) 0; }
 @media (hover: hover) { .day-moment:not(.is-now):hover { transform: translateY(-4px); } }
 
 /* ----- small delights ----- */
-.scroll-progress { display: none; }
-@supports (animation-timeline: scroll()) {
-  .scroll-progress {
-    display: block; position: fixed; top: 0; left: 0; right: 0; height: 2px; z-index: 150;
-    background: var(--accent); transform-origin: 0 50%; transform: scaleX(0);
-    animation: zen-progress linear both; animation-timeline: scroll(root);
-  }
-  @keyframes zen-progress { to { transform: scaleX(1); } }
-}
 .letter.is-fresh { animation: zen-breathe 1.4s var(--ease); }
 @keyframes zen-breathe { from { background: #FFFFFF; border-color: var(--ink); } to { background: var(--bg); border-color: var(--line); } }
 .itin-link { display: inline-flex; gap: 8px; transition: gap 0.6s var(--ease); }
@@ -2477,35 +2468,216 @@ section { padding: clamp(112px, 12vw, 192px) 0; }
   .concierge-panel { width: calc(100vw - 32px); }
 }
 @media (prefers-reduced-motion: reduce) {
-  .hero-bg video, .letter.is-fresh, .scroll-progress { animation: none; }
+  .hero-bg video, .letter.is-fresh { animation: none; }
   .itin-card:hover .itin-img img, .day-moment:hover { transform: none; }
   * { transition-duration: 0.01s !important; }
+}
+
+/* ===== STORYBOOK SAFARI: flow, navigation, motion =====
+   Skazka means "fairy tale". Original silhouette illustrations (no borrowed characters):
+   a vehicle that drives the nav as you read, a sun that crosses the day, animal tracks
+   that mark each chapter, and a dusk scene that closes the page.
+   Motion never hides content: entrances are CSS-only and finish by themselves. */
+
+/* --- section rhythm after the reorder: night, then linen and sand alternating --- */
+#itineraries, .founder, .house, .faq { background: var(--bg); }
+.regions, .how, .testimonials, .enquire { background: var(--bg-2); }
+section[id] { scroll-margin-top: 72px; }
+
+/* --- animal tracks beside each chapter label --- */
+.eyebrow[data-track]::before {
+  width: 20px; height: 20px; background: currentColor;
+  -webkit-mask: var(--track) center / contain no-repeat; mask: var(--track) center / contain no-repeat;
+}
+.eyebrow[data-track="lion"]     { --track: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cellipse cx='10' cy='13.5' rx='5' ry='4'/%3E%3Ccircle cx='4.3' cy='8' r='2'/%3E%3Ccircle cx='8' cy='4.6' r='2'/%3E%3Ccircle cx='12' cy='4.6' r='2'/%3E%3Ccircle cx='15.7' cy='8' r='2'/%3E%3C/svg%3E"); }
+.eyebrow[data-track="elephant"] { --track: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Ccircle cx='10' cy='11' r='7'/%3E%3Ccircle cx='5.5' cy='4.2' r='1.6'/%3E%3Ccircle cx='10' cy='2.6' r='1.6'/%3E%3Ccircle cx='14.5' cy='4.2' r='1.6'/%3E%3C/svg%3E"); }
+.eyebrow[data-track="antelope"] { --track: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M9 2C5 6 3.5 13 6 18c2.2 0 3-3 3-16z'/%3E%3Cpath d='M11 2c4 4 5.500 11 3 16-2.200 0-3-3-3-16z'/%3E%3C/svg%3E"); }
+.eyebrow[data-track="zebra"]    { --track: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5.500 17C2 9 5.500 3 10 3s8 6 4.500 14' fill='none' stroke='black' stroke-width='3.400' stroke-linecap='round'/%3E%3C/svg%3E"); }
+.eyebrow[data-track="bird"]     { --track: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 13V2M10 13L4 6M10 13l6-7M10 13v5' fill='none' stroke='black' stroke-width='1.800' stroke-linecap='round'/%3E%3C/svg%3E"); }
+.footer-tracks { margin: 0 0 28px; font-size: 14.5px; line-height: 1.6; color: var(--ink-dim); max-width: 640px; }
+
+/* --- nav: current chapter, a vehicle that drives the page, a real menu on phones --- */
+.nav { gap: 16px; }
+.nav-links a.is-current { background-size: 100% 1px; }
+.nav-trail { position: absolute; left: var(--pad); right: var(--pad); bottom: -1px; height: 1px; pointer-events: none; }
+.nav-trail::before { content: ''; position: absolute; left: 0; bottom: 0; height: 2px; width: calc(var(--p, 0) * 100%); background: var(--accent); }
+.nav-jeep { position: absolute; bottom: 1px; left: calc(var(--p, 0) * (100% - 30px)); width: 30px; height: 17px; color: inherit; fill: currentColor; }
+.nav:not(.scrolled) .nav-trail::before { background: #F0BE8E; }
+.nav-cta-short { display: none; }
+.nav-menu { display: none; }
+.nav-menu summary { list-style: none; cursor: pointer; display: inline-flex; align-items: center; gap: 10px; padding: 10px 0 10px 8px;
+  font-family: var(--ff-body); font-size: 12.5px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; }
+.nav-menu summary::-webkit-details-marker { display: none; }
+.nav-menu-icon { width: 20px; height: 9px; border-top: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transition: transform 0.4s var(--ease), height 0.4s var(--ease); }
+.nav-menu[open] .nav-menu-icon { height: 0; border-bottom-color: transparent; }
+.nav-menu-panel {
+  position: absolute; top: 100%; left: 0; right: 0; height: calc(100vh - 100%); height: calc(100dvh - 100%);
+  overflow-y: auto; background: #1F1B17; color: #F3EDE3; padding: 28px var(--pad) 48px;
+  animation: menu-in 0.45s var(--ease) both;
+}
+@keyframes menu-in { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: none; } }
+.nav-menu-panel ol { list-style: none; counter-reset: ch; border-top: 1px solid rgba(243, 237, 227, 0.26); }
+.nav-menu-panel li { counter-increment: ch; border-bottom: 1px solid rgba(243, 237, 227, 0.26); }
+.nav-menu-panel li a { display: grid; grid-template-columns: 44px 1fr auto; align-items: baseline; padding: 15px 0;
+  font-family: var(--ff-display); font-size: 25px; line-height: 1.2; color: #FBF7F0; }
+.nav-menu-panel li a::before { content: counter(ch, decimal-leading-zero); font-family: var(--ff-body); font-size: 12.5px; font-weight: 600; letter-spacing: 0.14em; color: #D5CBBD; }
+.nav-menu-panel li a::after { content: '\2192'; font-family: var(--ff-body); font-size: 16px; color: #D5CBBD; }
+html.menu-open .concierge { display: none; }
+.nav-menu-contact { margin-top: 28px; display: grid; gap: 12px; }
+.nav-menu-contact .btn { justify-content: space-between; color: #F3EDE3; border-color: rgba(243, 237, 227, 0.6); }
+.nav-menu-contact .btn-primary { background: #F3EDE3; color: #1F1B17; border-color: #F3EDE3; }
+@media (max-width: 820px) {
+  .nav { padding-top: 12px; padding-bottom: 20px; }
+  .nav-jeep { width: 24px; height: 14px; left: calc(var(--p, 0) * (100% - 24px)); }
+  .nav-menu { display: block; }
+  .nav > .btn { padding: 10px 14px !important; margin-left: auto; }
+  .nav > .btn .arrow, .nav-cta-long { display: none; }
+  .nav-cta-short { display: inline; }
+  .nav-trail { left: 0; right: 0; }
+}
+
+/* --- hero: the strip lines up in four columns; words arrive in order --- */
+.hero-meta, .hero-ticker { display: grid; grid-template-columns: repeat(4, 1fr); justify-content: stretch; gap: 20px 40px; }
+@media (min-width: 821px) { .hero { padding-bottom: 96px; } .hero-ticker { padding-right: 0; } }
+.hero-ticker span { line-height: 1.6; }
+@media (max-width: 820px) { .hero-meta { grid-template-columns: 1fr 1fr; } .hero-ticker { grid-template-columns: 1fr; gap: 8px; } }
+@media (prefers-reduced-motion: no-preference) {
+  .hero-now, .hero-title, .hero-sub, .hero-cta, .hero-meta, .hero-ticker { animation: hero-in 1s var(--ease) both; }
+  .hero-now { animation-delay: 0.15s; } .hero-title { animation-delay: 0.28s; } .hero-sub { animation-delay: 0.42s; }
+  .hero-cta { animation-delay: 0.54s; } .hero-meta { animation-delay: 0.7s; } .hero-ticker { animation-delay: 0.8s; }
+}
+@keyframes hero-in { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+
+/* --- the day: the sun crosses a sky above the cards --- */
+.day { padding-top: clamp(72px, 8vw, 128px); }
+.sky { grid-column: 1 / -1; position: relative; height: 132px; margin-top: 20px; overflow: hidden; border-bottom: 1px solid rgba(243, 237, 227, 0.5); --x: 0.5; --y: 1; }
+.sky-arc { position: absolute; left: 8%; right: 8%; top: 14px; height: calc(200% - 28px); border: 1px dashed rgba(243, 237, 227, 0.38); border-radius: 50%; }
+.sky-sun, .sky-moon { position: absolute; border-radius: 50%; transition: left 1.8s var(--ease), bottom 1.8s var(--ease), opacity 0.8s; }
+.sky-sun { width: 22px; height: 22px; background: #F0BE8E; left: calc(8% + 84% * var(--x)); bottom: calc((100% - 14px) * var(--y)); transform: translate(-50%, 50%); }
+.sky-moon { width: 20px; height: 20px; right: 16%; top: 22px; box-shadow: inset -6px -3px 0 0 #F3EDE3; opacity: 0; }
+.sky i { position: absolute; width: 2px; height: 2px; border-radius: 50%; background: #F3EDE3; opacity: 0; transition: opacity 0.8s; }
+.sky.is-night .sky-sun { opacity: 0; }
+.sky.is-night .sky-moon { opacity: 1; }
+.sky.is-night i { opacity: 0.9; animation: twinkle 4s ease-in-out infinite; }
+.sky.is-night i:nth-of-type(2n) { animation-delay: 1.3s; } .sky.is-night i:nth-of-type(3n) { animation-delay: 2.4s; }
+@keyframes twinkle { 50% { opacity: 0.25; } }
+.sky svg { position: absolute; bottom: -1px; color: #0F0D0B; fill: currentColor; }
+.sky-label { position: absolute; bottom: 8px; font-family: var(--ff-body); font-size: 12.5px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #D5CBBD; }
+.day-family { margin-top: 36px; max-width: 640px; padding-left: 20px; border-left: 2px solid #F0BE8E; font-size: 17px; line-height: 1.7; color: var(--ink); }
+.day-family strong { font-family: var(--ff-display); font-weight: 500; font-size: 21px; display: block; margin-bottom: 4px; color: #FBF7F0; }
+.day-foot { margin-top: 28px; }
+@media (max-width: 820px) { .sky { height: 100px; } .sky-label { display: none; } .sky svg { transform: scale(0.62); transform-origin: 50% 100%; } }
+
+/* --- regions: the picture changes gently --- */
+#region-img.is-swap { animation: img-in 0.9s var(--ease); }
+@keyframes img-in { from { opacity: 0.25; } to { opacity: 1; } }
+
+/* --- the chat steps back once you start reading --- */
+#concierge-toggle-label { max-width: 220px; overflow: hidden; white-space: nowrap; transition: max-width 0.6s var(--ease), opacity 0.4s; }
+.concierge-toggle { transition: padding 0.6s var(--ease), gap 0.6s var(--ease), background 0.3s; }
+@media (min-width: 821px) {
+  .concierge.is-compact .concierge-toggle:not(:hover):not(:focus-visible) { padding: 6px; gap: 0; }
+  .concierge.is-compact .concierge-toggle:not(:hover):not(:focus-visible) #concierge-toggle-label { max-width: 0; opacity: 0; }
+}
+
+/* --- the page ends at dusk --- */
+.scene { display: block; width: 100%; height: clamp(170px, 20vw, 290px); background: #1F1B17; margin-bottom: -1px; }
+.scene .ink { color: #1F1B17; fill: currentColor; }
+.scene .birds path { fill: none; stroke: #1F1B17; stroke-width: 2.2; stroke-linecap: round; }
+@media (prefers-reduced-motion: no-preference) { .scene .birds { animation: birds 38s linear infinite; } }
+@keyframes birds { from { transform: translate(-90px, 8px); } to { transform: translate(190px, -14px); } }
+.footer { background: #1F1B17; color: #F3EDE3; padding-top: 0;
+  --ink: #F3EDE3; --ink-dim: #D5CBBD; --ink-faint: #D5CBBD; --line: rgba(243, 237, 227, 0.26); --accent: #F0BE8E; }
+.footer-wordmark { color: #FBF7F0; }
+.footer > .container { padding-top: 72px; }
+
+/* --- blocks settle into place as they arrive (transform only: nothing is ever hidden) --- */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .section-head, .how-step, .md-file, .test-card, .founder-layout > *, .form-shell, .enquire-intro, .regions-layout > * {
+      animation: settle linear both; animation-timeline: view(); animation-range: entry 0% entry 70%;
+    }
+    @keyframes settle { from { transform: translateY(40px); } to { transform: none; } }
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .nav-menu-panel, .sky i, #region-img.is-swap { animation: none !important; }
 }
   </style>
 </head>
 <body>
   <a class="skip-link" href="#how">Skip to the story</a>
-  <div class="scroll-progress" aria-hidden="true"></div>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="i-acacia" viewBox="0 0 120 100">
+        <path d="M3 41C9 22 40 13 62 15c26-3 50 8 55 24-16-5-32 0-47-2-20 5-46 0-67 4z"/>
+        <path d="M55 100c1-20-1-34-6-50l-6-12 5-1 7 13c2-6 7-11 13-17l5 2c-7 8-10 16-10 26 0 14 1 27 3 39z"/>
+      </symbol>
+      <symbol id="i-elephant" viewBox="0 0 160 110">
+        <ellipse cx="96" cy="52" rx="48" ry="30"/><circle cx="44" cy="46" r="23"/><ellipse cx="62" cy="50" rx="14" ry="21"/>
+        <path d="M24 42C11 58 11 82 16 104h10c-2-16 0-32 14-42z"/>
+        <rect x="58" y="62" width="17" height="46" rx="5"/><rect x="80" y="66" width="15" height="42" rx="5"/>
+        <rect x="110" y="66" width="15" height="42" rx="5"/><rect x="128" y="60" width="17" height="48" rx="5"/>
+        <path d="M142 38c8 12 8 26 5 40" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="i-giraffe" viewBox="0 0 120 160">
+        <ellipse cx="52" cy="92" rx="30" ry="15" transform="rotate(-8 52 92)"/>
+        <path d="M64 86L91 22l10 4-20 70z"/><path d="M89 23l23 3c5 1 5 7 0 8l-17 1z"/>
+        <path d="M93 24l-2-10M99 25v-10" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+        <rect x="27" y="96" width="6.500" height="62" rx="3"/><rect x="38" y="98" width="6.500" height="60" rx="3"/>
+        <rect x="62" y="98" width="6.500" height="60" rx="3"/><rect x="72" y="96" width="6.500" height="62" rx="3"/>
+        <path d="M23 88c-6 10-6 20-4 30" fill="none" stroke="currentColor" stroke-width="2.500" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="i-jeep" viewBox="0 0 64 36">
+        <path d="M3 27V15h9V8h32l6 7 10 2 2 10z"/><rect x="9" y="2" width="38" height="2.600" rx="1.300"/>
+        <path d="M13 4v5M43 4v5" fill="none" stroke="currentColor" stroke-width="1.600"/>
+        <circle cx="17" cy="28" r="6.500"/><circle cx="48" cy="28" r="6.500"/>
+      </symbol>
+    </defs>
+  </svg>
   <div class="noise"></div>
 
-  <nav class="nav" id="site-nav">
-    <a href="index.html" class="nav-brand">
+  <nav class="nav" id="site-nav" aria-label="Main">
+    <a href="#top" class="nav-brand">
       <span class="nav-brand-mark">s</span>
       <span>Skazka</span>
     </a>
     <div class="nav-links">
-      <a href="index.html#how">Method</a>
-      <a href="index.html#itineraries">Journeys</a>
-      <a href="index.html#regions">Regions</a>
-      <a href="index.html#founder">Kimani</a>
-      <a href="index.html#enquire">Enquire</a>
+      <a href="#day">The day</a>
+      <a href="#itineraries">Journeys</a>
+      <a href="#regions">Regions</a>
+      <a href="#founder">Kimani</a>
+      <a href="#how">Method</a>
+      <a href="#faq">Questions</a>
     </div>
-    <a href="index.html#enquire" class="btn btn-ghost" style="padding: 10px 18px;">
-      Plan a trip <span class="arrow">&rarr;</span>
+    <a href="#enquire" class="btn btn-ghost" style="padding: 10px 18px;">
+      <span class="nav-cta-long">Plan a trip</span><span class="nav-cta-short">Enquire</span> <span class="arrow">&rarr;</span>
     </a>
+    <details class="nav-menu" id="nav-menu">
+      <summary><span class="nav-menu-icon" aria-hidden="true"></span><span>Menu</span></summary>
+      <div class="nav-menu-panel">
+        <ol>
+          <li><a href="#day">A day in the field</a></li>
+          <li><a href="#itineraries">Sample journeys</a></li>
+          <li><a href="#regions">Regions</a></li>
+          <li><a href="#founder">Who leads your trip</a></li>
+          <li><a href="#how">The method</a></li>
+          <li><a href="#house-rules">House rules</a></li>
+          <li><a href="#testimonials">In their words</a></li>
+          <li><a href="#faq">Questions</a></li>
+          <li><a href="#enquire">Begin</a></li>
+        </ol>
+        <div class="nav-menu-contact">
+          <a class="btn btn-primary" href="#enquire">Plan a trip <span class="arrow">&rarr;</span></a>
+          <a class="btn" href="https://wa.me/254722503787">WhatsApp Kimani <span class="arrow">&rarr;</span></a>
+          <a class="btn" href="mailto:hello@skazka.tours">hello@skazka.tours <span class="arrow">&rarr;</span></a>
+        </div>
+      </div>
+    </details>
+    <div class="nav-trail" aria-hidden="true"><svg class="nav-jeep"><use href="#i-jeep"/></svg></div>
   </nav>
 
-  <section class="hero">
+  <section class="hero" id="top">
     <div class="hero-bg">
       <video class="hero-video" autoplay muted loop playsinline preload="metadata"
              poster="/assets/hero-poster.jpg"
@@ -2568,44 +2740,85 @@ section { padding: clamp(112px, 12vw, 192px) 0; }
     </div>
   </section>
 
-  <section class="how" id="how">
+  <section class="day" id="day" aria-labelledby="day-title">
     <div class="container">
       <div class="section-head">
         <div>
-          <div class="eyebrow">01 / The Method</div>
+          <div class="eyebrow" data-track="lion">01 / A day in the field</div>
         </div>
-        <h2 class="display title">
-          Four steps, then<br/><em class="accent">everything else is yours.</em>
+        <h2 class="display title" id="day-title">
+          The day keeps<br/><em class="accent">the sun's hours.</em>
         </h2>
       </div>
-    </div>
-    <div class="container">
-      <div class="how-steps">
-        <div class="how-step">
-          <div class="how-step-num">01</div>
-          <h3>A conversation</h3>
-          <p>We begin with a call &mdash; no form funnels, no pressure. I ask about pace, what you love, what you'd rather not do. I listen more than I speak.</p>
-          <div class="how-step-tag">Typically 45 min, by video</div>
+      <p class="day-intro">There is no typical day. But this is the rhythm most of them follow, and it is set by the light, not the clock.</p>
+
+      <div class="day-now" id="day-now">
+        <div class="day-now-clock">
+          <span class="day-now-pulse" aria-hidden="true"></span>
+          <span>In Kenya now</span>
+          <strong id="day-now-time">EAT</strong>
         </div>
-        <div class="how-step">
-          <div class="how-step-num">02</div>
-          <h3>A draft written for you</h3>
-          <p>I sketch a route by hand &mdash; regions, camps, people to meet. You get one document, clearly priced, with rationale for every choice. We iterate until it feels right.</p>
-          <div class="how-step-tag">Delivered in 3&ndash;5 days</div>
-        </div>
-        <div class="how-step">
-          <div class="how-step-num">03</div>
-          <h3>On the ground, with us</h3>
-          <p>From arrival to departure, someone from our team of twenty-five is with you. Your guide is the same person every day. We carry the logistics so you carry nothing. Our multilingual team includes Russian-speaking support.</p>
-          <div class="how-step-tag">Concierge, not operator</div>
-        </div>
-        <div class="how-step">
-          <div class="how-step-num">04</div>
-          <h3>Flexibility as principle</h3>
-          <p>Want to stay another night because the leopard cubs returned? We move the plan. The itinerary is a starting hypothesis &mdash; not a contract.</p>
-          <div class="how-step-tag">Plans shift, daily</div>
+        <div class="day-now-text" id="day-now-text" aria-live="polite">Kenya runs on East Africa Time, UTC+3, all year.</div>
+        <div class="sky" id="sky" aria-hidden="true">
+          <div class="sky-arc"></div>
+          <i style="left:12%;top:26px"></i><i style="left:27%;top:58px"></i><i style="left:41%;top:20px"></i><i style="left:58%;top:44px"></i><i style="left:69%;top:16px"></i><i style="left:91%;top:52px"></i>
+          <span class="sky-moon"></span>
+          <span class="sky-sun"></span>
+          <svg style="left:9%;width:74px;height:62px"><use href="#i-acacia"/></svg>
+          <svg style="left:22%;width:34px;height:28px"><use href="#i-acacia"/></svg>
+          <svg style="right:11%;width:58px;height:48px"><use href="#i-acacia"/></svg>
+          <svg style="right:24%;width:30px;height:40px"><use href="#i-giraffe"/></svg>
+          <span class="sky-label" style="left:0">Sunrise</span>
+          <span class="sky-label" style="right:0">Sunset</span>
         </div>
       </div>
+
+      <ol class="day-strip" id="day-strip">
+        <li class="day-moment" data-sky="tea" data-from="330">
+          <time datetime="05:30">05:30</time>
+          <span class="day-moment-now">Now</span>
+          <h3>Tea</h3>
+          <p>Brought to the tent, before first light.</p>
+        </li>
+        <li class="day-moment" data-sky="dawn" data-from="360">
+          <time datetime="06:00">06:00</time>
+          <span class="day-moment-now">Now</span>
+          <h3>Out for the dawn light</h3>
+          <p>On the move by six, while the animals are too.</p>
+        </li>
+        <li class="day-moment" data-sky="breakfast" data-from="600">
+          <time datetime="10:00">10:00</time>
+          <span class="day-moment-now">Now</span>
+          <h3>Breakfast in the bush</h3>
+          <p>Laid out wherever the morning ended up.</p>
+        </li>
+        <li class="day-moment" data-sky="midday" data-from="720">
+          <time datetime="12:00">12:00</time>
+          <span class="day-moment-now">Now</span>
+          <h3>Rest at camp</h3>
+          <p>Through the midday heat. Read, sleep, do nothing.</p>
+        </li>
+        <li class="day-moment" data-sky="afternoon" data-from="930">
+          <time datetime="15:30">15:30</time>
+          <span class="day-moment-now">Now</span>
+          <h3>Out again</h3>
+          <p>Back out as the heat breaks, until sunset.</p>
+        </li>
+        <li class="day-moment" data-sky="sunset" data-from="1120">
+          <time datetime="18:40">&asymp; 18:40</time>
+          <span class="day-moment-now">Now</span>
+          <h3>Sunset</h3>
+          <p>So close to the equator, it comes at almost the same time all year.</p>
+        </li>
+        <li class="day-moment" data-sky="night" data-from="1200">
+          <time datetime="20:00">20:00</time>
+          <span class="day-moment-now">Now</span>
+          <h3>Dinner under the stars</h3>
+          <p>And tomorrow's plan, adjusted to what today showed us.</p>
+        </li>
+      </ol>
+      <p class="day-family"><strong>With children</strong>We slow the pace, cut the driving hours, and lean into walks, camp projects and astronomy after dark. The trip becomes calmer, not less interesting.</p>
+      <p class="day-foot">Times are East Africa Time &middot; We adjust everything daily</p>
     </div>
   </section>
 
@@ -2613,7 +2826,7 @@ section { padding: clamp(112px, 12vw, 192px) 0; }
     <div class="container">
       <div class="section-head">
         <div>
-          <div class="eyebrow">02 / Sample Journeys</div>
+          <div class="eyebrow" data-track="zebra">02 / Sample Journeys</div>
         </div>
         <h2 class="display title">
           Starting points,<br/>
@@ -2733,7 +2946,7 @@ section { padding: clamp(112px, 12vw, 192px) 0; }
     <div class="container">
       <div class="section-head">
         <div>
-          <div class="eyebrow">03 / Regions</div>
+          <div class="eyebrow" data-track="elephant">03 / Regions</div>
         </div>
         <h2 class="display title">
           The country,<br/><em class="accent">in six moods.</em>
@@ -2793,81 +3006,11 @@ section { padding: clamp(112px, 12vw, 192px) 0; }
     </div>
   </section>
 
-  <section class="day" id="day" aria-labelledby="day-title">
-    <div class="container">
-      <div class="section-head">
-        <div>
-          <div class="eyebrow">04 / A day in the field</div>
-        </div>
-        <h2 class="display title" id="day-title">
-          The day keeps<br/><em class="accent">the sun's hours.</em>
-        </h2>
-      </div>
-      <p class="day-intro">There is no typical day. But this is the rhythm most of them follow, and it is set by the light, not the clock.</p>
-
-      <div class="day-now" id="day-now">
-        <div class="day-now-clock">
-          <span class="day-now-pulse" aria-hidden="true"></span>
-          <span>In Kenya now</span>
-          <strong id="day-now-time">EAT</strong>
-        </div>
-        <div class="day-now-text" id="day-now-text" aria-live="polite">Kenya runs on East Africa Time, UTC+3, all year.</div>
-        <div class="day-track" aria-hidden="true"><span class="day-track-sun" id="day-track-sun"></span></div>
-      </div>
-
-      <ol class="day-strip" id="day-strip">
-        <li class="day-moment" data-sky="tea" data-from="330">
-          <time datetime="05:30">05:30</time>
-          <span class="day-moment-now">Now</span>
-          <h3>Tea</h3>
-          <p>Brought to the tent, before first light.</p>
-        </li>
-        <li class="day-moment" data-sky="dawn" data-from="360">
-          <time datetime="06:00">06:00</time>
-          <span class="day-moment-now">Now</span>
-          <h3>Out for the dawn light</h3>
-          <p>On the move by six, while the animals are too.</p>
-        </li>
-        <li class="day-moment" data-sky="breakfast" data-from="600">
-          <time datetime="10:00">10:00</time>
-          <span class="day-moment-now">Now</span>
-          <h3>Breakfast in the bush</h3>
-          <p>Laid out wherever the morning ended up.</p>
-        </li>
-        <li class="day-moment" data-sky="midday" data-from="720">
-          <time datetime="12:00">12:00</time>
-          <span class="day-moment-now">Now</span>
-          <h3>Rest at camp</h3>
-          <p>Through the midday heat. Read, sleep, do nothing.</p>
-        </li>
-        <li class="day-moment" data-sky="afternoon" data-from="930">
-          <time datetime="15:30">15:30</time>
-          <span class="day-moment-now">Now</span>
-          <h3>Out again</h3>
-          <p>Back out as the heat breaks, until sunset.</p>
-        </li>
-        <li class="day-moment" data-sky="sunset" data-from="1120">
-          <time datetime="18:40">&asymp; 18:40</time>
-          <span class="day-moment-now">Now</span>
-          <h3>Sunset</h3>
-          <p>So close to the equator, it comes at almost the same time all year.</p>
-        </li>
-        <li class="day-moment" data-sky="night" data-from="1200">
-          <time datetime="20:00">20:00</time>
-          <span class="day-moment-now">Now</span>
-          <h3>Dinner under the stars</h3>
-          <p>And tomorrow's plan, adjusted to what today showed us.</p>
-        </li>
-      </ol>
-      <p class="day-foot">Times are East Africa Time &middot; We adjust everything daily</p>
-    </div>
-  </section>
-
   <section class="founder" id="founder">
     <div class="container">
       <div class="section-head">
         <div>
-          <div class="eyebrow">05 / Who leads your trip</div>
+          <div class="eyebrow" data-track="antelope">04 / Who leads your trip</div>
         </div>
         <h2 class="display title">
           I am<br/>
@@ -2919,11 +3062,52 @@ section { padding: clamp(112px, 12vw, 192px) 0; }
     </div>
   </section>
 
+  <section class="how" id="how">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow" data-track="bird">05 / The Method</div>
+        </div>
+        <h2 class="display title">
+          Four steps, then<br/><em class="accent">everything else is yours.</em>
+        </h2>
+      </div>
+    </div>
+    <div class="container">
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-num">01</div>
+          <h3>A conversation</h3>
+          <p>We begin with a call &mdash; no form funnels, no pressure. I ask about pace, what you love, what you'd rather not do. I listen more than I speak.</p>
+          <div class="how-step-tag">Typically 45 min, by video</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">02</div>
+          <h3>A draft written for you</h3>
+          <p>I sketch a route by hand &mdash; regions, camps, people to meet. You get one document, clearly priced, with rationale for every choice. We iterate until it feels right.</p>
+          <div class="how-step-tag">Delivered in 3&ndash;5 days</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">03</div>
+          <h3>On the ground, with us</h3>
+          <p>From arrival to departure, someone from our team of twenty-five is with you. Your guide is the same person every day. We carry the logistics so you carry nothing. Our multilingual team includes Russian-speaking support.</p>
+          <div class="how-step-tag">Concierge, not operator</div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">04</div>
+          <h3>Flexibility as principle</h3>
+          <p>Want to stay another night because the leopard cubs returned? We move the plan. The itinerary is a starting hypothesis &mdash; not a contract.</p>
+          <div class="how-step-tag">Plans shift, daily</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="house" id="house-rules" aria-labelledby="house-title">
     <div class="container">
       <div class="section-head">
         <div>
-          <div class="eyebrow">06 / House rules</div>
+          <div class="eyebrow" data-track="lion">06 / House rules</div>
         </div>
         <h2 class="display title" id="house-title">
           Seven promises,<br/><em class="accent">kept in plain text.</em>
@@ -2973,7 +3157,7 @@ section { padding: clamp(112px, 12vw, 192px) 0; }
     <div class="container">
       <div class="section-head">
         <div>
-          <div class="eyebrow">07 / In their words</div>
+          <div class="eyebrow" data-track="elephant">07 / In their words</div>
         </div>
         <h2 class="display title">
           Notes from<br/><em class="accent">former guests.</em>
@@ -3002,7 +3186,7 @@ section { padding: clamp(112px, 12vw, 192px) 0; }
     <div class="container">
       <div class="section-head">
         <div>
-          <div class="eyebrow">08 / FAQ</div>
+          <div class="eyebrow" data-track="antelope">08 / FAQ</div>
         </div>
         <h2 class="display title">
           What we're<br/><em class="accent">often asked.</em>
@@ -3129,7 +3313,7 @@ section { padding: clamp(112px, 12vw, 192px) 0; }
     <div class="container">
       <div class="enquire-layout">
         <div class="enquire-intro">
-          <div class="eyebrow" style="margin-bottom: 24px;">09 / Begin</div>
+          <div class="eyebrow" data-track="zebra" style="margin-bottom: 24px;">09 / Begin</div>
           <h2>
             Tell me<br/><em>a little.</em>
           </h2>
@@ -3281,6 +3465,27 @@ section { padding: clamp(112px, 12vw, 192px) 0; }
   </section>
 
   <footer class="footer">
+    <svg class="scene" viewBox="0 0 1440 280" preserveAspectRatio="xMidYMax slice" role="img" aria-label="Dusk on the plains: elephants, a giraffe and a safari vehicle under acacia trees">
+      <defs><linearGradient id="dusk" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#EDE6DB"/><stop offset="0.38" stop-color="#F2D6B4"/><stop offset="0.74" stop-color="#E4A06A"/><stop offset="1" stop-color="#BE6233"/>
+      </linearGradient></defs>
+      <rect width="1440" height="240" fill="url(#dusk)"/>
+      <circle cx="1010" cy="228" r="56" fill="#FCEBD3"/>
+      <path d="M0 214c160-24 300-14 460-4s300-24 460-10 360-10 520 4v40H0z" fill="#A8643E"/>
+      <g class="birds"><path d="M900 92q7-7 14 0q7-7 14 0"/><path d="M944 74q6-6 12 0q6-6 12 0"/><path d="M872 68q5-5 10 0q5-5 10 0"/></g>
+      <g class="ink">
+        <path d="M0 233c240-10 480 4 720-2s480 6 720-3v52H0z"/>
+        <use href="#i-acacia" x="70" y="104" width="180" height="132"/>
+        <use href="#i-acacia" x="320" y="178" width="78" height="57"/>
+        <use href="#i-elephant" x="462" y="158" width="114" height="78"/>
+        <use href="#i-elephant" x="588" y="195" width="60" height="41"/>
+        <use href="#i-elephant" x="660" y="167" width="100" height="69"/>
+        <use href="#i-jeep" x="834" y="204" width="58" height="33"/>
+        <use href="#i-giraffe" x="1100" y="128" width="80" height="107"/>
+        <use href="#i-acacia" x="1160" y="112" width="170" height="124"/>
+        <use href="#i-acacia" x="1352" y="190" width="62" height="45"/>
+      </g>
+    </svg>
     <div class="container">
       <div class="footer-top">
         <div>
@@ -3319,6 +3524,7 @@ section { padding: clamp(112px, 12vw, 192px) 0; }
           </ul>
         </div>
       </div>
+      <p class="footer-tracks">The marks beside each chapter are animal tracks: lion, zebra, elephant, antelope and guineafowl.</p>
       <div class="footer-bottom">
         <span>&copy; 2026 Skazka Tours Ltd. &middot; KATO Member</span>
         <span>KPSGA Silver Certified &middot; Licensed MoT Kenya</span>
@@ -3368,9 +3574,46 @@ section { padding: clamp(112px, 12vw, 192px) 0; }
     if (!nav) return;
     if (window.scrollY > 20) nav.classList.add('scrolled');
     else nav.classList.remove('scrolled');
+    // the vehicle on the nav drives as far as you have read
+    var max = document.documentElement.scrollHeight - window.innerHeight;
+    nav.style.setProperty('--p', max > 0 ? Math.min(1, window.scrollY / max).toFixed(4) : '0');
+    // the chat steps back once reading starts
+    var chat = document.querySelector('.concierge'), panel = document.getElementById('concierge-panel');
+    if (chat) chat.classList.toggle('is-compact', window.scrollY > 240 && !(panel && panel.classList.contains('open')));
   }
-  window.addEventListener('scroll', onScroll, { passive: true });
+  var ticking = false;
+  window.addEventListener('scroll', function () {
+    if (ticking) return; ticking = true;
+    requestAnimationFrame(function () { onScroll(); ticking = false; });
+  }, { passive: true });
+  window.addEventListener('resize', onScroll);
   onScroll();
+
+  // --- Phone menu: close on choosing a chapter or pressing Escape ---
+  var menu = document.getElementById('nav-menu');
+  if (menu) {
+    menu.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { menu.removeAttribute('open'); }); });
+    document.addEventListener('keydown', function (ev) { if (ev.key === 'Escape' && menu.hasAttribute('open')) { menu.removeAttribute('open'); menu.querySelector('summary').focus(); } });
+    menu.addEventListener('toggle', function () {
+      document.documentElement.style.overflow = menu.open ? 'hidden' : '';
+      document.documentElement.classList.toggle('menu-open', menu.open);
+    });
+  }
+
+  // --- Nav: underline the chapter being read ---
+  if ('IntersectionObserver' in window) {
+    var spyLinks = {};
+    document.querySelectorAll('.nav-links a').forEach(function (a) { spyLinks[a.getAttribute('href').slice(1)] = a; });
+    var spy = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        Object.keys(spyLinks).forEach(function (k) { spyLinks[k].classList.remove('is-current'); spyLinks[k].removeAttribute('aria-current'); });
+        var link = spyLinks[e.target.id];
+        if (link) { link.classList.add('is-current'); link.setAttribute('aria-current', 'true'); }
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    document.querySelectorAll('main section[id], section[id]').forEach(function (sec) { spy.observe(sec); });
+  }
 
 
 
@@ -3433,7 +3676,10 @@ section { padding: clamp(112px, 12vw, 192px) 0; }
     regionRows.forEach(function (row) { row.classList.remove('active'); row.setAttribute('aria-pressed', 'false'); });
     var target = document.querySelector('.region-row[data-region="' + i + '"]');
     if (target) { target.classList.add('active'); target.setAttribute('aria-pressed', 'true'); }
-    if (regionImg) { regionImg.src = r.img; regionImg.alt = r.alt; }
+    if (regionImg && regionImg.getAttribute('src') !== r.img) {
+      regionImg.src = r.img; regionImg.alt = r.alt;
+      regionImg.classList.remove('is-swap'); void regionImg.offsetWidth; regionImg.classList.add('is-swap');
+    }
     if (regionSub) regionSub.textContent = r.sub;
     if (regionName) regionName.textContent = r.name;
     if (regionDesc) regionDesc.textContent = r.desc;
@@ -3527,7 +3773,7 @@ section { padding: clamp(112px, 12vw, 192px) 0; }
   var dayMoments = document.querySelectorAll('.day-moment');
   var dayTime = document.getElementById('day-now-time');
   var dayText = document.getElementById('day-now-text');
-  var daySun = document.getElementById('day-track-sun');
+  var sky = document.getElementById('sky');
   var eatClock = document.getElementById('eat-clock');
   var dayStrip = document.getElementById('day-strip');
   var dayScrolled = false;
@@ -3559,11 +3805,15 @@ section { padding: clamp(112px, 12vw, 192px) 0; }
         dayScrolled = true;
       }
     }
-    if (daySun) {
-      // track runs 05:00 -> 22:00; the sun parks at the ends overnight
-      var pct = Math.max(0, Math.min(1, (m - 300) / (1320 - 300)));
-      daySun.style.setProperty('--sun', (pct * 100).toFixed(1) + '%');
-      daySun.classList.toggle('is-night', m < 360 || m >= 1140);
+    if (sky) {
+      // the sun rides the arc from about 06:15 to 18:40; the moon keeps the night
+      var t = (m - 375) / (1120 - 375);
+      var night = t < 0 || t > 1;
+      sky.classList.toggle('is-night', night);
+      if (!night) {
+        sky.style.setProperty('--x', ((1 - Math.cos(Math.PI * t)) / 2).toFixed(4));
+        sky.style.setProperty('--y', Math.sin(Math.PI * t).toFixed(4));
+      }
     }
   }
   renderDay();
@@ -3727,6 +3977,7 @@ section { padding: clamp(112px, 12vw, 192px) 0; }
   if (conciergeToggle && conciergePanel) {
     conciergeToggle.addEventListener('click', function () {
       var open = conciergePanel.classList.toggle('open');
+      onScroll();
       conciergeLabel.textContent = open ? 'Close' : 'Chat with Kimani';
       conciergeToggle.setAttribute('aria-label', open ? 'Close concierge chat' : 'Open concierge chat');
     });

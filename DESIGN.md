@@ -70,6 +70,29 @@ Researched against Aman (warm neutrals, colour only from photographs, an editori
 - **Hanken Grotesk**: body at 17/1.7; labels at 12.5px, 600, 0.14em, uppercase.
 - Sizes: hero 48-88px, section titles 36-56px, card heads 23-29px, reading passages 21-22px.
 
+## Flow, navigation and storybook motion (November 2026)
+
+Read as a parent planning a family trip. Skazka means "fairy tale", so the illustration is storybook silhouette. All drawings are original inline SVG (`#i-acacia`, `#i-elephant`, `#i-giraffe`, `#i-jeep`); no characters or art from any film or book.
+
+**Chapter order** (feel, then facts, then trust, then action)
+1. A day in the field 2. Sample journeys 3. Regions 4. Who leads your trip 5. The method 6. House rules 7. In their words 8. Questions 9. Begin
+
+The hero and chapter 1 share the night ground, so the opening reads as one act. After that, linen and sand alternate, and the page ends on a dusk scene that runs into a dark footer.
+
+**Navigation**
+- Desktop: six links; the chapter being read is underlined (IntersectionObserver, class only).
+- Phones: a `<details>` menu with all nine chapters plus WhatsApp and email. It works without JavaScript.
+- A small safari vehicle drives along the bottom edge of the nav as far as the reader has scrolled.
+- The chat collapses to a square mark once reading starts, and hides while the phone menu is open.
+
+**Motion**
+- Hero words arrive in order on load (CSS only, finishes by itself).
+- The sun crosses an arc above the day cards by the Kenya clock; at night a moon and stars take over.
+- Blocks settle 40px into place as they enter (CSS `view()` timeline, transform only; absent where unsupported).
+- Birds drift in the closing scene. Everything above stops under `prefers-reduced-motion`.
+
+**Animal tracks** mark each chapter label: lion, zebra, elephant, antelope, guineafowl (CSS masks, `data-track`).
+
 ## Layout Principles
 
 - Max content width: `1180px`
