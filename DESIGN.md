@@ -98,3 +98,10 @@ Current images are still served from Unsplash CDN and should be replaced with re
 - Replace stock images with original photography for stronger brand trust
 - Add real credentials, social proof, and business metadata once verified
 - If the site grows beyond four static locales, move this structure into a template system
+
+## Added November 2026 (inspired by human-md.ai)
+
+- **A day in the field** (`#day`): the safari day as seven sky-coloured moments. A live East Africa Time clock marks the current moment and moves a sun along a track. Without JS, every moment is still visible; only the "now" marker is missing.
+- **House rules / SKAZKA.md** (`#house-rules`): a manifesto styled as a markdown file, built only from promises made elsewhere on the page. The same text is served raw at `/skazka.md`; `/llms.txt` summarises the site for AI assistants. Keep all three in sync.
+- **Enquiry letter**: the four-step form writes a plain-English note to Kimani as it is filled in, and that note leads the email body. Clicking a sample-journey card adds it as the starting point.
+- **Motion rule**: nothing may start hidden and animate in (see the April 2026 removal of scroll reveals). Motion is decorative only and switched off under `prefers-reduced-motion`.

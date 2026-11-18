@@ -1847,9 +1847,362 @@ section {
   color: var(--accent);
 }
 
+
+/* The hidden attribute must win over component display rules (form buttons, steps) */
+[hidden] { display: none !important; }
+
+/* Long contact values must not widen the page on phones */
+.enquire-layout > * { min-width: 0; }
+.enquire-contact-row { flex-wrap: wrap; }
+.enquire-contact-row a { overflow-wrap: anywhere; }
+.footer-top > * { min-width: 0; }
+.footer-col a { overflow-wrap: anywhere; }
+
+/* ===== SKIP LINK ===== */
+.skip-link {
+  position: absolute;
+  left: 16px; top: -100px;
+  z-index: 200;
+  padding: 12px 18px;
+  background: var(--cta);
+  color: var(--on-cta);
+  font-family: var(--ff-mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+.skip-link:focus { top: 16px; }
+
+.region-row:focus-visible,
+.faq-q:focus-visible,
+.chip:focus-visible,
+.itin-card:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* ===== A DAY IN THE FIELD ===== */
+.day {
+  background: #0E1410;
+  color: #F5EFE4;
+  --ink: #F5EFE4;
+  --ink-dim: #D9D2C3;
+  --ink-faint: #A09986;
+  --accent: #E8BD6B;
+  --line: rgba(245, 239, 228, 0.18);
+}
+.day-intro {
+  color: var(--ink-dim);
+  max-width: 640px;
+  margin-top: -32px;
+  margin-bottom: 40px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+.day-now {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 8px 24px;
+  align-items: center;
+  padding: 20px 0 28px;
+  border-top: 1px solid var(--line);
+}
+.day-now-clock {
+  font-family: var(--ff-mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+}
+.day-now-clock strong {
+  font-family: var(--ff-display);
+  font-size: 28px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  text-transform: none;
+  color: var(--ink);
+}
+.day-now-pulse {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 0 rgba(232, 189, 107, 0.6);
+  animation: day-pulse 2.4s ease-out infinite;
+}
+@keyframes day-pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(232, 189, 107, 0.55); }
+  70%  { box-shadow: 0 0 0 10px rgba(232, 189, 107, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(232, 189, 107, 0); }
+}
+.day-now-text {
+  font-family: var(--ff-display);
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(18px, 2vw, 24px);
+  color: var(--ink-dim);
+}
+.day-track {
+  grid-column: 1 / -1;
+  position: relative;
+  height: 2px;
+  margin-top: 16px;
+  background: linear-gradient(90deg, #3B3A5C 0%, #E59A6B 6%, #F3D27A 30%, #F7EBC8 45%, #F3C26A 65%, #D9653B 85%, #2A3550 100%);
+  border-radius: 2px;
+}
+.day-track-sun {
+  position: absolute;
+  top: 50%;
+  left: var(--sun, 50%);
+  width: 14px; height: 14px;
+  margin: -7px 0 0 -7px;
+  border-radius: 50%;
+  background: #F7D98A;
+  box-shadow: 0 0 18px 4px rgba(247, 217, 138, 0.45);
+  transition: left 1s ease;
+}
+.day-track-sun.is-night {
+  background: #DCE3F0;
+  box-shadow: 0 0 14px 2px rgba(220, 227, 240, 0.35);
+}
+
+.day-strip {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 10px;
+}
+.day-moment {
+  --sky: #1B2A23;
+  --sky-ink: #F5EFE4;
+  position: relative;
+  min-height: 300px;
+  padding: 22px 18px 20px;
+  display: flex;
+  flex-direction: column;
+  background: var(--sky);
+  color: var(--sky-ink);
+  border: 1px solid transparent;
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.3s;
+}
+.day-moment[data-sky="tea"]       { --sky: linear-gradient(180deg, #1E2340 0%, #4B3B5E 70%, #8E5A62 100%); --sky-ink: #F5EFE4; }
+.day-moment[data-sky="dawn"]      { --sky: linear-gradient(180deg, #4B3B5E 0%, #D98868 55%, #F2C38A 100%); --sky-ink: #1A1510; }
+.day-moment[data-sky="breakfast"] { --sky: linear-gradient(180deg, #CFE0E6 0%, #F3E2B4 70%, #EBD49B 100%); --sky-ink: #1A1510; }
+.day-moment[data-sky="midday"]    { --sky: linear-gradient(180deg, #F7F1E1 0%, #F1E3BE 100%); --sky-ink: #1A1510; }
+.day-moment[data-sky="afternoon"] { --sky: linear-gradient(180deg, #EBC77E 0%, #D99A4E 100%); --sky-ink: #1A1510; }
+.day-moment[data-sky="sunset"]    { --sky: linear-gradient(180deg, #E79A5A 0%, #B9472A 55%, #4A2230 100%); --sky-ink: #FFF6EA; }
+.day-moment[data-sky="night"]     { --sky: linear-gradient(180deg, #0B1022 0%, #1A2440 100%); --sky-ink: #F5EFE4; }
+.day-moment[data-sky="night"]::before {
+  /* a few stars, drawn with gradients: decoration only */
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    radial-gradient(1px 1px at 20% 18%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 68% 12%, #fff 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 82% 34%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 40% 40%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 12% 52%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 55% 28%, #fff 50%, transparent 51%);
+  opacity: 0.7;
+  pointer-events: none;
+}
+.day-moment time {
+  font-family: var(--ff-mono);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  opacity: 0.8;
+  position: relative;
+}
+.day-moment h3 {
+  font-family: var(--ff-display);
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  margin: auto 0 10px;
+  position: relative;
+}
+.day-moment p {
+  font-size: 13.5px;
+  line-height: 1.5;
+  opacity: 0.85;
+  position: relative;
+}
+.day-moment-now {
+  display: none;
+  position: absolute;
+  top: 18px; right: 16px;
+  font-family: var(--ff-mono);
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 4px 8px;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+}
+.day-moment.is-now { border-color: #E8BD6B; transform: translateY(-8px); }
+.day-moment.is-now .day-moment-now { display: inline-block; }
+.day-foot {
+  margin-top: 28px;
+  font-family: var(--ff-mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+@media (max-width: 1100px) {
+  .day-strip {
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(220px, 62%);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 12px 2px 16px;
+    -webkit-overflow-scrolling: touch;
+  }
+  .day-moment { scroll-snap-align: start; min-height: 280px; }
+}
+@media (max-width: 600px) {
+  .day-now { grid-template-columns: 1fr; }
+  .day-strip { grid-auto-columns: 78%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .day-now-pulse { animation: none; }
+  .day-moment, .day-track-sun { transition: none; }
+  .day-moment.is-now { transform: none; }
+}
+
+/* ===== HOUSE RULES — SKAZKA.md ===== */
+.house { background: var(--bg-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.md-file {
+  max-width: 880px;
+  margin: 0 auto;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  box-shadow: 0 30px 60px -40px rgba(26, 21, 16, 0.35);
+}
+.md-file-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding: 14px 24px;
+  border-bottom: 1px solid var(--line);
+  font-family: var(--ff-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--ink-faint);
+}
+.md-file-bar strong { color: var(--ink); font-weight: 500; letter-spacing: 0.04em; }
+.md-file-bar a { color: var(--accent-2); border-bottom: 1px solid currentColor; }
+.md-file-bar a:hover { color: var(--cta); }
+.md-body {
+  padding: clamp(28px, 5vw, 56px);
+  font-family: var(--ff-mono);
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--ink-dim);
+}
+.md-body .md-quote { margin: 0 0 4px; }
+.md-body .md-quote::before { content: '> '; color: var(--accent); }
+.md-body h3 {
+  font-family: var(--ff-display);
+  font-weight: 400;
+  font-size: clamp(24px, 2.6vw, 30px);
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+  color: var(--ink);
+  margin: 40px 0 18px;
+}
+.md-body h3::before {
+  content: '## ';
+  font-family: var(--ff-mono);
+  font-size: 0.6em;
+  color: var(--accent);
+  vertical-align: 0.2em;
+}
+.md-rules { list-style: none; counter-reset: rule; }
+.md-rules li {
+  counter-increment: rule;
+  display: grid;
+  grid-template-columns: 3.2em 1fr;
+  padding: 14px 0;
+  border-bottom: 1px dashed var(--line);
+}
+.md-rules li::before {
+  content: counter(rule, decimal-leading-zero) '.';
+  color: var(--accent);
+}
+.md-rules strong {
+  display: block;
+  font-family: var(--ff-display);
+  font-weight: 500;
+  font-size: 19px;
+  letter-spacing: -0.005em;
+  color: var(--ink);
+  margin-bottom: 2px;
+}
+.md-dont { list-style: none; }
+.md-dont li { padding: 4px 0 4px 2em; text-indent: -2em; }
+.md-dont li::before { content: '- '; color: var(--accent); padding-right: 1.1em; }
+.md-sign {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+  color: var(--ink-faint);
+}
+.md-sign em {
+  display: block;
+  font-family: var(--ff-display);
+  font-size: 22px;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+
+/* ===== ENQUIRY LETTER ===== */
+.letter {
+  margin-top: 28px;
+  padding: 24px 26px 22px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  position: relative;
+  box-shadow: 0 18px 40px -32px rgba(26, 21, 16, 0.45);
+}
+.letter::before {
+  /* torn-paper hint along the top edge */
+  content: '';
+  position: absolute; left: 0; right: 0; top: -1px;
+  height: 6px;
+  background: radial-gradient(circle at 6px -2px, var(--bg-2) 5px, transparent 5.5px) 0 0 / 14px 6px repeat-x;
+}
+.letter-label {
+  font-family: var(--ff-mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+.letter-text {
+  font-family: var(--ff-display);
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--ink);
+  white-space: pre-line;
+}
+.letter-text.is-empty { color: var(--ink-faint); font-style: italic; }
+.itin-card.is-picked { border-color: var(--cta); box-shadow: 0 0 0 1px var(--cta); }
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#how">Skip to the story</a>
   <div class="noise"></div>
 
   <nav class="nav" id="site-nav">
@@ -1983,7 +2336,7 @@ section {
       </p>
 
       <div class="itineraries-grid">
-        <a href="itinerary.html" class="itin-card featured">
+        <a href="#enquire" data-journey="The Great Rift, end to end" class="itin-card featured">
           <div class="itin-img">
             <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=1400&q=80" alt="Zebra herd crossing grassland, Mara" width="1400" height="933" loading="lazy" decoding="async" />
             <div class="itin-img-tag">12 days</div>
@@ -1999,11 +2352,11 @@ section {
             <p class="itin-desc">Nairobi &rarr; Amboseli &rarr; Laikipia &rarr; Maasai Mara. A slow traverse from the shadow of Kilimanjaro to the Mara plains, with three full rest days built in.</p>
             <div class="itin-foot">
               <div class="itin-price">from $14,800<small>per person, shared</small></div>
-              <span class="itin-link">View sample &rarr;</span>
+              <span class="itin-link">Start from this &rarr;</span>
             </div>
           </div>
         </a>
-        <a href="#enquire" class="itin-card">
+        <a href="#enquire" data-journey="Samburu &amp; Laikipia" class="itin-card">
           <div class="itin-img">
             <img src="https://images.unsplash.com/photo-1534996858221-380b92700493?w=1200&q=80" alt="Reticulated giraffe, Samburu" width="1200" height="800" loading="lazy" decoding="async" />
             <div class="itin-img-tag">7 days</div>
@@ -2019,11 +2372,11 @@ section {
             <p class="itin-desc">Northern Kenya's drier country &mdash; reticulated giraffe, Grevy's zebra, and the conservancies that brought them back.</p>
             <div class="itin-foot">
               <div class="itin-price">from $9,400<small>per person, shared</small></div>
-              <span class="itin-link">View sample &rarr;</span>
+              <span class="itin-link">Start from this &rarr;</span>
             </div>
           </div>
         </a>
-        <a href="#enquire" class="itin-card">
+        <a href="#enquire" data-journey="Mara Classic, our way" class="itin-card">
           <div class="itin-img">
             <img src="https://images.unsplash.com/photo-1535941339077-2dd1c7963098?w=1200&q=80" alt="Lion at dawn, Maasai Mara" width="1200" height="800" loading="lazy" decoding="async" />
             <div class="itin-img-tag">10 days</div>
@@ -2039,11 +2392,11 @@ section {
             <p class="itin-desc">The Mara without the crowds. Private conservancies, night drives, and a rivercamp only reached by foot across a hippo bridge.</p>
             <div class="itin-foot">
               <div class="itin-price">from $12,600<small>per person, shared</small></div>
-              <span class="itin-link">View sample &rarr;</span>
+              <span class="itin-link">Start from this &rarr;</span>
             </div>
           </div>
         </a>
-        <a href="#enquire" class="itin-card">
+        <a href="#enquire" data-journey="Coast, craft &amp; bush" class="itin-card">
           <div class="itin-img">
             <img src="/assets/lamu-sunset.jpg" alt="Sunset over the Lamu archipelago" width="1400" height="1050" loading="lazy" decoding="async" />
             <div class="itin-img-tag">14 days</div>
@@ -2059,11 +2412,11 @@ section {
             <p class="itin-desc">A full sweep &mdash; bush camps in Tsavo, dhow sailing in Lamu, a tailor in Malindi. Built for couples who want the land and the ocean.</p>
             <div class="itin-foot">
               <div class="itin-price">from $16,200<small>per person, shared</small></div>
-              <span class="itin-link">View sample &rarr;</span>
+              <span class="itin-link">Start from this &rarr;</span>
             </div>
           </div>
         </a>
-        <a href="#enquire" class="itin-card">
+        <a href="#enquire" data-journey="The short sabbatical" class="itin-card">
           <div class="itin-img">
             <img src="https://images.unsplash.com/photo-1504432842672-1a79f78e4084?w=1200&q=80" alt="Hot air balloon over acacia" width="1200" height="800" loading="lazy" decoding="async" />
             <div class="itin-img-tag">5 days</div>
@@ -2079,7 +2432,7 @@ section {
             <p class="itin-desc">For guests with little time. A private conservancy in Laikipia, three guided walks, one hot-air balloon at dawn. Nothing more.</p>
             <div class="itin-foot">
               <div class="itin-price">from $6,800<small>per person, shared</small></div>
-              <span class="itin-link">View sample &rarr;</span>
+              <span class="itin-link">Start from this &rarr;</span>
             </div>
           </div>
         </a>
@@ -2100,32 +2453,32 @@ section {
 
       <div class="regions-layout">
         <div class="regions-list">
-          <div class="region-row active" data-region="0">
+          <div class="region-row active" data-region="0" role="button" tabindex="0" aria-pressed="true">
             <div class="region-num">01</div>
             <div class="region-name">Maasai Mara<small>Southwest &middot; 1,510 km&sup2;</small></div>
             <div class="region-meta">Jul&ndash;Oct best</div>
           </div>
-          <div class="region-row" data-region="1">
+          <div class="region-row" data-region="1" role="button" tabindex="0" aria-pressed="false">
             <div class="region-num">02</div>
             <div class="region-name">Laikipia<small>Central highlands &middot; 9,500 km&sup2;</small></div>
             <div class="region-meta">Year-round</div>
           </div>
-          <div class="region-row" data-region="2">
+          <div class="region-row" data-region="2" role="button" tabindex="0" aria-pressed="false">
             <div class="region-num">03</div>
             <div class="region-name">Samburu<small>Northern &middot; Ewaso Nyiro basin</small></div>
             <div class="region-meta">Jun&ndash;Mar</div>
           </div>
-          <div class="region-row" data-region="3">
+          <div class="region-row" data-region="3" role="button" tabindex="0" aria-pressed="false">
             <div class="region-num">04</div>
             <div class="region-name">Amboseli<small>South &middot; 392 km&sup2;</small></div>
             <div class="region-meta">Jun&ndash;Oct, Jan&ndash;Feb</div>
           </div>
-          <div class="region-row" data-region="4">
+          <div class="region-row" data-region="4" role="button" tabindex="0" aria-pressed="false">
             <div class="region-num">05</div>
             <div class="region-name">Lamu &amp; the coast<small>Northeast &middot; Indian Ocean</small></div>
             <div class="region-meta">Nov&ndash;Mar best</div>
           </div>
-          <div class="region-row" data-region="5">
+          <div class="region-row" data-region="5" role="button" tabindex="0" aria-pressed="false">
             <div class="region-num">06</div>
             <div class="region-name">Tsavo<small>South-central &middot; 22,000 km&sup2;</small></div>
             <div class="region-meta">Jun&ndash;Oct</div>
@@ -2151,11 +2504,81 @@ section {
     </div>
   </section>
 
+  <section class="day" id="day" aria-labelledby="day-title">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">04 / A day in the field</div>
+        </div>
+        <h2 class="display" id="day-title" style="font-size: clamp(40px, 5.5vw, 80px);">
+          The day keeps<br/><em style="color: var(--accent); font-style: italic; font-weight: 300;">the sun's hours.</em>
+        </h2>
+      </div>
+      <p class="day-intro">There is no typical day. But this is the rhythm most of them follow, and it is set by the light, not the clock.</p>
+
+      <div class="day-now" id="day-now">
+        <div class="day-now-clock">
+          <span class="day-now-pulse" aria-hidden="true"></span>
+          <span>In Kenya now</span>
+          <strong id="day-now-time">EAT</strong>
+        </div>
+        <div class="day-now-text" id="day-now-text" aria-live="polite">Kenya runs on East Africa Time, UTC+3, all year.</div>
+        <div class="day-track" aria-hidden="true"><span class="day-track-sun" id="day-track-sun"></span></div>
+      </div>
+
+      <ol class="day-strip" id="day-strip">
+        <li class="day-moment" data-sky="tea" data-from="330">
+          <time datetime="05:30">05:30</time>
+          <span class="day-moment-now">Now</span>
+          <h3>Tea</h3>
+          <p>Brought to the tent, before first light.</p>
+        </li>
+        <li class="day-moment" data-sky="dawn" data-from="360">
+          <time datetime="06:00">06:00</time>
+          <span class="day-moment-now">Now</span>
+          <h3>Out for the dawn light</h3>
+          <p>On the move by six, while the animals are too.</p>
+        </li>
+        <li class="day-moment" data-sky="breakfast" data-from="600">
+          <time datetime="10:00">10:00</time>
+          <span class="day-moment-now">Now</span>
+          <h3>Breakfast in the bush</h3>
+          <p>Laid out wherever the morning ended up.</p>
+        </li>
+        <li class="day-moment" data-sky="midday" data-from="720">
+          <time datetime="12:00">12:00</time>
+          <span class="day-moment-now">Now</span>
+          <h3>Rest at camp</h3>
+          <p>Through the midday heat. Read, sleep, do nothing.</p>
+        </li>
+        <li class="day-moment" data-sky="afternoon" data-from="930">
+          <time datetime="15:30">15:30</time>
+          <span class="day-moment-now">Now</span>
+          <h3>Out again</h3>
+          <p>Back out as the heat breaks, until sunset.</p>
+        </li>
+        <li class="day-moment" data-sky="sunset" data-from="1120">
+          <time datetime="18:40">&asymp; 18:40</time>
+          <span class="day-moment-now">Now</span>
+          <h3>Sunset</h3>
+          <p>So close to the equator, it comes at almost the same time all year.</p>
+        </li>
+        <li class="day-moment" data-sky="night" data-from="1200">
+          <time datetime="20:00">20:00</time>
+          <span class="day-moment-now">Now</span>
+          <h3>Dinner under the stars</h3>
+          <p>And tomorrow's plan, adjusted to what today showed us.</p>
+        </li>
+      </ol>
+      <p class="day-foot">Times are East Africa Time &middot; We adjust everything daily</p>
+    </div>
+  </section>
+
   <section class="founder" id="founder">
     <div class="container">
       <div class="section-head">
         <div>
-          <div class="eyebrow">04 / Who leads your trip</div>
+          <div class="eyebrow">05 / Who leads your trip</div>
         </div>
         <h2 class="display" style="font-size: clamp(40px, 5.5vw, 80px);">
           I am<br/>
@@ -2207,11 +2630,61 @@ section {
     </div>
   </section>
 
+  <section class="house" id="house-rules" aria-labelledby="house-title">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">06 / House rules</div>
+        </div>
+        <h2 class="display" id="house-title" style="font-size: clamp(40px, 5.5vw, 80px);">
+          Seven promises,<br/><em style="color: var(--accent); font-style: italic; font-weight: 300;">kept in plain text.</em>
+        </h2>
+      </div>
+
+      <article class="md-file">
+        <div class="md-file-bar">
+          <strong>SKAZKA.md</strong>
+          <span>Nairobi &middot; last touched November 2026</span>
+          <a href="/skazka.md">Read as plain text &#8599;</a>
+        </div>
+        <div class="md-body">
+          <p class="md-quote">the house rules. the promises we keep on every trip.</p>
+          <p class="md-quote">plans shift daily. these don't.</p>
+
+          <h3>the rules</h3>
+          <ol class="md-rules">
+            <li><div><strong>One guide, the whole trip.</strong>The same person every day, from the first airport door to the last goodbye. You will know who it is before you arrive.</div></li>
+            <li><div><strong>Small parties only.</strong>Two, four or six of you. One vehicle, one guide, one chef. We do not pool strangers. Ever.</div></li>
+            <li><div><strong>The itinerary is a hypothesis.</strong>Not a contract. If the leopard cubs come back, we stay another night.</div></li>
+            <li><div><strong>Route around the storm.</strong>If a storm cuts a road, we find another way instead of cancelling a day. Redundancy on vehicles, power and water.</div></li>
+            <li><div><strong>Explain the land.</strong>How the Maasai built their enkaji to breathe. How the railway laid in 1899 redrew the migrations you will see.</div></li>
+            <li><div><strong>Leave room to do nothing.</strong>Rest days are built in. Many trips finish in Lamu with three days of doing very little.</div></li>
+            <li><div><strong>Every enquiry, read personally.</strong>No sales team between us. A reply within two working days.</div></li>
+          </ol>
+
+          <h3>things we don't do</h3>
+          <ul class="md-dont">
+            <li>sell fixed packages</li>
+            <li>hand you between a dozen vendors</li>
+            <li>put your party in a vehicle with strangers</li>
+            <li>cancel a day because a road washed out</li>
+            <li>send a plan without a price and a reason for every choice</li>
+          </ul>
+
+          <div class="md-sign">
+            <em>&mdash; Kimani</em>
+            Nairobi. If one of these is ever broken on your trip, tell me.
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
   <section class="testimonials" id="testimonials">
     <div class="container">
       <div class="section-head">
         <div>
-          <div class="eyebrow">05 / In their words</div>
+          <div class="eyebrow">07 / In their words</div>
         </div>
         <h2 class="display" style="font-size: clamp(40px, 5.5vw, 80px);">
           Notes from<br/><em style="color: var(--accent); font-style: italic; font-weight: 300;">former guests.</em>
@@ -2240,7 +2713,7 @@ section {
     <div class="container">
       <div class="section-head">
         <div>
-          <div class="eyebrow">06 / FAQ</div>
+          <div class="eyebrow">08 / FAQ</div>
         </div>
         <h2 class="display" style="font-size: clamp(40px, 5.5vw, 80px);">
           What we're<br/><em style="color: var(--accent); font-style: italic; font-weight: 300;">often asked.</em>
@@ -2248,7 +2721,7 @@ section {
       </div>
       <div class="faq-list" id="faq-list">
         <div class="faq-item open" data-faq="0">
-          <div class="faq-q">
+          <div class="faq-q" role="button" tabindex="0" aria-expanded="true">
             <div class="faq-num">01</div>
             <div class="faq-q-text">How is Skazka different from a regular safari operator?</div>
             <div class="faq-toggle">+</div>
@@ -2262,7 +2735,7 @@ section {
           </div>
         </div>
         <div class="faq-item" data-faq="1">
-          <div class="faq-q">
+          <div class="faq-q" role="button" tabindex="0" aria-expanded="false">
             <div class="faq-num">02</div>
             <div class="faq-q-text">Who actually leads the trip day-to-day?</div>
             <div class="faq-toggle">+</div>
@@ -2276,7 +2749,7 @@ section {
           </div>
         </div>
         <div class="faq-item" data-faq="2">
-          <div class="faq-q">
+          <div class="faq-q" role="button" tabindex="0" aria-expanded="false">
             <div class="faq-num">03</div>
             <div class="faq-q-text">What does 'engineer's approach' actually mean in practice?</div>
             <div class="faq-toggle">+</div>
@@ -2290,7 +2763,7 @@ section {
           </div>
         </div>
         <div class="faq-item" data-faq="3">
-          <div class="faq-q">
+          <div class="faq-q" role="button" tabindex="0" aria-expanded="false">
             <div class="faq-num">04</div>
             <div class="faq-q-text">Group size and privacy?</div>
             <div class="faq-toggle">+</div>
@@ -2304,7 +2777,7 @@ section {
           </div>
         </div>
         <div class="faq-item" data-faq="4">
-          <div class="faq-q">
+          <div class="faq-q" role="button" tabindex="0" aria-expanded="false">
             <div class="faq-num">05</div>
             <div class="faq-q-text">What is included in the price?</div>
             <div class="faq-toggle">+</div>
@@ -2318,7 +2791,7 @@ section {
           </div>
         </div>
         <div class="faq-item" data-faq="5">
-          <div class="faq-q">
+          <div class="faq-q" role="button" tabindex="0" aria-expanded="false">
             <div class="faq-num">06</div>
             <div class="faq-q-text">Can plans change mid-trip?</div>
             <div class="faq-toggle">+</div>
@@ -2332,7 +2805,7 @@ section {
           </div>
         </div>
         <div class="faq-item" data-faq="6">
-          <div class="faq-q">
+          <div class="faq-q" role="button" tabindex="0" aria-expanded="false">
             <div class="faq-num">07</div>
             <div class="faq-q-text">When should I book?</div>
             <div class="faq-toggle">+</div>
@@ -2346,7 +2819,7 @@ section {
           </div>
         </div>
         <div class="faq-item" data-faq="7">
-          <div class="faq-q">
+          <div class="faq-q" role="button" tabindex="0" aria-expanded="false">
             <div class="faq-num">08</div>
             <div class="faq-q-text">What about children?</div>
             <div class="faq-toggle">+</div>
@@ -2367,7 +2840,7 @@ section {
     <div class="container">
       <div class="enquire-layout">
         <div class="enquire-intro">
-          <div class="eyebrow" style="margin-bottom: 24px;">07 / Begin</div>
+          <div class="eyebrow" style="margin-bottom: 24px;">09 / Begin</div>
           <h2>
             Tell me<br/><em>a little.</em>
           </h2>
@@ -2382,6 +2855,10 @@ section {
             <div class="enquire-contact-row">
               <span>WhatsApp &middot; EAT</span>
               <span><a href="https://wa.me/254722503787">+254 722 503 787</a></span>
+            </div>
+            <div class="enquire-contact-row">
+              <span>Nairobi time now</span>
+              <span id="eat-clock">EAT &middot; UTC+3</span>
             </div>
             <div class="enquire-contact-row">
               <span>Office</span>
@@ -2415,10 +2892,10 @@ section {
               <div class="field">
                 <label>Flexibility</label>
                 <div class="chip-group" data-chip-group="flexible" data-chip-mode="single">
-                  <button type="button" class="chip" data-value="Firm">Firm</button>
-                  <button type="button" class="chip" data-value="Within a week">Within a week</button>
-                  <button type="button" class="chip" data-value="Within a month">Within a month</button>
-                  <button type="button" class="chip" data-value="Whenever's best">Whenever's best</button>
+                  <button type="button" class="chip" aria-pressed="false" data-value="Firm">Firm</button>
+                  <button type="button" class="chip" aria-pressed="false" data-value="Within a week">Within a week</button>
+                  <button type="button" class="chip" aria-pressed="false" data-value="Within a month">Within a month</button>
+                  <button type="button" class="chip" aria-pressed="false" data-value="Whenever's best">Whenever's best</button>
                 </div>
                 <input type="hidden" name="flexible" id="f-flexible" />
               </div>
@@ -2430,10 +2907,10 @@ section {
               <div class="field">
                 <label>Group type</label>
                 <div class="chip-group" data-chip-group="group" data-chip-mode="single">
-                  <button type="button" class="chip" data-value="Couple">Couple</button>
-                  <button type="button" class="chip" data-value="Family">Family</button>
-                  <button type="button" class="chip" data-value="Friends">Friends</button>
-                  <button type="button" class="chip" data-value="Solo traveler">Solo traveler</button>
+                  <button type="button" class="chip" aria-pressed="false" data-value="Couple">Couple</button>
+                  <button type="button" class="chip" aria-pressed="false" data-value="Family">Family</button>
+                  <button type="button" class="chip" aria-pressed="false" data-value="Friends">Friends</button>
+                  <button type="button" class="chip" aria-pressed="false" data-value="Solo traveler">Solo traveler</button>
                 </div>
                 <input type="hidden" name="group" id="f-group" />
               </div>
@@ -2449,25 +2926,25 @@ section {
               <div class="field">
                 <label>Pick as many as feel right</label>
                 <div class="chip-group" data-chip-group="interests" data-chip-mode="multi">
-                  <button type="button" class="chip" data-value="Big cats">Big cats</button>
-                  <button type="button" class="chip" data-value="Walking safaris">Walking safaris</button>
-                  <button type="button" class="chip" data-value="Coastal finish">Coastal finish</button>
-                  <button type="button" class="chip" data-value="Conservation">Conservation</button>
-                  <button type="button" class="chip" data-value="Cultural visits">Cultural visits</button>
-                  <button type="button" class="chip" data-value="Photography">Photography</button>
-                  <button type="button" class="chip" data-value="Birding">Birding</button>
-                  <button type="button" class="chip" data-value="Hot-air balloon">Hot-air balloon</button>
-                  <button type="button" class="chip" data-value="Rest & spa">Rest &amp; spa</button>
-                  <button type="button" class="chip" data-value="Engineering history">Engineering history</button>
+                  <button type="button" class="chip" aria-pressed="false" data-value="Big cats">Big cats</button>
+                  <button type="button" class="chip" aria-pressed="false" data-value="Walking safaris">Walking safaris</button>
+                  <button type="button" class="chip" aria-pressed="false" data-value="Coastal finish">Coastal finish</button>
+                  <button type="button" class="chip" aria-pressed="false" data-value="Conservation">Conservation</button>
+                  <button type="button" class="chip" aria-pressed="false" data-value="Cultural visits">Cultural visits</button>
+                  <button type="button" class="chip" aria-pressed="false" data-value="Photography">Photography</button>
+                  <button type="button" class="chip" aria-pressed="false" data-value="Birding">Birding</button>
+                  <button type="button" class="chip" aria-pressed="false" data-value="Hot-air balloon">Hot-air balloon</button>
+                  <button type="button" class="chip" aria-pressed="false" data-value="Rest & spa">Rest &amp; spa</button>
+                  <button type="button" class="chip" aria-pressed="false" data-value="Engineering history">Engineering history</button>
                 </div>
                 <input type="hidden" name="interests" id="f-interests" />
               </div>
               <div class="field">
                 <label>Preferred pace</label>
                 <div class="chip-group" data-chip-group="pace" data-chip-mode="single">
-                  <button type="button" class="chip" data-value="Slower — fewer moves">Slower &mdash; fewer moves</button>
-                  <button type="button" class="chip" data-value="Balanced">Balanced</button>
-                  <button type="button" class="chip" data-value="Fuller — see more">Fuller &mdash; see more</button>
+                  <button type="button" class="chip" aria-pressed="false" data-value="Slower — fewer moves">Slower &mdash; fewer moves</button>
+                  <button type="button" class="chip" aria-pressed="false" data-value="Balanced">Balanced</button>
+                  <button type="button" class="chip" aria-pressed="false" data-value="Fuller — see more">Fuller &mdash; see more</button>
                 </div>
                 <input type="hidden" name="pace" id="f-pace" />
               </div>
@@ -2488,6 +2965,11 @@ section {
                 <label for="f-note">Anything else I should know? (optional)</label>
                 <input id="f-note" name="note" type="text" placeholder="Dietary, celebrations, things to avoid&hellip;" />
               </div>
+            </div>
+
+            <div class="letter" id="letter">
+              <div class="letter-label"><span>Your note to Kimani, so far</span><span id="letter-count"></span></div>
+              <p class="letter-text is-empty" id="letter-text" aria-live="polite">Dear Kimani, &hellip; your answers will turn into a short letter here.</p>
             </div>
 
             <div class="form-nav">
@@ -2522,7 +3004,7 @@ section {
         <div class="footer-col">
           <h5>Journeys</h5>
           <ul>
-            <li><a href="itinerary.html">The Great Rift</a></li>
+            <li><a href="#itineraries">The Great Rift</a></li>
             <li><a href="#itineraries">Samburu &amp; Laikipia</a></li>
             <li><a href="#itineraries">Mara Classic</a></li>
             <li><a href="#itineraries">Coast, Craft &amp; Bush</a></li>
@@ -2534,6 +3016,7 @@ section {
             <li><a href="#how">Our method</a></li>
             <li><a href="#founder">About Kimani</a></li>
             <li><a href="#testimonials">Guest letters</a></li>
+            <li><a href="#house-rules">House rules</a></li>
             <li><a href="#faq">FAQ</a></li>
           </ul>
         </div>
@@ -2658,9 +3141,9 @@ section {
   function showRegion(i) {
     var r = REGIONS[i];
     if (!r) return;
-    regionRows.forEach(function (row) { row.classList.remove('active'); });
+    regionRows.forEach(function (row) { row.classList.remove('active'); row.setAttribute('aria-pressed', 'false'); });
     var target = document.querySelector('.region-row[data-region="' + i + '"]');
-    if (target) target.classList.add('active');
+    if (target) { target.classList.add('active'); target.setAttribute('aria-pressed', 'true'); }
     if (regionImg) { regionImg.src = r.img; regionImg.alt = r.alt; }
     if (regionSub) regionSub.textContent = r.sub;
     if (regionName) regionName.textContent = r.name;
@@ -2675,14 +3158,29 @@ section {
     var i = parseInt(row.getAttribute('data-region'), 10);
     row.addEventListener('mouseenter', function () { showRegion(i); });
     row.addEventListener('click', function () { showRegion(i); });
+    row.addEventListener('keydown', function (ev) {
+      if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); showRegion(i); }
+    });
   });
 
   // --- FAQ accordion ---
-  document.querySelectorAll('.faq-item').forEach(function (item) {
+  var faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach(function (item) {
+    var q = item.querySelector('.faq-q');
     item.addEventListener('click', function () {
       var isOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item').forEach(function (f) { f.classList.remove('open'); });
-      if (!isOpen) item.classList.add('open');
+      faqItems.forEach(function (f) {
+        f.classList.remove('open');
+        var fq = f.querySelector('.faq-q');
+        if (fq) fq.setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+        if (q) q.setAttribute('aria-expanded', 'true');
+      }
+    });
+    if (q) q.addEventListener('keydown', function (ev) {
+      if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); item.click(); }
     });
   });
 
@@ -2697,16 +3195,150 @@ section {
         ev.preventDefault();
         var val = chip.getAttribute('data-value');
         if (mode === 'single') {
-          group.querySelectorAll('.chip').forEach(function (c) { c.classList.remove('selected'); });
-          chip.classList.add('selected');
-          selected = [val];
+          var wasOn = chip.classList.contains('selected');
+          group.querySelectorAll('.chip').forEach(function (c) {
+            c.classList.remove('selected');
+            c.setAttribute('aria-pressed', 'false');
+          });
+          // tapping the chosen chip again clears it
+          if (wasOn) { selected = []; }
+          else { chip.classList.add('selected'); chip.setAttribute('aria-pressed', 'true'); selected = [val]; }
         } else {
-          chip.classList.toggle('selected');
+          var on = chip.classList.toggle('selected');
+          chip.setAttribute('aria-pressed', on ? 'true' : 'false');
           var idx = selected.indexOf(val);
           if (idx > -1) selected.splice(idx, 1); else selected.push(val);
         }
         if (hidden) hidden.value = selected.join(', ');
+        renderLetter();
       });
+    });
+  });
+
+  // --- East Africa Time (UTC+3, no daylight saving) ---
+  function eatMinutes() {
+    var d = new Date();
+    return (d.getUTCHours() * 60 + d.getUTCMinutes() + 180) % 1440;
+  }
+  function fmt(m) {
+    var h = Math.floor(m / 60), mm = m % 60;
+    return (h < 10 ? '0' : '') + h + ':' + (mm < 10 ? '0' : '') + mm;
+  }
+
+  // --- A day in the field: what the camp is doing right now ---
+  var NOW_LINES = {
+    tea: 'Tea is going round the tents. Nobody is quite awake.',
+    dawn: 'Out for the dawn light. The first drive of the day is on.',
+    breakfast: 'Breakfast in the bush, somewhere out on the plains.',
+    midday: 'Midday heat. Camp is quiet; most guests are resting.',
+    afternoon: 'Out again. The afternoon drive runs until sunset.',
+    sunset: 'The sun is going down over the plains.',
+    night: 'Dinner under the stars, and tomorrow is being planned.'
+  };
+  var dayMoments = document.querySelectorAll('.day-moment');
+  var dayTime = document.getElementById('day-now-time');
+  var dayText = document.getElementById('day-now-text');
+  var daySun = document.getElementById('day-track-sun');
+  var eatClock = document.getElementById('eat-clock');
+  var dayStrip = document.getElementById('day-strip');
+  var dayScrolled = false;
+  function renderDay() {
+    var m = eatMinutes();
+    if (dayTime) dayTime.textContent = fmt(m);
+    if (eatClock) eatClock.textContent = fmt(m) + ' \u00b7 EAT, UTC+3';
+    var current = null;
+    dayMoments.forEach(function (el) {
+      if (m >= parseInt(el.getAttribute('data-from'), 10)) current = el;
+      el.classList.remove('is-now');
+    });
+    var asleep = !current || m >= 1290; // before 05:30 or after 21:30
+    if (asleep) {
+      if (dayText) dayText.textContent = 'The camp is asleep. Tea comes round at 05:30.';
+    } else {
+      current.classList.add('is-now');
+      if (dayText) dayText.textContent = NOW_LINES[current.getAttribute('data-sky')] || '';
+      // on narrow screens, bring the current moment into the strip's view once
+      if (!dayScrolled && dayStrip && dayStrip.scrollWidth > dayStrip.clientWidth) {
+        dayStrip.scrollLeft += current.getBoundingClientRect().left - dayStrip.getBoundingClientRect().left - 2;
+        dayScrolled = true;
+      }
+    }
+    if (daySun) {
+      // track runs 05:00 -> 22:00; the sun parks at the ends overnight
+      var pct = Math.max(0, Math.min(1, (m - 300) / (1320 - 300)));
+      daySun.style.setProperty('--sun', (pct * 100).toFixed(1) + '%');
+      daySun.classList.toggle('is-night', m < 360 || m >= 1140);
+    }
+  }
+  renderDay();
+  setInterval(renderDay, 30000);
+
+  // --- The enquiry note that writes itself ---
+  var picked = { journey: '' };
+  var letterText = document.getElementById('letter-text');
+  function val(id) { var el = document.getElementById(id); return el ? el.value.trim() : ''; }
+  function listJoin(items) {
+    if (items.length < 2) return items.join('');
+    return items.slice(0, -1).join(', ') + ' and ' + items[items.length - 1];
+  }
+  function composeLetter() {
+    var group = val('f-group'), n = parseInt(val('f-travelers'), 10) || 0;
+    var dates = val('f-dates'), flex = val('f-flexible');
+    var interests = val('f-interests'), pace = val('f-pace');
+    var name = val('f-name'), note = val('f-note');
+    var solo = group === 'Solo traveler' || (!group && n === 1);
+    var We = solo ? 'I' : 'We', we = solo ? 'I' : 'we', us = solo ? 'me' : 'us';
+    var lines = [];
+
+    var who = '';
+    if (group === 'Couple') who = "We're a couple";
+    else if (group === 'Family') who = "We're a family" + (n > 1 ? ' of ' + n : '');
+    else if (group === 'Friends') who = "We're " + (n > 1 ? n + ' friends' : 'a group of friends');
+    else if (solo) who = "I'm travelling on my own";
+
+    var when = '';
+    if (dates) when = 'hoping to come ' + dates.replace(/^(late|early|mid|end|around|in|sometime|next|this|any|maybe)\b/i, function (x) { return x.toLowerCase(); });
+    var flexPart = { 'Firm': ', and the dates are firm', 'Within a week': ', give or take a week', 'Within a month': ', give or take a month', "Whenever's best": '' }[flex];
+    if (flex === "Whenever's best") when = dates ? when + ', or whenever you think is best' : 'happy to come whenever you think is best';
+    else if (when && flexPart) when += flexPart;
+
+    if (who && when) lines.push(who + ', ' + when + '.');
+    else if (who) lines.push(who + '.');
+    else if (when) lines.push((solo ? "I'm " : "We're ") + when + '.');
+
+    if (picked.journey) lines.push('\u201c' + picked.journey + '\u201d looked like a good starting point.');
+    if (interests) lines.push(We + ' love ' + listJoin(interests.split(', ').map(function (x) { return x.toLowerCase(); })) + '.');
+    if (pace) lines.push({
+      'Slower \u2014 fewer moves': 'A slower pace suits ' + us + ', with fewer moves.',
+      'Balanced': 'A balanced pace suits ' + us + '.',
+      'Fuller \u2014 see more': We + "'d like to see as much as " + we + ' can.'
+    }[pace] || '');
+    if (note) lines.push('Also: ' + note.replace(/[.\s]+$/, '').replace(/^[A-Z](?=[a-z])/, function (c) { return c.toLowerCase(); }) + '.');
+
+    if (!lines.filter(Boolean).length && !name) return '';
+    return 'Dear Kimani,\n\n' + lines.filter(Boolean).join(' ') + '\n\n\u2014 ' + (name || '');
+  }
+  function renderLetter() {
+    if (!letterText) return;
+    var text = composeLetter();
+    if (text) {
+      letterText.textContent = text;
+      letterText.classList.remove('is-empty');
+    } else {
+      letterText.textContent = 'Dear Kimani, \u2026 your answers will turn into a short letter here.';
+      letterText.classList.add('is-empty');
+    }
+  }
+  ['f-dates', 'f-travelers', 'f-name', 'f-note'].forEach(function (id) {
+    var el = document.getElementById(id);
+    if (el) el.addEventListener('input', renderLetter);
+  });
+  document.querySelectorAll('.itin-card[data-journey]').forEach(function (card) {
+    card.addEventListener('click', function () {
+      picked.journey = card.getAttribute('data-journey');
+      document.querySelectorAll('.itin-card').forEach(function (c) { c.classList.remove('is-picked'); });
+      card.classList.add('is-picked');
+      renderLetter();
     });
   });
 
@@ -2763,7 +3395,12 @@ section {
       var note = get('f-note');
 
       var subject = 'Trip enquiry \u2014 ' + (name || 'new guest');
+      var letter = composeLetter();
       var bodyLines = [
+        letter,
+        '',
+        '\u2014 the details \u2014',
+        'Starting point: ' + (picked.journey || '\u2014'),
         'Dates: ' + dates + (flexible ? ' (' + flexible + ')' : ''),
         'Group: ' + group + (travelers ? ' \u00b7 ' + travelers + ' travellers' : ''),
         'Interests: ' + interests,
