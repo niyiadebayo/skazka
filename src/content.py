@@ -1,5 +1,5 @@
 # Content for the Skazka site. build.py turns this into pages and structured data.
-# Text may contain HTML entities and <em> (rendered without italics).
+# Text may contain HTML entities and  (rendered without italics).
 
 FAQ = [('How is Skazka different from a regular safari operator?',
   "Most operators sell fixed packages and hand you off between a dozen vendors. We run one team &mdash; twenty-five people I've trained personally &mdash; and "
@@ -37,7 +37,7 @@ FAQ = [('How is Skazka different from a regular safari operator?',
   'the coast are best from November to March.')]
 
 JOURNEYS = [{'key': 'Mara Classic, our way',
-  'title': 'Mara Classic, <em>our way</em>',
+  'title': 'Mara Classic, our way',
   'desc': 'The Mara without the crowds. Private conservancies, night drives, and a rivercamp only reached by foot across a hippo bridge.',
   'days': 10,
   'price': '$12,600',
@@ -47,7 +47,7 @@ JOURNEYS = [{'key': 'Mara Classic, our way',
   'h': 933,
   'stops': ['Private conservancies', 'The river camp']},
  {'key': 'Coast, craft &amp; bush',
-  'title': 'Coast, craft, <em>&amp; bush</em>',
+  'title': 'Coast, craft, &amp; bush',
   'desc': 'A full sweep &mdash; bush camps in Tsavo, dhow sailing in Lamu, a tailor in Malindi. Built for couples who want the land and the ocean.',
   'days': 14,
   'price': '$16,200',
@@ -57,7 +57,7 @@ JOURNEYS = [{'key': 'Mara Classic, our way',
   'h': 1050,
   'stops': ['Tsavo', 'Lamu', 'Malindi']},
  {'key': 'The short sabbatical',
-  'title': 'The short <em>sabbatical</em>',
+  'title': 'The short sabbatical',
   'desc': 'For guests with little time. A private conservancy in Laikipia, three guided walks, one hot-air balloon at dawn. Nothing more.',
   'days': 5,
   'price': '$6,800',

@@ -23,7 +23,7 @@ python3 build.py     # after any change in src/
 - **Structured data per page**, generated from `content.py`: the agency on the home page, the three journeys on `/journeys/`, the FAQ on `/questions/`, Kimani on `/guides/`, breadcrumbs on every inner page.
 - `src/` and `build.py` are listed in `.assetsignore`, so they are not published.
 
-**No italics, anywhere.** `<em>` stays in the markup for meaning but renders upright; the font request no longer loads italic styles. Headlines carry no visual emphasis.
+**No italics, anywhere.** No italic styles, no italic fonts requested, and no `<em>`, `<i>` or `<cite>` tags in the markup, so nothing slants even in reader mode or without the stylesheet. Do not add them back. Headlines carry no visual emphasis.
 
 **Guides and languages.** `content.py` lists five people. Kimani and Elena are real. The Japanese-, Korean- and Spanish-speaking guides are placeholders (`placeholder=True`): their cards say "Profile to come" and carry no invented names. The hero and footer list all six languages because that was asked for; the structured data and `llms.txt` still list only English, Swahili and Russian, and should stay that way until those guides exist. Parts of this document below describe the earlier single-page site.
 

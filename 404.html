@@ -30,7 +30,6 @@ main { flex: 1; width: 100%; max-width: 1240px; margin: 0 auto; padding: clamp(4
 .eyebrow::before { content: ''; width: 20px; height: 20px; background: currentColor;
   -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cellipse cx='10' cy='13.5' rx='5' ry='4'/%3E%3Ccircle cx='4.3' cy='8' r='2'/%3E%3Ccircle cx='8' cy='4.6' r='2'/%3E%3Ccircle cx='12' cy='4.6' r='2'/%3E%3Ccircle cx='15.7' cy='8' r='2'/%3E%3C/svg%3E") center / contain no-repeat; mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cellipse cx='10' cy='13.5' rx='5' ry='4'/%3E%3Ccircle cx='4.3' cy='8' r='2'/%3E%3Ccircle cx='8' cy='4.6' r='2'/%3E%3Ccircle cx='12' cy='4.6' r='2'/%3E%3Ccircle cx='15.7' cy='8' r='2'/%3E%3C/svg%3E") center / contain no-repeat; }
 h1 { margin: 28px 0 24px; font-family: var(--ff-display); font-weight: 400; font-size: clamp(44px, 6.2vw, 88px); line-height: 1.02; letter-spacing: -0.018em; text-wrap: balance; }
-h1 em { font-style: normal; }
 .lede { max-width: 46ch; font-size: 18px; }
 .ways { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 40px; }
 .btn { display: inline-flex; align-items: center; gap: 14px; padding: 18px 32px; border: 1px solid var(--line-2); color: var(--ink);
@@ -93,7 +92,7 @@ h1 em { font-style: normal; }
 
   <main>
     <p class="eyebrow">Page not found</p>
-    <h1>The trail goes <em>cold here.</em></h1>
+    <h1>The trail goes cold here.</h1>
     <p class="lede">This page isn't on the map. The tracks lead back this way.</p>
     <div class="ways">
       <a class="btn btn-primary" href="/">Back to the start <span class="arrow" aria-hidden="true">&rarr;</span></a>

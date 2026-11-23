@@ -1867,7 +1867,7 @@ section {
   border-top: 1px solid var(--line);
   color: var(--ink-faint);
 }
-.md-sign em {
+.md-sign .md-sign-name {
   display: block;
   font-family: var(--ff-display);
   font-size: 22px;
@@ -1998,7 +1998,7 @@ section { padding: clamp(112px, 12vw, 192px) 0; }
 .test-card .quote-mark { font-family: var(--ff-display); font-weight: 400; font-size: 64px; color: var(--accent); }
 .letter-text { font-family: var(--ff-read); font-weight: 400; font-size: 21px; line-height: 1.55; color: var(--ink); }
 .letter-text.is-empty { color: var(--ink-dim); }
-.md-sign em { font-family: var(--ff-display); font-style: normal; font-weight: 400; font-size: 27px; color: var(--ink); }
+.md-sign .md-sign-name { font-family: var(--ff-display); font-style: normal; font-weight: 400; font-size: 27px; color: var(--ink); }
 .field input, .field textarea, .field select { font-family: var(--ff-display); font-weight: 400; font-size: 24px; color: var(--ink); border-bottom-color: var(--line-2); }
 .field input:focus { border-bottom-color: var(--ink); outline: none; box-shadow: 0 1px 0 0 var(--ink); }
 .field input::placeholder { font-style: normal; color: #6E655A; }
@@ -2286,11 +2286,11 @@ html.menu-open .concierge { display: none; }
 .sky-sun, .sky-moon { position: absolute; border-radius: 50%; transition: left 1.8s var(--ease), bottom 1.8s var(--ease), opacity 0.8s; }
 .sky-sun { width: 22px; height: 22px; background: #F0BE8E; left: calc(8% + 84% * var(--x)); bottom: calc((100% - 14px) * var(--y)); transform: translate(-50%, 50%); }
 .sky-moon { width: 20px; height: 20px; right: 16%; top: 22px; box-shadow: inset -6px -3px 0 0 #F3EDE3; opacity: 0; }
-.sky i { position: absolute; width: 2px; height: 2px; border-radius: 50%; background: #F3EDE3; opacity: 0; transition: opacity 0.8s; }
+.sky .star { position: absolute; width: 2px; height: 2px; border-radius: 50%; background: #F3EDE3; opacity: 0; transition: opacity 0.8s; }
 .sky.is-night .sky-sun { opacity: 0; }
 .sky.is-night .sky-moon { opacity: 1; }
-.sky.is-night i { opacity: 0.9; animation: twinkle 4s ease-in-out infinite; }
-.sky.is-night i:nth-of-type(2n) { animation-delay: 1.3s; } .sky.is-night i:nth-of-type(3n) { animation-delay: 2.4s; }
+.sky.is-night .star { opacity: 0.9; animation: twinkle 4s ease-in-out infinite; }
+.sky.is-night .star:nth-of-type(2n) { animation-delay: 1.3s; } .sky.is-night .star:nth-of-type(3n) { animation-delay: 2.4s; }
 @keyframes twinkle { 50% { opacity: 0.25; } }
 .sky svg { position: absolute; bottom: -1px; color: #0F0D0B; fill: currentColor; }
 .sky-label { position: absolute; bottom: 8px; font-family: var(--ff-body); font-size: 12.5px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #D5CBBD; }
@@ -2332,7 +2332,7 @@ html.menu-open .concierge { display: none; }
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  .nav-menu-panel, .sky i, #region-img.is-swap { animation: none !important; }
+  .nav-menu-panel, .sky .star, #region-img.is-swap { animation: none !important; }
 }
 
 /* ===== JOURNEYS: five spreads, one at a time =====
@@ -2422,7 +2422,8 @@ html.menu-open .concierge { display: none; }
   
 
 /* ===== NO ITALICS =====
-   Emphasis is carried by the words, not the slant. <em> stays in the markup for meaning. */
+   Nothing on this site slants. The markup carries no emphasis tags either, so nothing slants
+   in reader mode or before this stylesheet loads. This rule is the backstop. */
 em, i, cite, address, dfn, var { font-style: normal; }
 
 /* ===== MULTI-PAGE SITE =====
