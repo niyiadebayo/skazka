@@ -1,0 +1,30 @@
+  <div class="concierge">
+    <div class="concierge-panel" id="concierge-panel">
+      <div class="concierge-header">
+        <div class="concierge-header-avatar">
+          <img src="/assets/mark.svg" alt="" width="40" height="40" />
+        </div>
+        <div class="concierge-header-info">
+          <p class="concierge-name">Kimani</p>
+          <p>Usually replies within an hour</p>
+        </div>
+      </div>
+      <div class="concierge-body" id="concierge-body">
+        <div class="concierge-msg kimani">Hujambo. Kimani here. Ask me anything &mdash; season timing, a specific camp, or just say hello.</div>
+        <button type="button" class="concierge-msg you concierge-prompt" style="align-self: flex-end;" data-prompt="When's best for the Mara?">When's best for the Mara?</button>
+        <button type="button" class="concierge-msg you concierge-prompt" style="align-self: flex-end;" data-prompt="What does a typical day look like?">What does a typical day look like?</button>
+        <button type="button" class="concierge-msg you concierge-prompt" style="align-self: flex-end;" data-prompt="Do you take families?">Do you take families?</button>
+      </div>
+      <form class="concierge-foot" id="concierge-form">
+        <label for="concierge-input" class="sr-only" style="position:absolute;left:-9999px;">Message</label>
+        <input id="concierge-input" type="text" placeholder="Type a message&hellip;" />
+        <button type="submit" aria-label="Send message">Send</button>
+      </form>
+    </div>
+    <button type="button" class="concierge-toggle" id="concierge-toggle" aria-label="Open concierge chat">
+      <div class="concierge-avatar">
+        <img src="/assets/mark.svg" alt="" width="40" height="40" />
+      </div>
+      <span id="concierge-toggle-label">Chat with Kimani</span>
+    </button>
+  </div>

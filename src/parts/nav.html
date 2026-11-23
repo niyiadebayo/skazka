@@ -1,0 +1,26 @@
+  <nav class="nav{{NAV_CLASS}}" id="site-nav" aria-label="Main"{{NAV_ATTR}}>
+    <a href="/" class="nav-brand" aria-label="Skazka Tours, home">
+      <span class="nav-brand-mark">s</span>
+      <span>Skazka</span>
+    </a>
+    <div class="nav-links">
+{{NAV_LINKS}}
+    </div>
+    <a href="/enquire/" class="btn btn-ghost" style="padding: 10px 18px;"{{CUR_enquire}}>
+      <span class="nav-cta-long">Plan a trip</span><span class="nav-cta-short">Enquire</span> <span class="arrow">&rarr;</span>
+    </a>
+    <details class="nav-menu" id="nav-menu">
+      <summary><span class="nav-menu-icon" aria-hidden="true"></span><span>Menu</span></summary>
+      <div class="nav-menu-panel">
+        <ol>
+{{MENU_LINKS}}
+        </ol>
+        <div class="nav-menu-contact">
+          <a class="btn btn-primary" href="/enquire/">Plan a trip <span class="arrow">&rarr;</span></a>
+          <a class="btn" href="https://wa.me/254722503787">WhatsApp Kimani <span class="arrow">&rarr;</span></a>
+          <a class="btn" href="mailto:hello@skazka.tours">hello@skazka.tours <span class="arrow">&rarr;</span></a>
+        </div>
+      </div>
+    </details>
+    <div class="nav-trail" aria-hidden="true"><svg class="nav-jeep"><use href="#i-jeep"/></svg></div>
+  </nav>

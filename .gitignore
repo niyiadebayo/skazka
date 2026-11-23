@@ -12,3 +12,4 @@ assets/IMG_*.HEIC
 !.dev.vars.example
 .env*
 !.env.example
+__pycache__/

@@ -2,7 +2,7 @@
 
 > Skazka Tours is a private safari concierge in Nairobi, Kenya, founded in 2015. It runs safaris for one small party at a time, two to six guests, with the same guide for the whole trip and no fixed itineraries. The founder and lead guide is Kimani Kennedy Muna, a KPSGA silver-licensed guide and former electrical engineer. Guiding is in English, Swahili and Russian.
 
-Last updated: November 2026. Everything below is stated on https://skazka.tours/.
+Last updated: November 2026. Everything below is stated on the pages of https://skazka.tours/.
 
 ## Key facts
 
@@ -13,7 +13,7 @@ Last updated: November 2026. Everything below is stated on https://skazka.tours/
 - Team: 25 people (guides, chefs, mechanics, pilots), including a Russian-speaking manager, Elena
 - Languages: English, Swahili, Russian
 - Guests per year: fewer than 90
-- Contact: hello@skazka.tours · WhatsApp +254 722 503 787 · https://skazka.tours/#enquire
+- Contact: hello@skazka.tours · WhatsApp +254 722 503 787 · https://skazka.tours/enquire/
 
 ## Price
 
@@ -60,8 +60,13 @@ Six to twelve months ahead is comfortable. July to October is often full a year 
 
 One guide for the whole trip. Small parties only. The itinerary is a hypothesis. Route around the storm instead of cancelling a day. Explain the land. Leave room to do nothing. Every enquiry read personally. Full text: https://skazka.tours/skazka.md
 
-## Links
+## Pages
 
-- [Home page](https://skazka.tours/)
+- [Home](https://skazka.tours/): overview, and what a day in the field is like
+- [Sample journeys and prices](https://skazka.tours/journeys/)
+- [Regions and when to go](https://skazka.tours/regions/)
+- [Guides and languages](https://skazka.tours/guides/)
+- [How a trip is planned, and the house rules](https://skazka.tours/method/)
+- [Questions: cost, seasons, children, booking](https://skazka.tours/questions/)
+- [Plan a trip](https://skazka.tours/enquire/)
 - [House rules (plain text)](https://skazka.tours/skazka.md)
-- [Enquire](https://skazka.tours/#enquire)

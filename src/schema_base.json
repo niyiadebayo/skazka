@@ -1,0 +1,106 @@
+{
+  "TravelAgency": {
+    "@type": "TravelAgency",
+    "@id": "https://skazka.tours/#travelagency",
+    "name": "Skazka Tours",
+    "url": "https://skazka.tours/",
+    "description": "Private Kenya safaris for parties of two to six, planned and led from Nairobi since 2015. One guide for your whole trip. English, Swahili and Russian spoken.",
+    "email": "hello@skazka.tours",
+    "telephone": "+254-722-503787",
+    "foundingDate": "2015",
+    "numberOfEmployees": {
+      "@type": "QuantitativeValue",
+      "value": 25
+    },
+    "founder": {
+      "@type": "Person",
+      "name": "Kimani Kennedy Muna",
+      "jobTitle": "Founder and lead guide",
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "Kazan Power Engineering University",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Kazan",
+          "addressCountry": "RU"
+        }
+      },
+      "knowsLanguage": [
+        "en",
+        "sw",
+        "ru"
+      ],
+      "hasCredential": {
+        "@type": "EducationalOccupationalCredential",
+        "credentialCategory": "license",
+        "name": "KPSGA Silver License",
+        "recognizedBy": {
+          "@type": "Organization",
+          "name": "Kenya Professional Safari Guides Association"
+        }
+      }
+    },
+    "image": "https://skazka.tours/assets/og-card.jpg",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Nairobi",
+      "addressCountry": "KE"
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "Kenya"
+    },
+    "slogan": "Kenya, carried by hand.",
+    "priceRange": "From $6,800 per person",
+    "knowsLanguage": [
+      "en",
+      "sw",
+      "ru"
+    ],
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "contactType": "reservations",
+        "email": "hello@skazka.tours",
+        "telephone": "+254-722-503787",
+        "availableLanguage": [
+          "English",
+          "Swahili",
+          "Russian"
+        ],
+        "url": "https://wa.me/254722503787"
+      }
+    ],
+    "knowsAbout": [
+      "Private safaris in Kenya",
+      "Maasai Mara conservancies",
+      "Laikipia",
+      "Samburu",
+      "Amboseli",
+      "Tsavo",
+      "Lamu and the Kenya coast",
+      "Family safaris",
+      "Walking safaris"
+    ]
+  },
+  "WebSite": {
+    "@type": "WebSite",
+    "@id": "https://skazka.tours/#website",
+    "url": "https://skazka.tours/",
+    "name": "Skazka Tours",
+    "publisher": {
+      "@id": "https://skazka.tours/#travelagency"
+    }
+  },
+  "VideoObject": {
+    "@type": "VideoObject",
+    "@id": "https://skazka.tours/#herovideo",
+    "name": "African elephants at sunset in Samburu, Kenya",
+    "description": "Ambient hero footage of elephants moving through Samburu National Reserve at golden hour.",
+    "thumbnailUrl": "https://skazka.tours/assets/hero-poster.jpg",
+    "uploadDate": "2026-04-21",
+    "contentUrl": "https://skazka.tours/assets/hero.mp4",
+    "encodingFormat": "video/mp4",
+    "isFamilyFriendly": true
+  }
+}

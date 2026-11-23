@@ -60,7 +60,7 @@ There is no typical day. But most follow the light (East Africa Time, UTC+3):
 
 ## write to us
 
-hello@skazka.tours · WhatsApp +254 722 503 787 · https://skazka.tours/#enquire
+hello@skazka.tours · WhatsApp +254 722 503 787 · https://skazka.tours/enquire/
 
 — Kimani
 Nairobi. If one of these is ever broken on your trip, tell me.

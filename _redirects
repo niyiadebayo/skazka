@@ -13,6 +13,10 @@
 /fr/  /  301
 
 # Common typo / alt paths
-/contact /#enquire  301
-/about /#founder  301
-/faq /#faq  301
+/contact      /enquire/    301
+/about        /guides/     301
+/kimani       /guides/     301
+/faq          /questions/  301
+/journey      /journeys/   301
+/itinerary.html /journeys/ 301
+/how          /method/     301

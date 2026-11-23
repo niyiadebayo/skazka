@@ -1,0 +1,154 @@
+  <section class="enquire page-first" id="enquire">
+    <div class="container">
+      <div class="enquire-layout">
+        <div class="enquire-intro">
+          <div class="eyebrow" data-track="zebra" style="margin-bottom: 24px;">Begin</div>
+          <h1>
+            Tell me<br/>a little.
+          </h1>
+          <p>
+            I personally read every enquiry. No sales team sits between us. Send what you have &mdash; a season, a number of people, a wish &mdash; and I'll write back within two working days.
+          </p>
+          <div class="enquire-contact">
+            <div class="enquire-contact-row">
+              <span>Direct email</span>
+              <span><a href="mailto:hello@skazka.tours">hello@skazka.tours</a></span>
+            </div>
+            <div class="enquire-contact-row">
+              <span>WhatsApp &middot; EAT</span>
+              <span><a href="https://wa.me/254722503787">+254 722 503 787</a></span>
+            </div>
+            <div class="enquire-contact-row">
+              <span>Nairobi time now</span>
+              <span id="eat-clock">EAT &middot; UTC+3</span>
+            </div>
+            <div class="enquire-contact-row">
+              <span>Office</span>
+              <span>Nairobi, Kenya</span>
+            </div>
+          </div>
+        </div>
+
+        <form class="form-shell" id="enquire-form" novalidate>
+          <div id="enquire-success" class="form-success" hidden>
+            <div class="form-success-seal">&#10003;</div>
+            <h2>Thank you.</h2>
+            <p>We've opened your email app &mdash; if it didn't appear, write to <a href="mailto:hello@skazka.tours">hello@skazka.tours</a>.</p>
+          </div>
+
+          <div id="enquire-body">
+            <div class="form-progress" id="form-progress">
+              <div class="form-progress-dot active"></div>
+              <div class="form-progress-dot"></div>
+              <div class="form-progress-dot"></div>
+              <div class="form-progress-dot"></div>
+            </div>
+
+            <div class="form-step" data-step="0">
+              <div class="form-step-label">Step 01 of 04 &mdash; When</div>
+              <h2 class="form-step-title">When do you <em>imagine</em> travelling?</h2>
+              <div class="field">
+                <label for="f-dates">Month &amp; approximate dates</label>
+                <input id="f-dates" name="dates" type="text" placeholder="e.g. Late September, 10&ndash;12 days" />
+              </div>
+              <div class="field">
+                <label>Flexibility</label>
+                <div class="chip-group" data-chip-group="flexible" data-chip-mode="single">
+                  <button type="button" class="chip" aria-pressed="false" data-value="Firm">Firm</button>
+                  <button type="button" class="chip" aria-pressed="false" data-value="Within a week">Within a week</button>
+                  <button type="button" class="chip" aria-pressed="false" data-value="Within a month">Within a month</button>
+                  <button type="button" class="chip" aria-pressed="false" data-value="Whenever's best">Whenever's best</button>
+                </div>
+                <input type="hidden" name="flexible" id="f-flexible" />
+              </div>
+            </div>
+
+            <div class="form-step" data-step="1" hidden>
+              <div class="form-step-label">Step 02 of 04 &mdash; Who</div>
+              <h2 class="form-step-title">Who is <em>coming</em> with you?</h2>
+              <div class="field">
+                <label>Group type</label>
+                <div class="chip-group" data-chip-group="group" data-chip-mode="single">
+                  <button type="button" class="chip" aria-pressed="false" data-value="Couple">Couple</button>
+                  <button type="button" class="chip" aria-pressed="false" data-value="Family">Family</button>
+                  <button type="button" class="chip" aria-pressed="false" data-value="Friends">Friends</button>
+                  <button type="button" class="chip" aria-pressed="false" data-value="Solo traveler">Solo traveler</button>
+                </div>
+                <input type="hidden" name="group" id="f-group" />
+              </div>
+              <div class="field">
+                <label for="f-travelers">Number of travelers</label>
+                <input id="f-travelers" name="travelers" type="number" min="1" max="8" value="2" />
+              </div>
+            </div>
+
+            <div class="form-step" data-step="2" hidden>
+              <div class="form-step-label">Step 03 of 04 &mdash; What calls you</div>
+              <h2 class="form-step-title">What do you <em>love?</em></h2>
+              <div class="field">
+                <label>Pick as many as feel right</label>
+                <div class="chip-group" data-chip-group="interests" data-chip-mode="multi">
+                  <button type="button" class="chip" aria-pressed="false" data-value="Big cats">Big cats</button>
+                  <button type="button" class="chip" aria-pressed="false" data-value="Walking safaris">Walking safaris</button>
+                  <button type="button" class="chip" aria-pressed="false" data-value="Coastal finish">Coastal finish</button>
+                  <button type="button" class="chip" aria-pressed="false" data-value="Conservation">Conservation</button>
+                  <button type="button" class="chip" aria-pressed="false" data-value="Cultural visits">Cultural visits</button>
+                  <button type="button" class="chip" aria-pressed="false" data-value="Photography">Photography</button>
+                  <button type="button" class="chip" aria-pressed="false" data-value="Birding">Birding</button>
+                  <button type="button" class="chip" aria-pressed="false" data-value="Hot-air balloon">Hot-air balloon</button>
+                  <button type="button" class="chip" aria-pressed="false" data-value="Rest & spa">Rest &amp; spa</button>
+                  <button type="button" class="chip" aria-pressed="false" data-value="Engineering history">Engineering history</button>
+                </div>
+                <input type="hidden" name="interests" id="f-interests" />
+              </div>
+              <div class="field">
+                <label>Preferred pace</label>
+                <div class="chip-group" data-chip-group="pace" data-chip-mode="single">
+                  <button type="button" class="chip" aria-pressed="false" data-value="Slower — fewer moves">Slower &mdash; fewer moves</button>
+                  <button type="button" class="chip" aria-pressed="false" data-value="Balanced">Balanced</button>
+                  <button type="button" class="chip" aria-pressed="false" data-value="Fuller — see more">Fuller &mdash; see more</button>
+                </div>
+                <input type="hidden" name="pace" id="f-pace" />
+              </div>
+            </div>
+
+            <div class="form-step" data-step="3" hidden>
+              <div class="form-step-label">Step 04 of 04 &mdash; You</div>
+              <h2 class="form-step-title">How should I <em>reach you?</em></h2>
+              <div class="field">
+                <label for="f-name">Your name</label>
+                <input id="f-name" name="name" type="text" placeholder="First &amp; last" />
+              </div>
+              <div class="field">
+                <label for="f-email">Email</label>
+                <input id="f-email" name="email" type="email" placeholder="you@somewhere.com" />
+              </div>
+              <div class="field">
+                <label for="f-note">Anything else I should know? (optional)</label>
+                <input id="f-note" name="note" type="text" placeholder="Dietary, celebrations, things to avoid&hellip;" />
+              </div>
+            </div>
+
+            <div class="letter" id="letter">
+              <div class="letter-label"><span>Your note to Kimani, so far</span><span id="letter-count"></span></div>
+              <p class="letter-text is-empty" id="letter-text" aria-live="polite">Dear Kimani, &hellip; your answers will turn into a short letter here.</p>
+            </div>
+
+            <div class="form-nav">
+              <div class="form-step-num">
+                <button type="button" class="link-btn" id="form-back" hidden>&larr; Back</button>
+              </div>
+              <div class="form-btn-group">
+                <button type="button" class="btn btn-primary" id="form-next">
+                  Continue <span class="arrow">&rarr;</span>
+                </button>
+                <button type="submit" class="btn btn-primary" id="form-submit" hidden>
+                  Send to Kimani <span class="arrow">&rarr;</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
