@@ -56,8 +56,14 @@ def nav(page):
             .replace('{{NAV_LINKS}}', links).replace('{{MENU_LINKS}}', menu).replace('{{CUR_enquire}}', cur('enquire')))
 
 
-def footer(scene_top):
-    f = read('parts', 'footer.html').replace('{{LANGS_SHORT}}', C.LANGS_SHORT)
+INDEX = [('journeys', 'Journeys', '/journeys/'), ('regions', 'Regions', '/regions/'), ('guides', 'Guides', '/guides/'),
+         ('method', 'Method', '/method/'), ('questions', 'Questions', '/questions/'), ('enquire', 'Plan a trip', '/enquire/')]
+
+
+def footer(scene_top, key):
+    # The lit index: every page listed large, the one you are on lit, the rest dimmed.
+    index = '\n'.join('          <a href="%s"%s>%s</a>' % (href, ' aria-current="page"' if k == key else '', label) for k, label, href in INDEX)
+    f = read('parts', 'footer.html').replace('{{LANGS_SHORT}}', C.LANGS_SHORT).replace('{{LIT_INDEX}}', index)
     assert '<stop offset="0" stop-color="#EDE6DB"/>' in f
     return f.replace('<stop offset="0" stop-color="#EDE6DB"/>', '<stop offset="0" stop-color="%s"/>' % scene_top)
 
@@ -79,24 +85,60 @@ def section(cls, sid, inner, labelled=None):
         cls, ' id="%s"' % sid if sid else '', ' aria-labelledby="%s"' % labelled if labelled else '', inner)
 
 
+ARC = '<svg class="arc" aria-hidden="true"><use href="#i-arc"/></svg>'
+
+
+def running(left, right='Private safaris &middot; Kenya', track=None):
+    """The thin line of labels that opens a page or a field: where you are, and whose house this is."""
+    l = '<span class="eyebrow" data-track="%s">%s</span>' % (track, left) if track else '<span>%s</span>' % left
+    return '      <div class="running">%s<span class="running-mid">Skazka Tours</span><span>%s</span></div>\n' % (l, right)
+
+
 def page_head(track, label, title, intro, crumb):
     return ('''  <section class="page-head">
     <div class="container">
-      <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Skazka</a><span aria-hidden="true">/</span><span>%s</span></nav>
-%s      <p class="page-intro">%s</p>
+%s      <h1 class="display page-title">%s</h1>
+      <p class="page-intro">%s</p>
     </div>
   </section>
 
-''' % (crumb, head_block(track, label, title, 'h1'), intro))
+''' % (running(label, track=track), title, intro))
+
+
+def statement(label, line, sub, link_text, href):
+    """One thought, set large on the signature field."""
+    return ('''  <section class="statement">
+    <div class="container">
+%s      <p class="statement-line">%s</p>
+      <p class="statement-sub">%s</p>
+      <a class="more" href="%s">%s <span aria-hidden="true">&rarr;</span></a>
+    </div>
+  </section>
+
+''' % (running(label), line, sub, href, link_text))
 
 
 def cta(title='Tell me<br/>a little.', line="I personally read every enquiry. No sales team sits between us. Send what you have &mdash; a season, a number of people, a wish &mdash; and I'll write back within two working days."):
-    return section('cta-band', 'begin', head_block('zebra', 'Begin', title) + '''      <p>%s</p>
-      <div class="ways">
-        <a class="btn btn-primary" href="/enquire/">Begin a conversation <span class="arrow">&rarr;</span></a>
-        <a class="btn" href="https://wa.me/254722503787">WhatsApp Kimani <span class="arrow">&rarr;</span></a>
+    return ('''  <section class="cta-band" id="begin">
+    <div class="container">
+      <div class="split">
+        <div class="split-media">
+          <img src="/assets/hero-poster.jpg" alt="African elephants at sunset in Samburu National Reserve, Kenya" width="1600" height="900" loading="lazy" decoding="async" />
+        </div>
+        <div class="split-panel">
+          <div class="running"><span>Begin</span>%s</div>
+          <h2 class="display">%s</h2>
+          <p>%s</p>
+          <div class="ways">
+            <a class="btn btn-primary" href="/enquire/">Begin a conversation <span class="arrow">&rarr;</span></a>
+            <a class="btn" href="https://wa.me/254722503787">WhatsApp Kimani <span class="arrow">&rarr;</span></a>
+          </div>
+        </div>
       </div>
-''' % line)
+    </div>
+  </section>
+
+''' % (ARC, title, line))
 
 
 # ---------------------------------------------------------------- content blocks
@@ -240,6 +282,7 @@ def home():
     founder_quote = re.search(r'<p class="founder-quote">.*?</p>', read('sections', 'founder.html'), flags=re.S).group(0)
     return (read('sections', 'hero.html') + '\n' + read('sections', 'day.html') + '\n'
             + section('journeys-teaser', 'journeys', head_block('zebra', '02 / Sample journeys', 'Starting points,<br/>not destinations.') + journey_plates())
+            + statement('House rule &#8470; 03', 'The itinerary<br/>is a hypothesis.', 'Not a contract. If the leopard cubs come back, we stay another night.', 'The seven house rules', '/method/#house-rules')
             + section('regions', 'regions', head_block('elephant', '03 / Regions', 'The country,<br/>in six moods.') + region_links())
             + section('founder', 'guides', head_block('antelope', '04 / Who leads your trip', 'One guide,<br/>your whole trip.')
                       + '      <div class="lead-quote">\n        ' + founder_quote + '''
@@ -404,8 +447,8 @@ def render(page, css, js):
 <meta name="twitter:description" content="{desc}">
 <meta name="twitter:image" content="https://skazka.tours/assets/og-card.jpg">
 <meta name="twitter:image:alt" content="African elephants at sunset in Samburu National Reserve, Kenya">
-<link rel="icon" type="image/svg+xml" href="/assets/mark.svg">
-<link rel="apple-touch-icon" href="/assets/mark.svg">
+<link rel="icon" type="image/svg+xml" href="/assets/arc.svg">
+<link rel="apple-touch-icon" href="/assets/arc.svg">
 <meta name="author" content="Skazka Tours">
 <meta name="geo.region" content="KE-110">
 <meta name="geo.placename" content="Nairobi">
@@ -431,7 +474,7 @@ def render(page, css, js):
 </body>
 </html>
 '''.format(title=page['title'], desc=page['desc'], url=url, home_only=home_only, css=css, js=js, schema=schema(page), key=page['key'],
-           sprite=read('parts', 'sprite.html'), nav=nav(page), body=page['body'](), footer=footer(page['scene']), concierge=read('parts', 'concierge.html'))
+           sprite=read('parts', 'sprite.html'), nav=nav(page), body=page['body'](), footer=footer(page['scene'], page['key']), concierge=read('parts', 'concierge.html'))
 
 
 def main():

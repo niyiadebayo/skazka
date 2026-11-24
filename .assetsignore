@@ -6,6 +6,7 @@
 .claude
 CLAUDE.md
 DESIGN.md
+PHILOSOPHY.md
 README.md
 docs
 wrangler.jsonc

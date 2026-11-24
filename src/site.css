@@ -9,7 +9,7 @@
   --ink: #1F1B17;         /* 15.3:1 on linen, 13.8:1 on sand */
   --ink-dim: #4A4238;     /* 8.8:1 on linen, 8.0:1 on sand: labels and captions */
   --ink-faint: #4A4238;
-  --accent: #A0481C;      /* ember: dots, rules and markers only */
+  --accent: #6E2B16;      /* ember: dots, rules and markers only */
   --accent-2: #1F1B17;
   --cta: #1F1B17;
   --cta-2: #3A332B;
@@ -22,7 +22,7 @@
   --night: #1F1B17;
   --bone: #F3EDE3;        /* 14.7:1 on night */
   --mist: #D5CBBD;        /* 10.7:1 on night */
-  --glow: #F0BE8E;        /* apricot: the accent on night, 10.2:1 */
+  --glow: #D4B272;        /* apricot: the accent on night, 10.2:1 */
   --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
 
   --ff-display: 'Newsreader', Georgia, serif;          /* editorial serif, used light */
@@ -2076,7 +2076,7 @@ section { padding: clamp(112px, 12vw, 192px) 0; }
 
 /* ----- hero: the words sit on the dark land, not on the sky ----- */
 .hero {
-  --bg: #1F1B17; --ink: #F3EDE3; --ink-dim: #E6DED2; --ink-faint: #D5CBBD; --accent: #F0BE8E;
+  --bg: #1F1B17; --ink: #F3EDE3; --ink-dim: #E6DED2; --ink-faint: #D5CBBD; --accent: #D4B272;
   --line: rgba(243, 237, 227, 0.3); --line-2: rgba(243, 237, 227, 0.6);
   --cta: #F3EDE3; --cta-2: #FFFFFF; --on-cta: #1F1B17;
   background: #1F1B17;
@@ -2140,7 +2140,7 @@ section { padding: clamp(112px, 12vw, 192px) 0; }
 /* ----- a day in the field ----- */
 .day {
   background: #1F1B17; color: #F3EDE3;
-  --ink: #F3EDE3; --ink-dim: #E6DED2; --ink-faint: #D5CBBD; --accent: #F0BE8E;
+  --ink: #F3EDE3; --ink-dim: #E6DED2; --ink-faint: #D5CBBD; --accent: #D4B272;
   --line: rgba(243, 237, 227, 0.26);
 }
 .day .display, .day .display em { color: #FBF7F0; }
@@ -2160,7 +2160,7 @@ section { padding: clamp(112px, 12vw, 192px) 0; }
 .day-moment[data-sky="afternoon"] { --sky: linear-gradient(180deg, #DFCBA6 0%, #D2BD93 100%); --sky-ink: #1F1B17; }
 .day-moment[data-sky="sunset"]    { --sky: linear-gradient(180deg, #6B4029 0%, #45291D 100%); --sky-ink: #FBF4EA; }
 .day-moment[data-sky="night"]     { --sky: linear-gradient(180deg, #15120F 0%, #241F1A 100%); --sky-ink: #F3EDE3; border-color: rgba(243, 237, 227, 0.2); border-top-color: transparent; }
-.day-moment.is-now { border-top-color: #F0BE8E; outline: none; transform: translateY(-10px); }
+.day-moment.is-now { border-top-color: #D4B272; outline: none; transform: translateY(-10px); }
 .day-moment-now { background: var(--sky-ink); color: #1F1B17; border: none; padding: 4px 10px; border-radius: 0; font-size: 12.5px; top: 20px; }
 .day-moment[data-sky="dawn"] .day-moment-now, .day-moment[data-sky="breakfast"] .day-moment-now,
 .day-moment[data-sky="midday"] .day-moment-now, .day-moment[data-sky="afternoon"] .day-moment-now { color: #FBF7F0; }
@@ -2233,7 +2233,7 @@ section[id] { scroll-margin-top: 72px; }
 .nav-trail { position: absolute; left: var(--pad); right: var(--pad); bottom: -1px; height: 1px; pointer-events: none; }
 .nav-trail::before { content: ''; position: absolute; left: 0; bottom: 0; height: 2px; width: calc(var(--p, 0) * 100%); background: var(--accent); }
 .nav-jeep { position: absolute; bottom: 1px; left: calc(var(--p, 0) * (100% - 30px)); width: 30px; height: 17px; color: inherit; fill: currentColor; }
-.nav:not(.scrolled) .nav-trail::before { background: #F0BE8E; }
+.nav:not(.scrolled) .nav-trail::before { background: #D4B272; }
 .nav-cta-short { display: none; }
 .nav-menu { display: none; }
 .nav-menu summary { list-style: none; cursor: pointer; display: inline-flex; align-items: center; gap: 10px; padding: 10px 0 10px 8px;
@@ -2284,7 +2284,7 @@ html.menu-open .concierge { display: none; }
 .sky { grid-column: 1 / -1; position: relative; height: 132px; margin-top: 20px; overflow: hidden; border-bottom: 1px solid rgba(243, 237, 227, 0.5); --x: 0.5; --y: 1; }
 .sky-arc { position: absolute; left: 8%; right: 8%; top: 14px; height: calc(200% - 28px); border: 1px dashed rgba(243, 237, 227, 0.38); border-radius: 50%; }
 .sky-sun, .sky-moon { position: absolute; border-radius: 50%; transition: left 1.8s var(--ease), bottom 1.8s var(--ease), opacity 0.8s; }
-.sky-sun { width: 22px; height: 22px; background: #F0BE8E; left: calc(8% + 84% * var(--x)); bottom: calc((100% - 14px) * var(--y)); transform: translate(-50%, 50%); }
+.sky-sun { width: 22px; height: 22px; background: #D4B272; left: calc(8% + 84% * var(--x)); bottom: calc((100% - 14px) * var(--y)); transform: translate(-50%, 50%); }
 .sky-moon { width: 20px; height: 20px; right: 16%; top: 22px; box-shadow: inset -6px -3px 0 0 #F3EDE3; opacity: 0; }
 .sky .star { position: absolute; width: 2px; height: 2px; border-radius: 50%; background: #F3EDE3; opacity: 0; transition: opacity 0.8s; }
 .sky.is-night .sky-sun { opacity: 0; }
@@ -2294,7 +2294,7 @@ html.menu-open .concierge { display: none; }
 @keyframes twinkle { 50% { opacity: 0.25; } }
 .sky svg { position: absolute; bottom: -1px; color: #0F0D0B; fill: currentColor; }
 .sky-label { position: absolute; bottom: 8px; font-family: var(--ff-body); font-size: 12.5px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #D5CBBD; }
-.day-family { margin-top: 36px; max-width: 640px; padding-left: 20px; border-left: 2px solid #F0BE8E; font-size: 17px; line-height: 1.7; color: var(--ink); }
+.day-family { margin-top: 36px; max-width: 640px; padding-left: 20px; border-left: 2px solid #D4B272; font-size: 17px; line-height: 1.7; color: var(--ink); }
 .day-family strong { font-family: var(--ff-display); font-weight: 500; font-size: 21px; display: block; margin-bottom: 4px; color: #FBF7F0; }
 .day-foot { margin-top: 28px; }
 @media (max-width: 820px) { .sky { height: 100px; } .sky-label { display: none; } .sky svg { transform: scale(0.62); transform-origin: 50% 100%; } }
@@ -2318,7 +2318,7 @@ html.menu-open .concierge { display: none; }
 @media (prefers-reduced-motion: no-preference) { .scene .birds { animation: birds 38s linear infinite; } }
 @keyframes birds { from { transform: translate(-90px, 8px); } to { transform: translate(190px, -14px); } }
 .footer { background: #1F1B17; color: #F3EDE3; padding-top: 0;
-  --ink: #F3EDE3; --ink-dim: #D5CBBD; --ink-faint: #D5CBBD; --line: rgba(243, 237, 227, 0.26); --accent: #F0BE8E; }
+  --ink: #F3EDE3; --ink-dim: #D5CBBD; --ink-faint: #D5CBBD; --line: rgba(243, 237, 227, 0.26); --accent: #D4B272; }
 .footer-wordmark { color: #FBF7F0; }
 .footer > .container { padding-top: 72px; }
 
@@ -2523,3 +2523,176 @@ a.region-row:hover .region-name { text-decoration: underline; text-decoration-th
 .page-head .section-head { align-items: start; }
 .page-head .eyebrow { margin-top: 22px; }
 @media (max-width: 820px) { .page-head .eyebrow { margin-top: 0; } }
+
+/* ===== SIGNATURE =====
+   What makes a page recognisably Skazka. See PHILOSOPHY.md for the reasons.
+   1. The arc: a horizon, the sun's path over it, the sun. The mark, and the day chapter's clock.
+   2. The field: one earth red (laterite) used whole, for a statement or a closing card. Brass marks on dark.
+   3. The lit index: every page named large in the footer; the one you are on is lit, the rest dimmed.
+   4. Large numerals, small labels. Labels are sentence case, never tracked capitals. */
+:root { --field: #6E2B16; --brass: #D4B272; --ivory: #FBF7F0; }
+
+/* labels: sentence case, quiet */
+.mono,
+.eyebrow,
+.btn,
+.nav-links,
+.hero-ticker,
+.how-step-tag,
+.region-name small,
+.region-meta,
+.region-preview-stat span,
+.founder-img-tag,
+.founder-meta-item span,
+.test-author small,
+.test-trip,
+.enquire-contact-row span:first-child,
+.form-step-label,
+.field label,
+.chip,
+.form-step-num,
+.link-btn,
+.footer-tagline,
+.footer-col .footer-h,
+.footer-bottom,
+.concierge-toggle,
+.concierge-header-info p,
+.concierge-msg.you,
+.concierge-foot button,
+.tweaks-panel h5,
+.tweaks-palette-opt span,
+.itin-hero-meta-item span,
+.days-rail h4,
+.day-nav-dur,
+.day-block-img-cap,
+.day-side-section h5,
+.builder-pool h5,
+.builder-plan h5,
+.builder-item-tag,
+.builder-item-name small,
+.builder-plan-summary,
+.skip-link,
+.day-now-clock,
+.day-moment-now,
+.day-foot,
+.letter-label,
+.hero-meta-item .mono,
+.how-step-num,
+.itin-img-tag,
+.itin-meta,
+.itin-price small,
+.itin-link,
+.region-num,
+.faq-num,
+.md-file-bar,
+.nav-menu summary,
+.sky-label,
+.journey-label,
+.journey-price small,
+.journey-cta,
+.crumbs,
+.more,
+.plate-label,
+.plate-price small,
+.spread-stats span,
+.guide-role,
+.guide-tag,
+.lead-langs {
+  text-transform: none;
+  letter-spacing: 0.01em;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+.btn, .journey-cta, .more, .chip, .guide-tag, .day-moment-now { font-weight: 600; }
+.btn { padding: 17px 28px; }
+.nav-links { gap: 32px; }
+.footer-bottom, .footer-tracks { font-size: 14px; }
+
+/* display type: larger, tighter */
+.display { letter-spacing: -0.02em; line-height: 1.02; }
+.title { font-size: clamp(38px, 4.4vw, 64px) !important; line-height: 1.04; }
+.hero-title { letter-spacing: -0.022em; }
+
+/* the mark */
+.arc { width: 30px; height: 30px; flex: none; --sun: var(--brass); }
+.nav-brand-mark { width: 30px; height: 30px; border: none; border-radius: 0; background: none; display: block; }
+.nav.scrolled .arc, .page-head .arc { --sun: var(--field); }
+.concierge-avatar { border-radius: 0; }
+.concierge-avatar::after { display: none; }
+
+/* the running head: where you are, and whose house this is */
+.running { display: flex; justify-content: space-between; align-items: center; gap: 24px;
+  font-family: var(--ff-body); font-size: 14px; font-weight: 500; line-height: 1.5; color: var(--ink-dim); }
+.running .eyebrow { margin: 0; }
+@media (max-width: 820px) { .running-mid { display: none; } }
+
+/* inner pages open on the title, full size, with the introduction set to the right */
+.page-head { padding: clamp(128px, 12vw, 168px) 0 clamp(16px, 3vw, 40px); }
+.page-head .running { padding-bottom: 20px; border-bottom: 1px solid var(--line); }
+.page-head .eyebrow { margin-top: 0; }
+.page-title { font-size: clamp(44px, 6.4vw, 96px); line-height: 0.99; letter-spacing: -0.024em; margin: clamp(40px, 6vw, 88px) 0 clamp(32px, 4vw, 56px); text-wrap: balance; }
+.page-intro { margin-left: 50%; max-width: 560px; font-size: 19px; line-height: 1.6; }
+@media (max-width: 820px) { .page-head { padding-top: 112px; } .page-intro { margin-left: 0; font-size: 18px; } }
+
+/* the field: one thought, set large */
+.statement, .split-panel {
+  background: var(--field); color: var(--ivory);
+  --bg: var(--field); --ink: #FBF7F0; --ink-dim: #E6DED2; --ink-faint: #E6DED2; --accent: var(--brass);
+  --line: rgba(251, 247, 240, 0.28); --line-2: rgba(251, 247, 240, 0.6); --cta: #FBF7F0; --cta-2: #FFFFFF; --on-cta: #1F1B17;
+}
+.statement { padding: clamp(40px, 5vw, 64px) 0 clamp(96px, 11vw, 168px); }
+.statement .running { padding-bottom: 20px; border-bottom: 1px solid var(--line); }
+.statement-line { font-family: var(--ff-display); font-weight: 400; font-size: clamp(40px, 8vw, 124px); line-height: 0.98; letter-spacing: -0.026em;
+  text-align: center; text-wrap: balance; color: #FBF7F0; margin: clamp(72px, 10vw, 152px) auto clamp(28px, 3vw, 44px); }
+.statement-sub { text-align: center; max-width: 30em; margin: 0 auto; font-size: 19px; line-height: 1.6; color: #FBF7F0; }
+.statement .more { display: table; margin: 40px auto 0; color: #FBF7F0; }
+
+/* the closing card: the photograph on one side, the field on the other */
+.cta-band { padding: clamp(72px, 8vw, 128px) 0; }
+.split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-height: clamp(460px, 44vw, 620px); }
+.split-media { overflow: hidden; background: #1F1B17; }
+.split-media img { width: 100%; height: 100%; object-fit: cover; }
+.split-panel { display: flex; flex-direction: column; padding: clamp(28px, 4vw, 56px); }
+.split-panel .running { color: #E6DED2; }
+.split-panel .display { color: #FBF7F0; font-size: clamp(40px, 5vw, 76px); margin: auto 0 20px; padding-top: 48px; }
+.split-panel p { color: #FBF7F0; max-width: 27em; font-size: 17px; }
+.split-panel .ways { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+.split-panel .btn:not(.btn-primary) { color: #FBF7F0; border-color: rgba(251, 247, 240, 0.6); }
+@media (max-width: 820px) { .split { grid-template-columns: 1fr; min-height: 0; } .split-media { aspect-ratio: 3 / 2; } .split-panel .btn { width: 100%; justify-content: space-between; } }
+
+/* numbered pillars: the numeral large, the label above the title */
+.how-step { min-height: 0; padding: 40px 32px 48px; }
+.how-step-num { order: 0; font-family: var(--ff-display); font-size: 64px; font-weight: 400; line-height: 1; letter-spacing: -0.02em; color: var(--field); margin-bottom: 36px; }
+.how-step-tag { order: 1; margin: 0 0 8px; padding: 0; color: var(--ink-dim); }
+.how-step :is(h2, h3) { order: 2; }
+.how-step p { order: 3; }
+
+/* numerals: figures are set large, their captions small */
+.journey-price { font-size: 40px; font-weight: 400; letter-spacing: -0.02em; line-height: 1; }
+.journey-price small { margin-top: 10px; }
+.plate-price { font-size: 30px; font-weight: 400; letter-spacing: -0.015em; }
+.plate-price small { display: block; margin: 6px 0 0; }
+.spread-stats strong, .founder-meta-item strong { font-size: 30px; font-weight: 400; letter-spacing: -0.015em; }
+.hero-meta-item strong { font-size: 24px; font-weight: 400; }
+@media (max-width: 820px) { .journey-price { font-size: 34px; } .spread-stats strong, .founder-meta-item strong { font-size: 22px; } .hero-meta-item strong { font-size: 20px; } }
+
+/* the lit index */
+.footer-top { grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) minmax(0, 1fr); align-items: start; margin-bottom: 56px; }
+.lit-index { display: flex; flex-direction: column; align-items: flex-start; }
+.lit-index a { font-family: var(--ff-display); font-size: clamp(36px, 4.6vw, 66px); line-height: 1.06; letter-spacing: -0.022em; color: #FBF7F0; transition: color 0.6s var(--ease); }
+.lit-index:has([aria-current]) a:not([aria-current]), .lit-index:hover a { color: #A69B8C; }
+.lit-index a:hover, .lit-index a:focus-visible { color: #FBF7F0 !important; }
+.footer-sign { display: flex; align-items: center; flex-wrap: wrap; gap: 12px 16px; padding-top: 28px; margin-bottom: 20px; border-top: 1px solid var(--line); color: #FBF7F0; }
+.footer-sign .footer-wordmark { font-size: 28px; line-height: 1; margin-right: 8px; }
+.footer-sign .footer-tagline { color: #D5CBBD; }
+.footer-tracks { margin-bottom: 20px; }
+.footer-bottom { border-top: none; padding-top: 0; }
+@media (max-width: 820px) { .footer-top { grid-template-columns: 1fr 1fr; } .lit-index { grid-column: 1 / -1; margin-bottom: 16px; } }
+
+/* small marks take the field colour on light grounds */
+.test-card .quote-mark { color: var(--field); }
+.team-note, .day-family { border-left-color: var(--accent); }
+
+/* floors: nothing under 14px */
+.day-moment time, .faq-num, .nav-menu-panel li a::before { font-size: 14px; letter-spacing: 0.02em; }
