@@ -8,6 +8,7 @@
 - the arc mark (`#i-arc` in the sprite; `assets/arc.svg` for the browser tab and chat),
 - `--field` laterite `#6E2B16` and `--brass` `#D4B272` (these replaced ember and apricot),
 - `.running` heads, `.page-title` openings, `.statement`, `.split` closing cards, `.lit-index` in the footer,
+- alignment: the ALIGNMENT block sets the two edges (the page edge via the menu's padding, and `--col2` for the content column) and the `.on-linen` / `.on-sand` grounds. Check any layout change at several widths: a phone silently zooms out when a page overflows, so compare the page width with the device width, not with `innerWidth`.
 - labels in sentence case at 14px. The label rule is generated from every selector that used to be set in capitals; if you add a new label style, do not use `text-transform: uppercase`.
 
 ## How the site is built (read this first, November 2026)

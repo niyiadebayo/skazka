@@ -66,6 +66,18 @@ These are part of the family but not the signature. Do not add more.
 - The dusk scene of silhouettes that closes each page.
 - The running head: a thin line of labels that opens a page or a field (where you are, whose house this is).
 
+## 4a. The grid
+
+Two edges, on every page. If something sits anywhere else, it needs a reason.
+
+- **The page edge.** The menu, every section, and the footer start on the same line.
+- **The content column.** One third in, where section titles begin. Introductions, notes and narrow reading blocks (the house rules, the guest letter, the regions list) sit in it, under the title.
+- **Wide objects span both.** Grids, spreads, the day strip, the closing card.
+- **A field is the exception.** A statement is centred, because it stands alone.
+- On a phone there is one edge.
+
+Every page opens the same way: a running head, then the title at full size, on linen. The first section stays on linen; after that, linen and sand alternate. No hairlines between sections; the change of ground is the divider.
+
 ## 5. Colour
 
 Colour comes from the photographs. The interface stays out of their way.

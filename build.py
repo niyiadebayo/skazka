@@ -308,7 +308,7 @@ def journeys():
 
 def regions():
     return (page_head('elephant', 'Regions', 'The country,<br/>in six moods.', 'Six regions, each with its own season and its own pace.', 'Regions')
-            + section('regions', 'regions', region_spreads()) + cta())
+            + section('regions on-linen', 'regions', region_spreads()) + cta())
 
 
 def guides():
@@ -323,8 +323,8 @@ def guides():
 def method():
     return (page_head('bird', 'The method', 'Four steps, then<br/>everything else is yours.',
                       'How a trip comes together, from the first call to the last goodbye.', 'Method')
-            + section('how', 'how', read('sections', 'how.html'))
-            + section('house', 'house-rules', head_block('lion', 'House rules', 'Seven promises,<br/>kept in plain text.', hid='house-title') + read('sections', 'house.html'), labelled='house-title')
+            + section('how on-linen', 'how', read('sections', 'how.html'))
+            + section('house on-sand', 'house-rules', head_block('lion', 'House rules', 'Seven promises,<br/>kept in plain text.', hid='house-title') + read('sections', 'house.html'), labelled='house-title')
             + cta())
 
 
@@ -334,7 +334,7 @@ def questions():
 
 
 def enquire():
-    return read('sections', 'enquire.html')
+    return read('sections', 'enquire.html').replace('{{RUNNING}}', running('Plan a trip', track='zebra'))
 
 
 PAGES = [
@@ -356,7 +356,7 @@ PAGES = [
     dict(key='questions', path='questions/', body=questions, scene=LINEN, name='Questions',
          title='Kenya Safari Questions: Cost, Seasons, Children | Skazka Tours',
          desc='What a private Kenya safari costs, what is included, the best time to go by region, group size, children, Russian-speaking guides, and when to book.'),
-    dict(key='enquire', path='enquire/', body=enquire, scene=SAND, name='Plan a trip',
+    dict(key='enquire', path='enquire/', body=enquire, scene=LINEN, name='Plan a trip',
          title='Plan a Private Kenya Safari | Skazka Tours',
          desc='Tell Kimani when you imagine travelling, who is coming and what you love. Every enquiry is read personally, with a reply within two working days.'),
 ]
