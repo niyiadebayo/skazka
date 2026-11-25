@@ -35,7 +35,7 @@ Four things make a page recognisably Skazka. Use them consistently and sparingly
 
 ### The arc
 
-A horizon, the sun's path over it, and the sun. It comes from the day chapter ("The day keeps the sun's hours") and from the fact that near the equator the sun sets at almost the same time all year.
+A horizon, the sun's path over it, and the sun. It comes from the day chapter, where the day follows the sun, and from the fact that near the equator the sun sets at almost the same time all year.
 
 - It is the mark: in the menu, the browser tab, the chat and the footer.
 - Full size, it is the clock in "A day in the field", where the sun sits where it really is over Kenya.
@@ -182,6 +182,6 @@ Left behind, because it belongs to that brand:
 
 1. Is laterite the right signature colour, or does Kimani see Skazka in another (the Maasai red, the green of the highlands)?
 2. Is the arc the right mark? It replaced a plain "S" without a brief.
-3. Which line deserves the statement on the home page? It is currently house rule 03, "The itinerary is a hypothesis."
+3. Which line deserves the statement on the home page? It is currently house rule 03, "The itinerary is a starting point."
 4. When will first-party photographs replace the stock stand-ins?
 5. The animal tracks are stylised. Should a guide redraw them accurately, or should they go?

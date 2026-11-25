@@ -388,7 +388,7 @@
   var RESPONSES = {
     "When's best for the Mara?": "Great migration peak is July through October, but I actually prefer late June \u2014 the crowds haven't arrived and the grass is shorter. Shoulder months are quieter and much better value.",
     "What does a typical day look like?": "There is no typical day. But often: 5:30 tea, out by 6 for the dawn light, breakfast in the bush around 10, rest at camp through midday heat, out again 3:30 until sunset. Dinner under the stars. We adjust everything daily.",
-    "Do you take families?": "Yes \u2014 with care. I've taken guests as young as five. For children we slow the pace, cut driving hours, and lean into walks, camp projects, and nighttime astronomy. It becomes calmer, not less interesting."
+    "Do you take families?": "Yes \u2014 with care. I've taken guests as young as five. For children we slow the pace, cut driving hours, and lean into walks, camp projects, and nighttime astronomy. It becomes calmer and stays just as interesting."
   };
   var conciergeBody = document.getElementById('concierge-body');
   function appendMsg(from, text) {

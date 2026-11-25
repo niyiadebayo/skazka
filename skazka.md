@@ -16,9 +16,9 @@ You will know who it is before you arrive.
 Two, four or six of you. One vehicle, one guide, one chef.
 We do not pool strangers. Ever.
 
-### 03. The itinerary is a hypothesis.
+### 03. The itinerary is a starting point.
 
-Not a contract. If the leopard cubs come back, we stay another night.
+If the leopard cubs come back, we stay another night.
 
 ### 04. Route around the storm.
 

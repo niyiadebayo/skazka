@@ -281,8 +281,8 @@ INCLUDED = '''      <div class="included">
 def home():
     founder_quote = re.search(r'<p class="founder-quote">.*?</p>', read('sections', 'founder.html'), flags=re.S).group(0)
     return (read('sections', 'hero.html') + '\n' + read('sections', 'day.html') + '\n'
-            + section('journeys-teaser', 'journeys', head_block('zebra', '02 / Sample journeys', 'Starting points,<br/>not destinations.') + journey_plates())
-            + statement('House rule &#8470; 03', 'The itinerary<br/>is a hypothesis.', 'Not a contract. If the leopard cubs come back, we stay another night.', 'The seven house rules', '/method/#house-rules')
+            + section('journeys-teaser', 'journeys', head_block('zebra', '02 / Sample journeys', "Three trips we've run,<br/>as starting points.") + journey_plates())
+            + statement('House rule &#8470; 03', 'The itinerary<br/>is a starting point.', 'If the leopard cubs come back, we stay another night.', 'The seven house rules', '/method/#house-rules')
             + section('regions', 'regions', head_block('elephant', '03 / Regions', 'The country,<br/>in six moods.') + region_links())
             + section('founder', 'guides', head_block('antelope', '04 / Who leads your trip', 'One guide,<br/>your whole trip.')
                       + '      <div class="lead-quote">\n        ' + founder_quote + '''
@@ -298,8 +298,8 @@ def home():
 
 
 def journeys():
-    return (page_head('zebra', 'Sample journeys', 'Starting points,<br/>not destinations.',
-                      "These are real trips we've run &mdash; shown to give you a feel for rhythm and cost. Each is for one small party of two to six. Yours will look different. It should.", 'Journeys')
+    return (page_head('zebra', 'Sample journeys', "Three trips we've run,<br/>as starting points.",
+                      "They are shown to give you a feel for rhythm and cost. Each is for one small party of two to six. Yours will look different. It should.", 'Journeys')
             + section('journeys-list', 'itineraries', journey_spreads())
             + section('how', 'included', head_block('bird', 'The price', 'Everything after<br/>you land.') + INCLUDED
                       + '      <a class="more" href="/questions/">More on cost, seasons and children <span aria-hidden="true">&rarr;</span></a>\n')

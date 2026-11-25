@@ -23,8 +23,7 @@ FAQ = [('How is Skazka different from a regular safari operator?',
   'Six to twelve months before travel is comfortable. For July&ndash;October (Mara migration peak) we are often full a year out. We hold small windows for '
   'last-minute guests &mdash; ask.'),
  ('What about children?',
-  'Welcome. I have taken guests as young as five. For children under ten we adjust pace, driving hours, and walking &mdash; the trip becomes calmer, not less '
-  'interesting.'),
+  'Welcome. I have taken guests as young as five. For children under ten we adjust pace, driving hours, and walking &mdash; the trip becomes calmer and stays just as interesting.'),
  ('How much does a private Kenya safari cost?',
   'Our sample journeys start from $6,800 per person for five days, $12,600 for ten days and $16,200 for fourteen days, based on sharing. That covers '
   'everything after you land: camps, meals, transfers, park and conservancy fees, your guide and crew. International flights and visas are yours. Your own '
