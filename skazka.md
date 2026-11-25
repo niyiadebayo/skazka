@@ -48,7 +48,7 @@ No sales team between us. A reply within two working days.
 
 ## a day in the field
 
-There is no typical day. But most follow the light (East Africa Time, UTC+3):
+You won't have a typical day. However, this is the rhythm most of them follow, set by the light and the weather of the day (times are East Africa Time, UTC+3):
 
 - 05:30 — tea, brought to the tent before first light
 - 06:00 — out for the dawn light

@@ -148,7 +148,8 @@ Kimani speaks in the first person, plainly, with specifics.
 
 - "I read every enquiry myself" over "Our team is dedicated to you".
 - A number or a place in every claim: "three full rest days", "the conservancies that ring the reserve".
-- Short sentences. The second sentence may contradict the first: "There is no typical day. But most follow the light."
+- Short sentences, said plainly: "You won't have a typical day. However, this is the rhythm most of them follow, set by the light and the weather of the day."
+- No "X, not Y" constructions and no neat reversals ("set by the light, not the clock"). They read as machine-written. Say what the thing is.
 - Never: bespoke, curated, unforgettable, once in a lifetime, world-class.
 
 ## 11. What we refuse
