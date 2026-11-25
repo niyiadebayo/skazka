@@ -2741,3 +2741,30 @@ main > section { border-top: none !important; border-bottom: none !important; }
   .lead-quote > .founder-quote { order: 2; }
   .lead-quote > div { order: 1; }
 }
+
+/* ===== FEWER LINES =====
+   Space divides. Lines are kept only where they do a job: rows in a list, form fields,
+   buttons and tags, link underlines, the horizon in the day chapter, and the drawn routes.
+   Frames around blocks and rules between blocks are gone. */
+.page-head .running, .statement .running, .enquire .running, .running { border-bottom: none; padding-bottom: 0; }
+.nav.scrolled { border-bottom-color: transparent; }
+.hero-meta { border-top: none; padding-top: 0; }
+.day-now { border-top: none; }
+.day-family, .team-note { border-left: none; padding-left: 0; }
+.journey-foot { border-top: none; padding-top: 0; }
+.spread-stats { border-top: none; padding-top: 0; }
+.regions-list.is-links, .faq-list, .included ul { border-top: none; }
+.founder-meta { border-top: none; padding-top: 0; }
+.founder-img { border: none; }
+.founder-img-tag { padding-left: 0; padding-right: 0; }
+.test-grid, .test-card { border: none; }
+.test-card { padding: 0; min-height: 0; }
+.md-file { border: none; }
+.md-sign { border-top: none; padding-top: 0; }
+.how-steps { border-top: none; gap: 0 40px; }
+.how-step { border: none !important; padding: 0 0 48px; }
+.enquire-contact { border-top: none; padding-top: 0; }
+.letter { border: none; }
+.form-nav { border-top: none; padding-top: 0; }
+.footer-sign { border-top: none; padding-top: 0; }
+.concierge-avatar { border: none; }

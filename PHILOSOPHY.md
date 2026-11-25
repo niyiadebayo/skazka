@@ -78,6 +78,14 @@ Two edges, on every page. If something sits anywhere else, it needs a reason.
 
 Every page opens the same way: a running head, then the title at full size, on linen. The first section stays on linen; after that, linen and sand alternate. No hairlines between sections; the change of ground is the divider.
 
+**Lines.** Space divides; lines do not. A line is kept only where it does a job:
+- rows in a list (questions, regions, house rules, what is included),
+- form fields, buttons and tags,
+- link underlines,
+- the horizon in the day chapter and the drawn routes.
+
+No frames around blocks, no rules above or below a block, no accent bars down the side of a note. One frame remains, around the enquiry form, because paper on linen is too faint to show where the form ends.
+
 ## 5. Colour
 
 Colour comes from the photographs. The interface stays out of their way.
@@ -149,6 +157,7 @@ Kimani speaks in the first person, plainly, with specifics.
 - Countdown timers, "only two places left", pop-ups, newsletter gates.
 - Invented reviews, invented guides, invented awards.
 - Italics, tracked capitals, drop shadows, glows, grain.
+- Decorative lines: frames, dividers between blocks, side bars on notes.
 - More than one accent colour on a page.
 - Any effect that makes text harder to read.
 
